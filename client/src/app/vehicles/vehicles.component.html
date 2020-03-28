@@ -664,10 +664,11 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- <p>../assets//images/image_car_grid_1.png</p> -->
                                 <div class="my-vehicles-grid-item-image">
-                                    <img src="../assets//images/image_car_grid_1.png"
-                                         alt="My Ride"
-                                         title="My Ride"
+                                    <img src="../assets{{product.images.imagePath}}{{product.images.imageName}}"
+                                         alt="{{product.vehicleNickName}}"
+                                         title="{{product.vehicleNickName}}"
                                          height="90" />
                                 </div>
                                 <div class="my-vehicles-grid-item-meta-data">
@@ -696,7 +697,8 @@
                                                 {{product.diagnosticsIssues?product.diagnosticsIssues:'None'}}
                                             </em>
                                         </div>
-                                        <div class="car-meta-data">
+                                        <div class="car-meta-data"
+                                             *ngIf="product.chargeLevelPct">
                                             <strong>
                                                 Charge level
                                             </strong>
@@ -721,7 +723,8 @@
                                                 {{product.chargeLevelPct}}%
                                             </em>
                                         </div>
-                                        <div class="car-meta-data">
+                                        <div class="car-meta-data"
+                                             *ngIf="product.chargeLevelPct">
                                             <strong>
                                                 Battery status
                                             </strong>
@@ -729,7 +732,8 @@
                                                 {{product.batteryStatus}}
                                             </em>
                                         </div>
-                                        <div class="car-meta-data">
+                                        <div class="car-meta-data"
+                                             *ngIf="product.chargeLevelPct">
                                             <strong>
                                                 Driving range
                                             </strong>
@@ -745,10 +749,10 @@
                                             UVO
                                         </span>
                                         <span class="status-uvo-message">
-                                            Connected
+                                            {{product.status}}
                                         </span>
                                         <span class="status-uvo-last-updated">
-                                            Last refreshed 18 hrs ago
+                                            Last refreshed {{product.lastRefreshed |date:'h'}} hrs ago
                                         </span>
                                     </div>
                                 </div>

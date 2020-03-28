@@ -13,7 +13,7 @@ import { VehicleService } from '../vehicle.service';
 export class VehiclesComponent implements OnInit {
 
   products: any = []
-  // members: Member[];
+
 
   fullImagePath: String
   constructor(private modalService: NgbModal, private httpClient: HttpClient, private vs: VehicleService) {
@@ -27,10 +27,7 @@ export class VehiclesComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.httpClient.get("assets/data.json").subscribe(data => {
-    //   console.log('===========', JSON.stringify(data))
-    //   this.products = data
-    // })
+
     this.vs
       .getProducts()
       .subscribe((data: any) => {
