@@ -744,7 +744,8 @@
                                     </div>
                                 </div>
                                 <div class="my-vehicles-grid-item-footer">
-                                    <div class="status-uvo green">
+                                    <div
+                                         [class]="product.status=='connected'?'status-uvo green':product.status=='Not Activated'?'status-uvo red':'status-uvo'">
                                         <span class="logo-uvo">
                                             UVO
                                         </span>
