@@ -1,0 +1,102 @@
+.hide {
+    display: none;
+  }
+  .text-center {
+    text-align: center
+  }
+  .red-haze {
+    color: #C4172C;
+  }
+  .registration-nav nav.nav-app + nav.nav-main {
+    width: 100%;
+    position: static;
+}
+.registration-nav .notifications-menu {
+  display: none !important;
+}
+  .account-complete .secondary {
+    display: inline-block;
+    color: #C4172C;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.7px;
+    font-family: "KIA", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .account-complete .secondary:hover {
+
+    text-decoration: underline;
+  }
+
+  .account-complete {
+    padding-top: 55px;
+  }
+
+  .account-complete .contain {
+    max-width: 855px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .account-complete form {
+    max-width: 312px;
+    margin: auto;
+  }
+
+  .account-complete-block {
+    max-width: 675px;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 1px 19px 0 rgba(68, 68, 68, 0.24);
+    padding: 50px 20px 20px;
+    margin: 0 auto 40px;
+  }
+  .checkbox > em.smaller {
+    font-size: 11px;
+    line-height: 1.36em;
+    padding-top: 5px;
+    letter-spacing: .5px;
+}
+  .account-complete-block .form-fields li {
+    margin-bottom: 8px;
+  }
+
+  .account-complete-header {
+    text-align: center;
+    margin-bottom: 65px;
+  }
+
+  .account-complete-header h2 {
+    font-size: 12px;
+    letter-spacing: .6px;
+    color: #8E8E8E;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0 0 10px;
+    line-height: 1em;
+    font-family: "KIA", sans-serif;
+    font-weight: 500;
+  }
+
+  .account-complete-header h1 {
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    margin: 0;
+    font-family: "KIA", sans-serif;
+  }
+
+  .account-complete-header p {
+    padding-top: 25px;
+    max-width: 645px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: .6px;
+    color: #2f2f2f;
+  }

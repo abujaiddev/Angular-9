@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html ontouchstart="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="format-detection" content="telephone=no">
+
+
+  <!-- GLOBAL VENDOR CSS -->
+  <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/css/global.css?v=3.1.0" />
+  <link rel="stylesheet" href="/css/alerts.css?v=3.1.0" />
+  
+  <!-- VIEW CSS -->
+  <link rel="stylesheet" href="/css/view-locations.css">
+  <link rel="stylesheet" href="/css/view-my-trips.css">
+
+  <!-- GLOBAL VENDOR JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- GLOBAL JS -->
+  <script type="text/javascript" src="/scripts/modals.js"></script>
+  <script type="text/javascript" src="/scripts/forms.js"></script>
+  <script type="text/javascript" src="/scripts/loading.js"></script>
+  <script type="text/javascript" src="/scripts/nav.js"></script>
+  <script type="text/javascript" src="/scripts/alerts.js"></script>
+  <script type="text/javascript" src="/scripts/account-settings.js"></script>
+  
+  <!-- VIEW JS -->
+  <script type="text/javascript" src="/scripts/locations.js"></script>
+  <script type="text/javascript" src="/scripts/my-trips.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+  
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+  
+  <script type="text/javascript" src="/scripts/map.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+
+  <title>KIA</title>
+  </head>
+<body ontouchstart="">
+
+  <span class="loading-bar"></span>
+  
+  <div class="alerts">
+      <div class="alert alert-success alert-dismissible">
+        <p>&lt;A success message goes here, replace me!&gt;</p>
+        <div class="alert-actions">
+          <button type="button" class="close">
+            Close
+          </button>
+        </div><!-- /.alert-actions -->
+      </div><!-- /.alert -->
+      <div class="alert alert-failed alert-dismissible">
+        <p>&lt;An error message goes here, replace me!&gt;</p>
+        <div class="alert-actions double-actions">
+          <button type="button" class="close">
+            Retry
+          </button>
+          <button type="button" class="close">
+            Close
+          </button>
+        </div><!-- /.alert-actions -->
+      </div><!-- /.alert -->
+      <div class="alert alert-notification alert-dismissible">
+        <ul class="notification-list">
+          <li>
+            <i class="notification-geofence"></i>
+            <strong>
+              Geo Fence Alert
+            </strong>
+            <em>
+              <strong>My Optima</strong> exited <strong>Our Neighborhood</strong> geofence.
+            </em>
+            <span>
+              Just now
+            </span>
+          </li>
+        </ul>
+        <span type="button" class="close"></span>
+      </div><!-- /.alert -->
+    </div><!-- /.alerts -->
+    
+  <div class="has-mobile-nav">
+    <nav class="nav-app">
+      <div class="nav-app-main">
+        <div class="nav-app-inner">
+          <a href="/" class="logo white">KIA</a>
+          <ul class="nav-app-menu">
+            <li>
+              <a href="#" class="active">
+                <i class="icon-dashboard">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="11" viewBox="0 0 28 11">
+                    <path fill="#FFF" fill-rule="evenodd" d="M21.248 9.15a2.609 2.609 0 1 1 0-5.218 2.609 2.609 0 0 1 0 5.217m-7.568 0a3.933 3.933 0 1 1 0-7.866 3.933 3.933 0 0 1 0 7.866m-7.611 0a2.608 2.608 0 1 1 .001-5.216 2.608 2.608 0 0 1-.001 5.216M13.68 0C9.422 0 4.132 2.1 1.35 4.882-1.43 7.665.67 10.39 2.43 10.39H24.93c1.76 0 3.86-2.724 1.078-5.507C23.228 2.1 17.94 0 13.68 0"/>
+                  </svg>
+                </i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-remote">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="26" viewBox="0 0 23 26">
+                      <g fill="#828282" fill-rule="evenodd">
+                          <path d="M14.829 22H8.172a3.012 3.012 0 0 0 2.837 2h.982a3.012 3.012 0 0 0 2.838-2zM6 11c0-1.105.9-2 1.992-2h7.016c1.1 0 1.992.89 1.992 2v13c0 1.105-.9 2-1.992 2H7.992C6.892 26 6 25.11 6 24V11zm2 1v2h7v-2H8zm0 3v2h7v-2H8z"/>
+                          <g fill-rule="nonzero">
+                              <path d="M3.243 6.301a13.957 13.957 0 0 1 8.403-2.796c3.24 0 6.223 1.099 8.597 2.944l-1.013.84a12.681 12.681 0 0 0-7.584-2.503c-2.759 0-5.313.877-7.399 2.368L3.243 6.3z"/>
+                              <path d="M.516 3.988A17.452 17.452 0 0 1 11.646 0c4.328 0 8.289 1.569 11.346 4.169l-1.022.847a16.151 16.151 0 0 0-10.324-3.71A16.15 16.15 0 0 0 1.53 4.848l-1.014-.86z"/>
+                          </g>
+                      </g>
+                  </svg>
+                </i>
+                <span>Remote</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-schedules">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="19" viewBox="0 0 17 19">
+                      <path fill="#828282" fill-rule="evenodd" d="M14 2.574h1c1.105 0 2 .9 2 1.997v11.904c0 1.103-.89 1.997-2 1.997H2c-1.105 0-2-.9-2-1.997V4.57c0-1.103.89-1.997 2-1.997h1v.421a2 2 0 1 0 4 0v-.42h3v.427C10 4.102 10.895 5 12 5c1.112 0 2-.894 2-1.998v-.428zM2 9v1.002c0 .556.447.999.999.999h1.002A.996.996 0 0 0 5 10.001V8.999A.996.996 0 0 0 4.001 8H2.999A.996.996 0 0 0 2 8.999zm5 0v1.002c0 .556.447.999.999.999h1.002a.996.996 0 0 0 .999-.999V8.999A.996.996 0 0 0 9.001 8H7.999A.996.996 0 0 0 7 8.999zm5 0v1.002c0 .556.447.999.999.999h1.002a.996.996 0 0 0 .999-.999V8.999A.996.996 0 0 0 14.001 8h-1.002a.996.996 0 0 0-.999.999zm-10 5v1.002c0 .556.447.999.999.999h1.002A.996.996 0 0 0 5 15.001v-1.002A.996.996 0 0 0 4.001 13H2.999a.996.996 0 0 0-.999.999zm5 0v1.002c0 .556.447.999.999.999h1.002a.996.996 0 0 0 .999-.999v-1.002A.996.996 0 0 0 9.001 13H7.999a.996.996 0 0 0-.999.999zm5 0v1.002c0 .556.447.999.999.999h1.002a.996.996 0 0 0 .999-.999v-1.002a.996.996 0 0 0-.999-.999h-1.002a.996.996 0 0 0-.999.999zM4 1.009a1 1 0 1 1 2 0v1.982a1 1 0 1 1-2 0V1.009zm7 0a1 1 0 1 1 2 0v1.982a1 1 0 1 1-2 0V1.009z"/>
+                  </svg>
+                </i>
+                <span>Schedules</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-locations">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="25" viewBox="0 0 22 25">
+                      <g fill="none" fill-rule="evenodd">
+                        <path class="transparent" fill="#5C5C5C" d="M15.714 18.776c-1.348 0-6.285-8.327-6.285-12.045C9.429 3.014 12.243 0 15.714 0 19.186 0 22 3.014 22 6.731c0 3.718-4.938 12.045-6.286 12.045zm0-8.502c1.736 0 3.143-1.428 3.143-3.189 0-1.76-1.407-3.188-3.143-3.188-1.735 0-3.143 1.427-3.143 3.188 0 1.761 1.408 3.189 3.143 3.189z"/>
+                        <path fill="#828282" d="M6.286 24.444C4.938 24.444 0 16.117 0 12.4c0-3.717 2.814-6.73 6.286-6.73 3.471 0 6.285 3.013 6.285 6.73 0 3.718-4.937 12.045-6.285 12.045zm0-8.502c1.735 0 3.143-1.427 3.143-3.188 0-1.761-1.408-3.189-3.143-3.189-1.736 0-3.143 1.428-3.143 3.189 0 1.76 1.407 3.188 3.143 3.188z"/>
+                      </g>
+                  </svg>
+                </i>
+                <span>Locations</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-maintence">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                    <path fill="#828282" fill-rule="nonzero" d="M0 5.585A7.002 7.002 0 0 1 2.552.162a.795.795 0 0 1 1.276.596v3.23c-.017.444.293.827.672 1.129a3.44 3.44 0 0 0 2.143.716h.746a3.44 3.44 0 0 0 2.144-.716c.378-.302.689-.685.672-1.13V.76A.795.795 0 0 1 11.48.164a7.017 7.017 0 0 1 .11 10.75c-.459.4-.837.884-1.112 1.426a5.65 5.65 0 0 0-.591 2.603v4.287H4.147v-4.287a5.648 5.648 0 0 0-.59-2.605 4.725 4.725 0 0 0-1.112-1.427A6.996 6.996 0 0 1 0 5.585z"/>
+                  </svg>
+                </i>
+                <span>Maintenance</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-mycarzone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                      <path fill="#828282" fill-rule="nonzero" d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zM4 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2.46-3.95a1 1 0 1 0 0 1.414.981.981 0 0 0 0-1.414zM10 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2 10.983a1.93 1.93 0 0 0-.295-1.018L9.99 7.014l-1.72 6c-.156.26-.251.573-.26.907l-.02.071H8V14a2 2 0 1 0 4 0v-.017zm2.95-8.933a.996.996 0 0 0-1.41 0 .981.981 0 0 0 0 1.414 1 1 0 0 0 1.41-1.414zM16 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                  </svg>
+                </i>
+                <span>My Car Zone</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-stats">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                      <g fill="none">
+                          <g transform="translate(10 -1)">
+                              <mask id="b" fill="#fff">
+                                  <path id="a" d="M0 0h11v11H0z"/>
+                              </mask>
+                              <path fill="#464646" d="M0 21c-5.523 0-10-4.477-10-10S-5.523 1 0 1s10 4.477 10 10S5.523 21 0 21zm0-3A7 7 0 1 0 0 4a7 7 0 0 0 0 14z" mask="url(#b)"/>
+                          </g>
+                          <path fill="#828282" d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10h-3a7 7 0 1 1-7-7V0z"/>
+                      </g>
+                  </svg>
+                </i>
+                <span>Stats</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-reference">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="23" viewBox="0 0 17 23">
+                      <path fill="#828282" fill-rule="nonzero" d="M17 21.75V5.286c0-.586-.542-1.06-.542-1.06L12.988.74l-.303-.304C12.211-.041 11.47 0 11.47 0H1.244C.557 0 0 .56 0 1.25V21.75C0 22.44.557 23 1.244 23h14.512c.687 0 1.244-.56 1.244-1.25zM3 14.6c0-.331.213-.6.476-.6h9.047c.264 0 .477.269.477.6v.8c0 .331-.213.6-.477.6H3.476C3.213 16 3 15.731 3 15.4v-.8zm0 3c0-.331.224-.6.501-.6h4.998c.277 0 .501.269.501.6v.8c0 .331-.224.6-.501.6H3.5C3.224 19 3 18.731 3 18.4v-.8zm0-6c0-.332.213-.6.476-.6h9.047c.264 0 .477.268.477.6v.8c0 .33-.213.6-.477.6H3.476C3.213 13 3 12.73 3 12.4v-.8zM15 5h-3V2l3 3z"/>
+                  </svg>
+                </i>
+                <span>Reference Material</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon-finance">
+                  <svg width="14px" height="28px" viewBox="0 0 14 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+                      <desc>Created with Sketch.</desc>
+                      <defs></defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Navigation-/-Links-/-Finance-On" transform="translate(-29.000000, 0.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                              <g transform="translate(8.000000, 0.000000)" id="Shape">
+                                  <path d="M29.4,12.7381333 L29.4,4.4576 C31.0277333,5.04 32.2,6.57813333 32.2,8.4 L35,8.4 C35,5.0176 32.5882667,2.1952 29.4,1.53813333 L29.4,0 L26.6,0 L26.6,1.53813333 C23.4117333,2.18773333 21,5.0176 21,8.4 C21,11.7824 23.4117333,14.6048 26.6,15.2618667 L26.6,23.5424 C24.9722667,22.96 23.8,21.4218667 23.8,19.6 L21,19.6 C21,22.9824 23.4117333,25.8048 26.6,26.4618667 L26.6,28 L29.4,28 L29.4,26.4618667 C32.5882667,25.8122667 35,22.9824 35,19.6 C35,16.2176 32.5882667,13.3952 29.4,12.7381333 Z M23.8,8.4 C23.8,6.57813333 24.9722667,5.04 26.6,4.4576 L26.6,12.3424 C24.9722667,11.76 23.8,10.2218667 23.8,8.4 Z M29.4,23.5424 L29.4,15.6576 C31.0277333,16.24 32.2,17.7781333 32.2,19.6 C32.2,21.4218667 31.0202667,22.96 29.4,23.5424 Z"></path>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                </i>
+                <span>Finance</span>
+              </a>
+            </li>
+            <li class="more unread">
+              <a href="#" data-action="nav-toggle">
+                <i class="icon-reference">
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <svg width="26px" height="6px" viewBox="0 0 26 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="Navigation-/-Secondary-/-Dashboard" transform="translate(-275.000000, -13.000000)" fill="#696969">
+                              <path d="M277.785714,18.5714286 C276.247207,18.5714286 275,17.3242218 275,15.7857143 C275,14.2472068 276.247207,13 277.785714,13 C279.324222,13 280.571429,14.2472068 280.571429,15.7857143 C280.571429,17.3242218 279.324222,18.5714286 277.785714,18.5714286 Z M288,18.5714286 C286.461492,18.5714286 285.214286,17.3242218 285.214286,15.7857143 C285.214286,14.2472068 286.461492,13 288,13 C289.538508,13 290.785714,14.2472068 290.785714,15.7857143 C290.785714,17.3242218 289.538508,18.5714286 288,18.5714286 Z M298.214286,18.5714286 C296.675778,18.5714286 295.428571,17.3242218 295.428571,15.7857143 C295.428571,14.2472068 296.675778,13 298.214286,13 C299.752793,13 301,14.2472068 301,15.7857143 C301,17.3242218 299.752793,18.5714286 298.214286,18.5714286 Z" id="Combined-Shape"></path>
+                          </g>
+                      </g>
+                  </svg>
+                </i>
+                <span>More</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!-- /.nav-app-main -->
+      <div class="nav-app-mobile-menu">
+        <div class="nav-app-mobile-menu-inner">
+          <div class="nav-app-mobile-menu-default">
+            <div class="nav-app-mobile-menu-header" data-action="vehicle-selector-next">
+              <span class="vehicle-selector-current">
+                <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                <span class="title">My Niro</span>
+                <span class="next"></span>
+              </span><!-- /.vehicle-selector-current -->
+            </div><!-- /.nav-app-mobile-menu-header -->
+            <div class="nav-app-mobile-menu-footer">
+              <i class="icon-notifications unread">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16">
+                    <path fill="#9BA1A9" fill-rule="nonzero" d="M11.499 8.098L0 2.83V.479A.48.48 0 0 1 .48 0h22.04a.48.48 0 0 1 .48.48v2.315L11.499 8.098zm.201.961L23 3.852v11.002a.48.48 0 0 1-.48.48H.48a.479.479 0 0 1-.48-.48V3.885l11.3 5.176a.487.487 0 0 0 .4-.002z"/>
+                </svg>
+              </i>
+            </div><!-- /.nav-app-mobile-menu-footer -->
+            <div class="nav-app-mobile-menu-body">
+              <div class="nav-app-mobile-menu-body-inner">
+                <ul class="nav-list main-nav">
+                  <li>
+                    <a href="#">
+                      <i class="icon-maintenance">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
+                            <path fill="#828282" fill-rule="nonzero" d="M0 5.585A7.002 7.002 0 0 1 2.552.162a.795.795 0 0 1 1.276.596v3.23c-.017.444.293.827.672 1.129a3.44 3.44 0 0 0 2.143.716h.746a3.44 3.44 0 0 0 2.144-.716c.378-.302.689-.685.672-1.13V.76A.795.795 0 0 1 11.48.164a7.017 7.017 0 0 1 .11 10.75c-.459.4-.837.884-1.112 1.426a5.65 5.65 0 0 0-.591 2.603v4.287H4.147v-4.287a5.648 5.648 0 0 0-.59-2.605 4.725 4.725 0 0 0-1.112-1.427A6.996 6.996 0 0 1 0 5.585z"/>
+                        </svg>
+                      </i>
+                      <span>Maintenance</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-mycarzone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill="#828282" fill-rule="nonzero" d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zM4 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2.46-3.95a1 1 0 1 0 0 1.414.981.981 0 0 0 0-1.414zM10 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2 10.983a1.93 1.93 0 0 0-.295-1.018L9.99 7.014l-1.72 6c-.156.26-.251.573-.26.907l-.02.071H8V14a2 2 0 1 0 4 0v-.017zm2.95-8.933a.996.996 0 0 0-1.41 0 .981.981 0 0 0 0 1.414 1 1 0 0 0 1.41-1.414zM16 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                      </i>
+                      <span>My Car Zone</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-mycarzone">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                            <g fill="none">
+                                <g transform="translate(10 -1)">
+                                    <mask id="b" fill="#fff">
+                                        <path id="a" d="M0 0h11v11H0z"/>
+                                    </mask>
+                                    <path class="lighten" fill="#464646" d="M0 21c-5.523 0-10-4.477-10-10S-5.523 1 0 1s10 4.477 10 10S5.523 21 0 21zm0-3A7 7 0 1 0 0 4a7 7 0 0 0 0 14z" mask="url(#b)"/>
+                                </g>
+                                <path class="darken" fill="#828282" d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10h-3a7 7 0 1 1-7-7V0z"/>
+                            </g>
+                        </svg>
+                      </i>
+                      <span>Stats</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-reference">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="23" viewBox="0 0 17 23">
+                            <path fill="#828282" fill-rule="nonzero" d="M17 21.75V5.286c0-.586-.542-1.06-.542-1.06L12.988.74l-.303-.304C12.211-.041 11.47 0 11.47 0H1.244C.557 0 0 .56 0 1.25V21.75C0 22.44.557 23 1.244 23h14.512c.687 0 1.244-.56 1.244-1.25zM3 14.6c0-.331.213-.6.476-.6h9.047c.264 0 .477.269.477.6v.8c0 .331-.213.6-.477.6H3.476C3.213 16 3 15.731 3 15.4v-.8zm0 3c0-.331.224-.6.501-.6h4.998c.277 0 .501.269.501.6v.8c0 .331-.224.6-.501.6H3.5C3.224 19 3 18.731 3 18.4v-.8zm0-6c0-.332.213-.6.476-.6h9.047c.264 0 .477.268.477.6v.8c0 .33-.213.6-.477.6H3.476C3.213 13 3 12.73 3 12.4v-.8zM15 5h-3V2l3 3z"/>
+                        </svg>
+                      </i>
+                      <span>Reference Material</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav-list secondary-nav">
+                  <li>
+                    <a href="#">
+                      <i class="icon-awards">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="#9BA1A9" fill-rule="nonzero" d="M15.972 1.292a.39.39 0 0 0-.035-.175.21.21 0 0 0-.14-.14.237.237 0 0 0-.174-.07H13.18V.315c0-.07-.035-.14-.105-.21A.335.335 0 0 0 12.83 0H3.124a.335.335 0 0 0-.244.105.375.375 0 0 0-.07.21v.593H.33a.237.237 0 0 0-.175.07c-.046.023-.081.07-.104.14a.39.39 0 0 0-.035.174S-.11 5.37.33 6.634c.292.84 1.42 2.025 2.653 2.374.489 1.164 1.804 2.083 3.946 2.758l.07 2.27-2.933.698c-.07 0-.128.035-.175.105a.339.339 0 0 0-.07.174v.908h8.345v-.908a.339.339 0 0 0-.07-.174c-.047-.07-.105-.105-.175-.105l-3.002-.698.07-2.27c2.01-.438 3.336-1.357 3.98-2.758 1.257-.35 2.36-1.533 2.653-2.374.44-1.264.35-5.342.35-5.342zM2.81 7.367c-.536-.186-1.03-.485-1.152-1.013-.17-.736-.1-2.658-.058-3.518a.448.448 0 0 1 .448-.427h.762v4.958zM14.33 6.354c-.134.536-.64.827-1.152 1.013V2.409h.764c.239 0 .436.186.448.424.047.86.124 2.788-.06 3.521z"/>
+                        </svg>
+                      </i>
+                      <span>Awards</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-cog">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19">
+                            <path fill="#9BA1A9" fill-rule="nonzero" d="M0 12.503l1.505-.869a7.98 7.98 0 0 1-.3-2.176c0-.741.1-1.458.29-2.138l-1.49-.86a9.48 9.48 0 0 1 1.949-3.327l1.448.836A7.742 7.742 0 0 1 7.06 1.822V.2a9.53 9.53 0 0 1 3.856-.006v1.635a7.744 7.744 0 0 1 3.653 2.158l1.477-.853a9.48 9.48 0 0 1 1.95 3.327l-1.53.883c.186.673.284 1.382.284 2.115 0 .747-.102 1.47-.294 2.154l1.544.891a9.48 9.48 0 0 1-1.944 3.33l-1.515-.874a7.743 7.743 0 0 1-3.625 2.129v1.696a9.531 9.531 0 0 1-3.856-.005v-1.686a7.741 7.741 0 0 1-3.63-2.118l-1.486.858A9.48 9.48 0 0 1 0 12.503zm8.998.139c1.712 0 3.1-1.407 3.1-3.143 0-1.735-1.388-3.142-3.1-3.142-1.713 0-3.101 1.407-3.101 3.142 0 1.736 1.388 3.143 3.1 3.143z"/>
+                        </svg>
+                      </i>
+                      <span>Settings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-user">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+                            <path fill="#A1A6AE" fill-rule="nonzero" d="M.01 15.059c-.258-3.826 3.465-3.847 6.066-5.476V7.842C3.03 5.552 4.506 0 8.04 0c3.446 0 4.95 5.562 1.873 7.842v1.74c2.819 1.682 7.371 1.58 7.074 5.477-.573.793-16.535.991-16.976 0z"/>
+                        </svg>
+                      </i>
+                      <span>Driver Preferences</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-mycarzone">
+                        <i class="icon-power">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                              <path fill="#9BA1A9" fill-rule="nonzero" d="M8.5 16.98c-4.687 0-8.5-3.771-8.5-8.406a8.267 8.267 0 0 1 1.76-5.12 1.207 1.207 0 0 1 1.679-.218 1.176 1.176 0 0 1 .22 1.661 5.935 5.935 0 0 0-1.264 3.676 6.105 6.105 0 1 0 12.21 0 5.935 5.935 0 0 0-1.264-3.676 1.176 1.176 0 0 1 .22-1.66 1.207 1.207 0 0 1 1.68.217A8.269 8.269 0 0 1 17 8.574c0 4.635-3.813 8.405-8.5 8.405zm-.233-6.848a1.19 1.19 0 0 1-1.19-1.19V1.169a1.194 1.194 0 1 1 2.388 0v7.778a1.19 1.19 0 0 1-1.198 1.185z"/>
+                          </svg>
+                        </i>
+                      </i>
+                      <span>Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav-list text-nav">
+                  <li>
+                    <a href="#">
+                      <span>Privacy / Legal</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>Contact Us</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>Kia.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>Other Kia Sites</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>MPG</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>Global Disclaimer</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>Terms of Service</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="nav-list-footer">
+                  <p>
+                    2017® Kia Motors America, Inc
+                  </p>
+                  <ul class="social-icons">
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-facebook-square"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-pinterest-p"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div><!-- /.nav-list-footer -->
+              </div><!-- /.nav-app-mobile-menu-body-inner -->
+            </div><!-- /.nav-app-mobile-menu-body -->
+          </div><!-- /.nav-app-mobile-menu-default -->
+          <div class="nav-app-mobile-menu-vehicle-selector">
+            <span class="back" data-action="vehicle-selector-back">Back</span>
+            <ul class="vehicle-selector-list">
+              <li>
+                <a href="#">
+                  <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                  <span class="car-meta">
+                    <span class="model">2017 K900</span>
+                    <span class="title">Andrews Car</span>
+                  </span><!-- /.car-meta -->
+                </a>
+                <!-- <a href="#" class="settings-icon">
+                  <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z" style="fill: #898989"/>
+                  </svg>
+                </a> -->
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                  <span class="car-meta">
+                    <span class="model">2017 K900</span>
+                    <span class="title">Andrews Car</span>
+                  </span><!-- /.car-meta -->
+                </a>
+                <!-- <a href="#" class="settings-icon">
+                  <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z" style="fill: #898989"/>
+                  </svg>
+                </a> -->
+              </li>
+              <li>
+                <a href="#" class="last-link">
+                   View All Vehicles
+                </a>
+              </li>
+            </ul>
+          </div><!-- /.nav-app-mobile-menu-vehicle-selector -->
+        </div><!-- /.nav-app-mobile-menu-inner -->
+      </div><!-- /.nav-app-mobile-menu -->
+      <div class="nav-app-mobile-menu-close" data-action="nav-toggle"></div>
+    </nav><!-- /.app-nav -->
+    
+    <nav class="nav-main">
+      <div class="contain">
+        <a href="/" class="nav-service-text">
+          <em>
+            Need to service your car?
+          </em>
+          <strong>
+            Make an appointment
+          </strong>
+        </a>
+        <a href="/" class="logo">
+          Kia
+        </a>
+        <div class="vehicle-selector">
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+              <span class="vehicle-selector-current">
+                <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                <span class="title">My Niro</span>
+                <span class="caret"></span>
+              </span><!-- /.vehicle-selector-current -->
+            </button>
+            <ul class="dropdown-menu vehicle-selector-list">
+              <li>
+                <a href="#">
+                  <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                  <span class="car-meta">
+                    <span class="model">2017 K900</span>
+                    <span class="title">Andrews Car</span>
+                  </span><!-- /.car-meta -->
+                </a>
+                <a href="#" class="settings-icon">
+                  <!-- <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z" style="fill: #898989"/>
+                  </svg> -->
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                  <span class="car-meta">
+                    <span class="model">2017 K900</span>
+                    <span class="title">Andrews Car</span>
+                  </span><!-- /.car-meta -->
+                </a>
+                <!-- <a href="#" class="settings-icon">
+                  <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z" style="fill: #898989"/>
+                  </svg>
+                </a> -->
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/images/image_selector_1.png" width="65" height="27" title="My Niro" alt="My Niro" />
+                  <span class="car-meta">
+                    <span class="model">2017 K900</span>
+                    <span class="title">Andrews Car</span>
+                  </span><!-- /.car-meta -->
+                </a>
+                <!-- <a href="#" class="settings-icon">
+                  <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z" style="fill: #898989"/>
+                  </svg>
+                </a> -->
+              </li>
+              <li>
+                <a href="#" class="last-link">
+                   View All Vehicles
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.vehicle-selector -->
+        <div class="notifications-menu unread">
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+              <i class="icon-notifications unread">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16">
+                    <path fill="#9BA1A9" fill-rule="nonzero" d="M11.499 8.098L0 2.83V.479A.48.48 0 0 1 .48 0h22.04a.48.48 0 0 1 .48.48v2.315L11.499 8.098zm.201.961L23 3.852v11.002a.48.48 0 0 1-.48.48H.48a.479.479 0 0 1-.48-.48V3.885l11.3 5.176a.487.487 0 0 0 .4-.002z"/>
+                </svg>
+              </i>
+            </button>
+            <div class="dropdown-menu">
+              <ul class="notification-list">
+                <li class="unread">
+                  <i class="notification-geofence"></i>
+                  <strong>
+                    Geo Fence Alert
+                  </strong>
+                  <em>
+                    <strong>My Optima</strong> exited <strong>Our Neighborhood</strong> geofence.
+                  </em>
+                  <span>
+                    2 minutes ago
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-maintenance"></i>
+                  <strong>
+                    Maintenance
+                  </strong>
+                  <em>
+                    <strong>OG Soul</strong> has a <strong>diagnostic issue</strong>: WU Battery Sensor Low RR.
+                  </em>
+                  <span>
+                    4 hours ago
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-security-unlocked"></i>
+                  <strong>
+                    Security
+                  </strong>
+                  <em>
+                    <strong>OG Soul</strong> was <strong>unlocked</strong>
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-climate"></i>
+                  <strong>
+                    Climate
+                  </strong>
+                  <em>
+                    <strong>My Niro’s climate</strong> was set to <strong>71˚</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:29am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-valet"></i>
+                  <strong>
+                    Valet Alert
+                  </strong>
+                  <em>
+                    <strong>My Niro</strong> driven outside allowed area. <strong>View Vehicles Location.</strong>
+                  </em>
+                  <span>
+                    Yesterday at 10:29am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-security-locked"></i>
+                  <strong>
+                    Security
+                  </strong>
+                  <em>
+                    <strong>OG Soul</strong> was <strong>locked</strong>
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-maintenance"></i>
+                  <strong>
+                    Maintenance
+                  </strong>
+                  <em>
+                    <strong>My Niro</strong> has a <strong>diagnostic issue</strong>: WU Battery Sensor Low RR.
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-schedules-climate"></i>
+                  <strong>
+                    Schedules
+                  </strong>
+                  <em>
+                    A <strong>Climate Schedule</strong> will start in <strong>My Niro</strong> in 30 minutes.
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-schedules-charge"></i>
+                  <strong>
+                    Schedules
+                  </strong>
+                  <em>
+                    <strong>My Niro’s charge schedule</strong> set to start in <strong>30 minutes</strong> has been <strong>canceled</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-security-remote"></i>
+                  <strong>
+                    Security
+                  </strong>
+                  <em>
+                    <strong>My Niro</strong> has been <strong>started remotely</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-security-panic"></i>
+                  <strong>
+                    Security
+                  </strong>
+                  <em>
+                    <strong>My Niro’s</strong> alarm has been <strong>activated</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:30am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-battery"></i>
+                  <strong>
+                    Battery
+                  </strong>
+                  <em>
+                    <strong>OG Soul’s</strong> battery <strong>started charging</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:29am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-curfew"></i>
+                  <strong>
+                    Curfew Alert
+                  </strong>
+                  <em>
+                    <strong>My Niro</strong> is being driven past <strong>Tim’s Curfew</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:29am
+                  </span>
+                </li>
+                <li>
+                  <i class="notification-speed"></i>
+                  <strong>
+                    Speed Alert
+                  </strong>
+                  <em>
+                    <strong>My Niro</strong> exceeded the <strong>speed threshold</strong>.
+                  </em>
+                  <span>
+                    Yesterday at 10:29am
+                  </span>
+                </li>
+              </ul>
+              <div class="menu-anchor">
+                <a href="#">See All Notifications</a>
+              </div><!-- /.menu-anchor -->
+            </div><!-- /.dropdown-menu -->
+          </div>
+        </div><!-- /.notifications-menu -->
+        <div class="account-menu">
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+              Account
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu account-menu-list">
+              <li>
+                <a href="#">
+                  <i class="icon-awards">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path fill="#9BA1A9" fill-rule="nonzero" d="M15.972 1.292a.39.39 0 0 0-.035-.175.21.21 0 0 0-.14-.14.237.237 0 0 0-.174-.07H13.18V.315c0-.07-.035-.14-.105-.21A.335.335 0 0 0 12.83 0H3.124a.335.335 0 0 0-.244.105.375.375 0 0 0-.07.21v.593H.33a.237.237 0 0 0-.175.07c-.046.023-.081.07-.104.14a.39.39 0 0 0-.035.174S-.11 5.37.33 6.634c.292.84 1.42 2.025 2.653 2.374.489 1.164 1.804 2.083 3.946 2.758l.07 2.27-2.933.698c-.07 0-.128.035-.175.105a.339.339 0 0 0-.07.174v.908h8.345v-.908a.339.339 0 0 0-.07-.174c-.047-.07-.105-.105-.175-.105l-3.002-.698.07-2.27c2.01-.438 3.336-1.357 3.98-2.758 1.257-.35 2.36-1.533 2.653-2.374.44-1.264.35-5.342.35-5.342zM2.81 7.367c-.536-.186-1.03-.485-1.152-1.013-.17-.736-.1-2.658-.058-3.518a.448.448 0 0 1 .448-.427h.762v4.958zM14.33 6.354c-.134.536-.64.827-1.152 1.013V2.409h.764c.239 0 .436.186.448.424.047.86.124 2.788-.06 3.521z"/>
+                    </svg>
+                  </i>
+                  <span>My Awards</span>
+                </a>
+              </li>
+              <li>
+                <a data-toggle="modal" data-target="#settings">
+                  <i class="icon-cog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19">
+                        <path fill="#9BA1A9" fill-rule="nonzero" d="M0 12.503l1.505-.869a7.98 7.98 0 0 1-.3-2.176c0-.741.1-1.458.29-2.138l-1.49-.86a9.48 9.48 0 0 1 1.949-3.327l1.448.836A7.742 7.742 0 0 1 7.06 1.822V.2a9.53 9.53 0 0 1 3.856-.006v1.635a7.744 7.744 0 0 1 3.653 2.158l1.477-.853a9.48 9.48 0 0 1 1.95 3.327l-1.53.883c.186.673.284 1.382.284 2.115 0 .747-.102 1.47-.294 2.154l1.544.891a9.48 9.48 0 0 1-1.944 3.33l-1.515-.874a7.743 7.743 0 0 1-3.625 2.129v1.696a9.531 9.531 0 0 1-3.856-.005v-1.686a7.741 7.741 0 0 1-3.63-2.118l-1.486.858A9.48 9.48 0 0 1 0 12.503zm8.998.139c1.712 0 3.1-1.407 3.1-3.143 0-1.735-1.388-3.142-3.1-3.142-1.713 0-3.101 1.407-3.101 3.142 0 1.736 1.388 3.143 3.1 3.143z"/>
+                    </svg>
+                  </i>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon-user">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+                        <path fill="#A1A6AE" fill-rule="nonzero" d="M.01 15.059c-.258-3.826 3.465-3.847 6.066-5.476V7.842C3.03 5.552 4.506 0 8.04 0c3.446 0 4.95 5.562 1.873 7.842v1.74c2.819 1.682 7.371 1.58 7.074 5.477-.573.793-16.535.991-16.976 0z"/>
+                    </svg>
+                  </i>
+                  <span>Driver Preferences</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon-power">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                        <path fill="#9BA1A9" fill-rule="nonzero" d="M8.5 16.98c-4.687 0-8.5-3.771-8.5-8.406a8.267 8.267 0 0 1 1.76-5.12 1.207 1.207 0 0 1 1.679-.218 1.176 1.176 0 0 1 .22 1.661 5.935 5.935 0 0 0-1.264 3.676 6.105 6.105 0 1 0 12.21 0 5.935 5.935 0 0 0-1.264-3.676 1.176 1.176 0 0 1 .22-1.66 1.207 1.207 0 0 1 1.68.217A8.269 8.269 0 0 1 17 8.574c0 4.635-3.813 8.405-8.5 8.405zm-.233-6.848a1.19 1.19 0 0 1-1.19-1.19V1.169a1.194 1.194 0 1 1 2.388 0v7.778a1.19 1.19 0 0 1-1.198 1.185z"/>
+                    </svg>
+                  </i>
+                  <span>Log Out</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.account-menu -->
+      </div><!-- /.contain -->
+    </nav>
+    
+    
+    <div class="nav-mobile">
+      <div class="contain">
+        <h1>My Trips</h1>
+        <ul class="mobile-nav-options">
+          <li>
+            <i class="icon-edit start-edit">
+              <svg id="084335f4-2228-4b1b-8741-8fdbf8102c58" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <title>icon_edit</title>
+                <path d="M2.89,11.57,2,16l4.43-.89L14.3,7.24,10.76,3.71ZM14.47,0,11.9,2.57,15.43,6.1,18,3.53Z" transform="translate(-2)" style="fill: #9ba1a9"/>
+              </svg>
+            </i>
+          </li>
+          <li>
+            <i class="icon-export" data-toggle="modal" data-target="#export">
+              <svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Hover-Over-a-Trip-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-927.000000, -177.000000)">
+                      <g id="Sorting-Options" transform="translate(127.000000, 153.000000)" fill-rule="nonzero">
+                          <g id="Export" transform="translate(800.000000, 21.000000)">
+                              <path d="M14,7.12505882 L9.88235294,11.2476471 L9.88235294,7.94117647 L9.05882353,7.94117647 C7.69423529,7.94117647 6.58823529,9.04717647 6.58823529,10.4117647 L6.58823529,12.8823529 L4.94117647,12.8823529 L4.94117647,10.4117647 C4.94117647,8.138 6.78505882,6.29411765 9.05882353,6.29411765 L9.88235294,6.29411765 L9.88235294,3 L14,7.12505882 Z M1.64705882,5.47058824 L1.64705882,17 C1.64705882,17.4545882 2.016,17.8235294 2.47058824,17.8235294 L9.05882353,17.8235294 C9.51341176,17.8235294 9.88235294,17.4545882 9.88235294,17 L9.88235294,13.5774118 L11.5294118,11.9303529 L11.5294118,17 C11.5294118,18.3645882 10.4234118,19.4705882 9.05882353,19.4705882 L2.47058824,19.4705882 C1.106,19.4705882 0,18.3645882 0,17 L0,5.47058824 C0,4.106 1.106,3 2.47058824,3 L8.23529412,3 L8.23529412,4.64705882 L2.47058824,4.64705882 C2.016,4.64705882 1.64705882,5.016 1.64705882,5.47058824 Z" id="Shape"></path>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+            </i>
+          </li>
+          <li class="stop-edit">
+            Cancel
+          </li>
+        </ul><!-- /.mobile-nav-options -->
+      </div><!-- /.contain -->
+    </div><!-- /.nav-mobile -->
+
+    <div class="page-view locations-page-view my-trips-page-view">
+      <div class="page-view-subnav">
+        <ul class="page-view-subnav-items">
+          <li>
+            <a href="#">
+              Locations
+            </a>
+          </li>
+          <li>
+            <a href="#" class="active">
+              My Trips
+            </a>
+          </li>
+        </ul><!-- /.page-view-subnav-items -->
+      </div><!-- /.page-view-subnav -->
+      <div class="locations-map">
+        <div class="my-trips-toolbar">
+          <div class="my-trips-toolbar-inner">
+            <div class="edit-toolbar">
+              <label class="checkbox solo">
+                <input type="checkbox" name="" value="" class="select-all" />
+                <em></em>
+              </label>
+              <span class="delete disabled">
+                <i>
+                  <svg width="11px" height="15px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Edit-Driving-Rule-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-27.000000, -523.000000)">
+                          <g id="Group-2" transform="translate(27.000000, 520.000000)" fill="#C4172C">
+                              <path d="M4,4 L4,3 L7,3 L7,4 L10.0044225,4 C10.5542648,4 11,4.44386482 11,5 L11,6 L0,6 L0,5 C0,4.44771525 0.444836974,4 0.995577499,4 L4,4 Z M1,7 L10,7 L10,17.0044225 C10,17.5542648 9.5536886,18 9.00245535,18 L1.99754465,18 C1.44661595,18 1,17.555163 1,17.0044225 L1,7 Z" id="Combined-Shape"></path>
+                          </g>
+                      </g>
+                  </svg>
+                </i>
+                Deleted Selected
+              </span>
+              <span class="merge-toggle disabled">
+                <span class="merge active">
+                  <i>
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#C4172C" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </i>
+                  Merge Selected
+                </span>
+                <span class="unmerge">
+                  <i>
+                    <svg width="15px" height="17px" viewBox="0 0 15 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Unmerge-Selected-|-Tablet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-202.000000, -193.000000)">
+                            <g id="Group-2" transform="translate(202.000000, 193.000000)" fill="#C4172C">
+                                <polygon id="Shape" points="0 0 0 7.46655838 1.93446378 6.35188261 5.01309212 12.0609099 5.01309212 16.9855357 9.17690746 16.9855357 9.17690746 12.0609099 12.2555358 6.35188261 14.1899996 7.46655838 14.1899996 0 7.72605962 3.73327919 9.65462565 4.84795497 7.09499979 9.5956481 4.53537393 4.84795497 6.46393996 3.73327919"></polygon>
+                            </g>
+                        </g>
+                    </svg>
+                  </i>
+                  Unmerge Selected
+                </span>
+              </span>
+              <span class="cancel stop-edit">
+                <i>
+                  <svg id="83423d78-0e91-4301-a1e9-92d10df4f68d" xmlns="http://www.w3.org/2000/svg" width="14.99" height="15" viewBox="0 0 14.99 15">
+                    <path id="80148eb1-3817-49e4-8928-d5cb855e2703" data-name="cancel" d="M12.82,12.8a7.5,7.5,0,1,0-10.6,0,7.49,7.49,0,0,0,10.6,0ZM4.34,9.62,6.47,7.49,4.34,5.37,5.39,4.32,7.52,6.44,9.65,4.32,10.7,5.37,8.57,7.49,10.7,9.62,9.65,10.67,7.52,8.55,5.39,10.67Z" transform="translate(-0.03 0)" style="fill: #c4172c"/>
+                  </svg>
+                </i>
+                Cancel
+              </span>
+            </div>
+            <span class="start-edit">
+              <label class="checkbox solo hidden-xs hidden-sm">
+                <input type="checkbox" name="" value="" class="select-all stop-propagation" />
+                <em></em>
+              </label>
+              <span class="edit-tablet hidden-md hidden-lg">
+                <svg id="084335f4-2228-4b1b-8741-8fdbf8102c58" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <path d="M2.89,11.57,2,16l4.43-.89L14.3,7.24,10.76,3.71ZM14.47,0,11.9,2.57,15.43,6.1,18,3.53Z" transform="translate(-2)" style="fill: #C4172C"/>
+                </svg>
+                Edit
+              </span>
+            </span>
+            <form>
+              <ul class="form-fields">
+                <li class="trips-search">
+                  <label>
+                    <strong>Search Trips</strong>
+                    <input type="text" name="" value="" placeholder="Search Tags">
+                    <i class="icon-search">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path fill="#9BA1A9" fill-rule="nonzero" d="M6.453.08C3.101.08.361 2.822.361 6.174c0 3.351 2.74 6.092 6.092 6.092 1.291 0 2.49-.407 3.477-1.098l4.004 4.01c.42.419 1.103.419 1.522 0 .42-.42.42-1.104 0-1.524L11.448 9.65a6.044 6.044 0 0 0 1.097-3.477C12.545 2.82 9.805.08 6.453.08zm0 2.151a3.926 3.926 0 0 1 3.942 3.942 3.926 3.926 0 0 1-3.942 3.942 3.926 3.926 0 0 1-3.942-3.942A3.926 3.926 0 0 1 6.453 2.23z"/>
+                      </svg>
+                    </i>
+                  </label>
+                </li>
+                <li class="trips-alerts">
+                  <label>
+                    <strong>My Car Zone Alerts</strong>
+                    <select class="selectpicker small">
+                      <option value="1">All</option>
+                      <option value="1">Option 1</option>
+                      <option value="1">Option 2</option>
+                      <option value="1">Option 3</option>
+                    </select>
+                  </label>
+                </li>
+                <li class="trips-type">
+                  <label>
+                    <strong>Trip Type</strong>
+                    <select class="selectpicker small">
+                      <option value="1">All</option>
+                      <option value="1" selected>Personal</option>
+                      <option value="1">Business</option>
+                    </select>
+                  </label>
+                </li>
+                <li class="trips-date">
+                  <label>
+                    <strong>Date Range</strong>
+                    <div id="reportrange" class="pull-right daterange">
+                        <i class="fa fa-calendar"></i>&nbsp;
+                        <span></span>
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <span class="export-btn" data-toggle="modal" data-target="#export">
+                    <i class="icon-export">
+                      <svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="Hover-Over-a-Trip-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-927.000000, -177.000000)">
+                              <g id="Sorting-Options" transform="translate(127.000000, 153.000000)" fill-rule="nonzero">
+                                  <g id="Export" transform="translate(800.000000, 21.000000)">
+                                      <path d="M14,7.12505882 L9.88235294,11.2476471 L9.88235294,7.94117647 L9.05882353,7.94117647 C7.69423529,7.94117647 6.58823529,9.04717647 6.58823529,10.4117647 L6.58823529,12.8823529 L4.94117647,12.8823529 L4.94117647,10.4117647 C4.94117647,8.138 6.78505882,6.29411765 9.05882353,6.29411765 L9.88235294,6.29411765 L9.88235294,3 L14,7.12505882 Z M1.64705882,5.47058824 L1.64705882,17 C1.64705882,17.4545882 2.016,17.8235294 2.47058824,17.8235294 L9.05882353,17.8235294 C9.51341176,17.8235294 9.88235294,17.4545882 9.88235294,17 L9.88235294,13.5774118 L11.5294118,11.9303529 L11.5294118,17 C11.5294118,18.3645882 10.4234118,19.4705882 9.05882353,19.4705882 L2.47058824,19.4705882 C1.106,19.4705882 0,18.3645882 0,17 L0,5.47058824 C0,4.106 1.106,3 2.47058824,3 L8.23529412,3 L8.23529412,4.64705882 L2.47058824,4.64705882 C2.016,4.64705882 1.64705882,5.016 1.64705882,5.47058824 Z" id="Shape"></path>
+                                  </g>
+                              </g>
+                          </g>
+                      </svg>
+                    </i>
+                    Export
+                  </span>
+                </li>
+              </ul>
+            </form>
+            <div class="hidden-sm hidden-md hidden-lg mobile-toolbar" data-toggle="modal" data-target="#filters">
+              <span>
+                <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="My-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-16.000000, -122.000000)">
+                        <g id="Group-9" transform="translate(16.000000, 116.000000)" fill="#9BA1A9" fill-rule="nonzero">
+                            <path d="M9.88697813,6.0950671 C9.83416307,6.04225204 9.74965899,6 9.6651549,6 C9.6651549,6 9.6651549,6 9.6651549,6 L5.65121079,6.0950671 C5.30263143,6.11619312 4.98574111,6.25351226 4.72166584,6.49646151 L0.475335487,10.7427919 C0.169008173,11.0491192 0,11.4716396 0,11.89416 C0,12.2849914 0.158445162,12.6652598 0.443646454,12.9715871 L3.04214712,15.5700878 C3.33791142,15.8658521 3.71817981,16.0031712 4.10901121,16.0031712 C4.52096863,16.0031712 4.94348906,15.8447261 5.26037939,15.5278358 L9.49614673,11.2815054 C9.74965899,11.0279932 9.89754114,10.6899768 9.89754114,10.3413974 L9.99260824,6.31689032 C9.98204523,6.23238624 9.95035619,6.15844516 9.88697813,6.0950671 Z M7.66874586,9.60198669 C7.49973768,9.77099486 7.25678843,9.87662497 7.0244022,9.87662497 C6.80257897,9.87662497 6.55962972,9.77099486 6.40118456,9.60198669 C6.23217638,9.45410454 6.13710929,9.2217183 6.13710929,8.96820604 C6.13710929,8.7358198 6.23217638,8.50343356 6.40118456,8.33442539 C6.76032693,7.98584603 7.33072951,7.98584603 7.66874586,8.33442539 C7.83775403,8.48230754 7.93282113,8.71469378 7.93282113,8.96820604 C7.93282113,9.19002927 7.83775403,9.43297852 7.66874586,9.60198669 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </svg>
+                3 Tags
+              </span>
+              <span>
+                <svg width="11px" height="9px" viewBox="0 0 11 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="My-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-82.000000, -122.000000)">
+                        <g id="Group-8" transform="translate(82.000000, 116.000000)" fill="#9BA1A9" fill-rule="nonzero">
+                            <path d="M10.7904325,13.450638 L6.85658433,6.63868368 C6.61078177,6.21255876 6.28741038,6 5.96303161,6 C5.63865283,6 5.31528144,6.21255876 5.06947889,6.63868368 L1.1406676,13.450638 C0.644025561,14.3028878 1.04698056,15 2.03422032,15 L9.89184289,15 C10.8790826,15 11.2820376,14.3028878 10.7904325,13.450638 Z M5.45127875,9.43418402 L6.47579185,9.43418402 L6.47579185,11.8176629 L5.45027136,11.8176629 L5.45027136,9.43418402 L5.45127875,9.43418402 Z M5.96403899,13.3629953 C5.65414382,13.3629953 5.40292415,13.1117756 5.40292415,12.8018805 C5.40292415,12.4919853 5.65414382,12.2407656 5.96403899,12.2407656 C6.27393416,12.2407656 6.52515384,12.4919853 6.52515384,12.8018805 C6.52542188,12.9510466 6.46628454,13.0941803 6.36080801,13.1996569 C6.25533148,13.3051334 6.1121977,13.3642707 5.96303161,13.3640027 L5.96403899,13.3629953 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </svg>
+                All
+              </span>
+              <span>
+                <svg width="9px" height="10px" viewBox="0 0 9 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="My-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-130.000000, -122.000000)">
+                        <g id="Group-10" transform="translate(130.000000, 116.000000)" fill="#9BA1A9" fill-rule="nonzero">
+                            <path d="M2.12340308,6 C1.78498493,6.00031348 1.49473062,6.24150241 1.4324618,6.57414265 L0.0125845056,14.1393164 C-0.0276543095,14.3535281 0.0296924157,14.5745274 0.169011704,14.742146 C0.308330992,14.9097645 0.515119274,15.0065526 0.733077244,15.0061592 L3.93167098,15.0061592 L3.93167098,12.4731769 L5.05744089,12.4731769 L5.05744089,15.0061592 L8.25603463,15.0061592 C8.47374647,15.0061334 8.68014111,14.9091664 8.8191419,14.7416038 C8.9581427,14.5740412 9.01531311,14.353286 8.97512015,14.1393164 L7.55665007,6.57414265 C7.49438125,6.24150241 7.20412694,6.00031348 6.8657088,6 L5.05744089,6 L5.05744089,7.97009733 L3.93167098,7.97009733 L3.93167098,6 L2.12340308,6 Z M5.05744089,9.09586724 L5.05744089,11.347407 L3.93167098,11.347407 L3.93167098,9.09586724 L5.05744089,9.09586724 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </svg>
+                Personal
+              </span>
+              <span>
+                <svg width="10px" height="11px" viewBox="0 0 10 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="My-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-207.000000, -121.000000)">
+                        <g id="Group-11" transform="translate(207.000000, 116.000000)" fill="#9BA1A9">
+                            <path d="M8.23529412,6.52783683 C9.2289539,6.64431813 10,7.49069813 10,8.52036807 L10,13.8598062 C10,14.9678037 9.11256671,15.8660131 8.00038502,15.8660131 L1.99961498,15.8660131 C0.895258123,15.8660131 0,14.9693182 0,13.8598062 L0,8.52036807 C0,7.49160454 0.765049117,6.6436976 1.76470588,6.52768929 L1.76470588,6.76183441 C1.76470588,7.41535306 2.29142971,7.94117647 2.94117647,7.94117647 C3.59545315,7.94117647 4.11764706,7.41316705 4.11764706,6.76183441 L4.11764706,6.51416122 L5.88235294,6.51416122 L5.88235294,6.76593346 C5.88235294,7.42039961 6.40907676,7.94117647 7.05882353,7.94117647 C7.71310021,7.94117647 8.23529412,7.41500225 8.23529412,6.76593346 L8.23529412,6.52783683 Z M1.17647059,10.5882353 C1.17647059,11.0789428 1.57151346,11.4705882 2.05882353,11.4705882 C2.54953104,11.4705882 2.94117647,11.0755454 2.94117647,10.5882353 C2.94117647,10.0975278 2.5461336,9.70588235 2.05882353,9.70588235 C1.56811602,9.70588235 1.17647059,10.1009252 1.17647059,10.5882353 Z M4.11764706,10.5882353 C4.11764706,11.0789428 4.51268993,11.4705882 5,11.4705882 C5.49070751,11.4705882 5.88235294,11.0755454 5.88235294,10.5882353 C5.88235294,10.0975278 5.48731007,9.70588235 5,9.70588235 C4.50929249,9.70588235 4.11764706,10.1009252 4.11764706,10.5882353 Z M7.05882353,10.5882353 C7.05882353,11.0789428 7.4538664,11.4705882 7.94117647,11.4705882 C8.43188398,11.4705882 8.82352941,11.0755454 8.82352941,10.5882353 C8.82352941,10.0975278 8.42848654,9.70588235 7.94117647,9.70588235 C7.45046896,9.70588235 7.05882353,10.1009252 7.05882353,10.5882353 Z M1.17647059,13.5294118 C1.17647059,14.0201193 1.57151346,14.4117647 2.05882353,14.4117647 C2.54953104,14.4117647 2.94117647,14.0167218 2.94117647,13.5294118 C2.94117647,13.0387043 2.5461336,12.6470588 2.05882353,12.6470588 C1.56811602,12.6470588 1.17647059,13.0421017 1.17647059,13.5294118 Z M4.11764706,13.5294118 C4.11764706,14.0201193 4.51268993,14.4117647 5,14.4117647 C5.49070751,14.4117647 5.88235294,14.0167218 5.88235294,13.5294118 C5.88235294,13.0387043 5.48731007,12.6470588 5,12.6470588 C4.50929249,12.6470588 4.11764706,13.0421017 4.11764706,13.5294118 Z M7.05882353,13.5294118 C7.05882353,14.0201193 7.4538664,14.4117647 7.94117647,14.4117647 C8.43188398,14.4117647 8.82352941,14.0167218 8.82352941,13.5294118 C8.82352941,13.0387043 8.42848654,12.6470588 7.94117647,12.6470588 C7.45046896,12.6470588 7.05882353,13.0421017 7.05882353,13.5294118 Z M2.35294118,5.59374641 C2.35294118,5.26582932 2.62580423,5 2.94117647,5 C3.26604985,5 3.52941176,5.26991227 3.52941176,5.59374641 L3.52941176,6.75919477 C3.52941176,7.08711185 3.25654871,7.35294118 2.94117647,7.35294118 C2.61630309,7.35294118 2.35294118,7.08302891 2.35294118,6.75919477 L2.35294118,5.59374641 Z M6.47058824,5.59374641 C6.47058824,5.26582932 6.74345129,5 7.05882353,5 C7.38369691,5 7.64705882,5.26991227 7.64705882,5.59374641 L7.64705882,6.75919477 C7.64705882,7.08711185 7.37419577,7.35294118 7.05882353,7.35294118 C6.73395015,7.35294118 6.47058824,7.08302891 6.47058824,6.75919477 L6.47058824,5.59374641 Z" id="Combined-Shape-Copy"></path>
+                        </g>
+                    </g>
+                </svg>
+                05/06/17 - 06/21/17
+              </span>
+              <span class="fade-arrow">
+                <i class="icon-arrow-right"></i>
+              </span>
+            </div>
+          </div><!-- /.my-trips-toolbar-inner -->
+        </div><!-- /.my-trips-toolbar -->
+        <div class="trips-list">
+          <div class="trips-list-inner">
+            <strong>
+              Yesterday
+            </strong>
+            <div class="trip active">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse in">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-1" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-1" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-2" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-2" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <strong>
+              This Past Week
+            </strong>
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-4" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-4" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-5" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-5" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-6" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-6" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-7" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-7" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-8" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-8" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+            <div class="trip">
+              <div class="trip-main">
+                <span class="mobile-modal" data-toggle="modal" data-target="#trip-details"></span>
+                <label class="checkbox solo start-edit">
+                  <input type="checkbox" name="" value="" class="stop-propagation" />
+                  <em></em>
+                </label>
+                <span class="trip-label">
+                  PERSONAL TRIP
+                </span>
+                <div class="trip-points">
+                  <span>A <em>3:00 PM</em></span>
+                  <span class="merge">
+                    <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                            <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                                <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                    <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                  <span>B <em>4:45 PM</em></span>
+                </div><!-- /.trip-points -->
+                <div class="trip-data">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <strong>92.7 <span>MI</span></strong>
+                      <em>Distance</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                      <em>Duration</em>
+                    </div>
+                    <div class="col-xs-4">
+                      <strong>68 <span>MPH</span></strong>
+                      <em>Avg Speed</em>
+                    </div>
+                  </div><!-- /.row -->
+                </div><!-- /.trip-data -->
+              </div><!-- /.trip-main -->
+              <div class="collapse">
+                <div class="trip-meta">
+                  <div class="trip-alerts">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-geo"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Geo Fence Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-curfew"></i>
+                        <span>
+                          <strong>0</strong>
+                          <em>Curfew Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                      <div class="col-xs-4">
+                        <i class="icon-trip-alert-speed"></i>
+                        <span>
+                          <strong>3</strong>
+                          <em>Speed Alerts</em>
+                        </span>
+                      </div><!-- /.col -->
+                    </div><!-- /.row -->
+                  </div><!-- /.trip-alerts -->
+                  <div class="radio-toggle milestone-status">
+                    <label>
+                      <input type="radio" name="trip-type-9" value="0" checked="">
+                      <span>
+                        Personal
+                      </span>
+                    </label>
+                    <label>
+                      <input type="radio" name="trip-type-9" value="0">
+                      <span>
+                        Business
+                      </span>
+                    </label>
+                  </div>
+                </div><!-- /.trip-meta -->
+                <div class="trip-tags">
+                  <strong>Tags</strong>
+                  <span class="badge">
+                    <span>gym</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge">
+                    <span>downtown</span>
+                    <input type="text" name="" value="gym" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <span class="badge add">
+                    <span></span>
+                    <input type="text" name="" value="" tabindex="-1">
+                    <em>+</em>
+                  </span>
+                  <em>Press Enter</em>
+                </div><!-- /.trip-tags -->
+              </div><!-- /.collapse -->
+            </div><!-- /.trip -->
+          </div><!-- /.trips-list-inner -->
+          <span class="scroll-top">
+            <svg width="19px" height="11px" viewBox="0 0 19 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Hover-Over-a-Trip-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-476.000000, -945.000000)" stroke-linecap="square">
+                    <g id="Trip-List" transform="translate(111.000000, 219.000000)" stroke="#FFFFFF" stroke-width="2">
+                        <g id="Back-To-Top" transform="translate(346.000000, 710.000000)">
+                            <g id="Icons-/-Chevron" transform="translate(28.500000, 21.500000) rotate(90.000000) translate(-28.500000, -21.500000) translate(24.000000, 13.000000)">
+                                <g id="up">
+                                    <path d="M8.35714286,0.642857143 L0.536448175,8.46355182" id="Line"></path>
+                                    <path d="M8.35714286,8.35714286 L0.536448175,16.1778375" id="Line-Copy-2" transform="translate(4.500000, 12.214286) scale(1, -1) translate(-4.500000, -12.214286) "></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <em>Top</em>
+          </span>
+        </div><!-- /.trip-list -->
+        <div class="map"></div>
+      </div><!-- /.locations-map -->
+    </div><!-- /.page-view -->
+  </div><!-- /.has-mobile-nav -->
+<div class="modal fade modal-trip-details" id="trip-details" tabindex="-1" role="dialog" aria-labelledby="filters" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <span class="back" data-dismiss="modal"></span>
+        <span class="icon-delete" data-dismiss="modal">
+            <svg width="11px" height="15px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Edit-Driving-Rule-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-27.000000, -523.000000)">
+                    <g id="Group-2" transform="translate(27.000000, 520.000000)" fill="#C4172C">
+                        <path d="M4,4 L4,3 L7,3 L7,4 L10.0044225,4 C10.5542648,4 11,4.44386482 11,5 L11,6 L0,6 L0,5 C0,4.44771525 0.444836974,4 0.995577499,4 L4,4 Z M1,7 L10,7 L10,17.0044225 C10,17.5542648 9.5536886,18 9.00245535,18 L1.99754465,18 C1.44661595,18 1,17.555163 1,17.0044225 L1,7 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </svg>
+        </span>
+        <strong class="modal-title">
+          Trip Details
+        </strong>
+        <div class="trip">
+          <div class="map"></div>
+          <div class="trip-main">
+            <span class="trip-label">
+              PERSONAL TRIP
+            </span>
+            <div class="trip-points">
+              <span>A <em>3:00 PM</em></span>
+              <span class="merge">
+                <svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="2-Trips-Selected-|-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-320.000000, -168.000000)">
+                        <g id="Sorting-Options" transform="translate(127.000000, 168.000000)" fill="#FFF" fill-rule="nonzero">
+                            <g id="Merge-Selected" transform="translate(193.000000, 0.000000)">
+                                <polygon id="Shape" points="13.3999996 14.7352462 8.41491902 9.74999396 8.41491902 5.14450022 10.4727877 5.14450022 6.70008561 0 2.92755508 5.14450022 4.9852522 5.14450022 4.9852522 9.74999396 0 14.7352462 2.42527174 17.1603463 6.70008561 12.8855324 10.9748995 17.1603463"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+              </span>
+              <span>B <em>4:45 PM</em></span>
+            </div><!-- /.trip-points -->
+            <div class="trip-data">
+              <div class="row">
+                <div class="col-xs-4">
+                  <strong>92.7 <span>MI</span></strong>
+                  <em>Distance</em>
+                </div>
+                <div class="col-xs-4">
+                  <strong>1 <span>HR</span> 45 <span>MIN</span></strong>
+                  <em>Duration</em>
+                </div>
+                <div class="col-xs-4">
+                  <strong>68 <span>MPH</span></strong>
+                  <em>Avg Speed</em>
+                </div>
+              </div><!-- /.row -->
+            </div><!-- /.trip-data -->
+          </div><!-- /.trip-main -->
+          <div class="trip-meta">
+            <div class="trip-alerts">
+              <div class="row">
+                <div class="col-xs-4">
+                  <i class="icon-trip-alert-geo"></i>
+                  <span>
+                    <strong>0</strong>
+                    <em>Geo Fence Alerts</em>
+                  </span>
+                </div><!-- /.col -->
+                <div class="col-xs-4">
+                  <i class="icon-trip-alert-curfew"></i>
+                  <span>
+                    <strong>0</strong>
+                    <em>Curfew Alerts</em>
+                  </span>
+                </div><!-- /.col -->
+                <div class="col-xs-4">
+                  <i class="icon-trip-alert-speed"></i>
+                  <span>
+                    <strong>3</strong>
+                    <em>Speed Alerts</em>
+                  </span>
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+            </div><!-- /.trip-alerts -->
+            <div class="radio-toggle milestone-status">
+              <label>
+                <input type="radio" name="trip-type-3" value="0" checked="">
+                <span>
+                  Personal
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="trip-type-3" value="0">
+                <span>
+                  Business
+                </span>
+              </label>
+            </div>
+          </div><!-- /.trip-meta -->
+          <div class="trip-tags">
+            <strong>Tags</strong>
+            <span class="badge">
+              <span>gym</span>
+              <input type="text" name="" value="gym" tabindex="-1">
+              <em>+</em>
+            </span>
+            <span class="badge">
+              <span>downtown</span>
+              <input type="text" name="" value="gym" tabindex="-1">
+              <em>+</em>
+            </span>
+            <span class="badge add">
+              <span></span>
+              <input type="text" name="" value="" tabindex="-1">
+              <em>+</em>
+            </span>
+            <em>Press Enter</em>
+          </div><!-- /.trip-tags -->
+        </div><!-- /.trip -->
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade modal-filters" id="filters" tabindex="-1" role="dialog" aria-labelledby="filters" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="filters-modal-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <div class="item active">
+              <span class="back" data-dismiss="modal"></span>
+              <strong class="modal-title">
+                Filter
+              </strong>
+              <form>
+                <ul class="form-fields">
+                  <li class="trips-search">
+                    <label>
+                      <strong>Search Trips</strong>
+                      <input type="text" name="" value="" placeholder="Search Tags">
+                      <i class="icon-search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="#9BA1A9" fill-rule="nonzero" d="M6.453.08C3.101.08.361 2.822.361 6.174c0 3.351 2.74 6.092 6.092 6.092 1.291 0 2.49-.407 3.477-1.098l4.004 4.01c.42.419 1.103.419 1.522 0 .42-.42.42-1.104 0-1.524L11.448 9.65a6.044 6.044 0 0 0 1.097-3.477C12.545 2.82 9.805.08 6.453.08zm0 2.151a3.926 3.926 0 0 1 3.942 3.942 3.926 3.926 0 0 1-3.942 3.942 3.926 3.926 0 0 1-3.942-3.942A3.926 3.926 0 0 1 6.453 2.23z"/>
+                        </svg>
+                      </i>
+                    </label>
+                  </li>
+                  <li class="trips-alerts">
+                    <label>
+                      <strong>My Car Zone Alerts</strong>
+                      <select class="selectpicker small">
+                        <option value="1">All</option>
+                        <option value="1">Option 1</option>
+                        <option value="1">Option 2</option>
+                        <option value="1">Option 3</option>
+                      </select>
+                    </label>
+                  </li>
+                  <li class="trips-type">
+                    <label>
+                      <strong>Trip Type</strong>
+                      <select class="selectpicker small">
+                        <option value="1">All</option>
+                        <option value="1" selected>Personal</option>
+                        <option value="1">Business</option>
+                      </select>
+                    </label>
+                  </li>
+                  <li class="trips-date">
+                    <label>
+                      <strong>Date Range</strong>
+                    </label>
+                    <div id="reportrange1" class="daterange">
+                        <i class="fa fa-calendar"></i>&nbsp;
+                        <span></span>
+                    </div>
+                  </li>
+                </ul>
+                <div class="form-actions">
+                  <span class="button full" data-dismiss="modal">Apply Filters</span>
+                </div>
+              </form>
+            </div><!-- /.item -->
+          </div>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade modal-export" id="export" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <span class="icon-close" data-dismiss="modal"></span>
+      <div class="modal-body">
+        <div class="export-settings">
+          <strong class="modal-title">
+            Export Trips
+          </strong>
+          <form>
+            <ul class="export-data">
+              <li>
+                <strong>Tags</strong>
+                <span>NONE</span>
+              </li>
+              <li>
+                <strong>My Car Zone Trip Alerts</strong>
+                <span>All</span>
+              </li>
+              <li>
+                <strong>Trip Type</strong>
+                <span>Personal</span>
+              </li>
+              <li>
+                <strong>Date Range</strong>
+                <span>
+                  <svg width="10px" height="11px" viewBox="0 0 10 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="My-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-207.000000, -121.000000)">
+                          <g id="Group-11" transform="translate(207.000000, 116.000000)" fill="#9BA1A9">
+                              <path d="M8.23529412,6.52783683 C9.2289539,6.64431813 10,7.49069813 10,8.52036807 L10,13.8598062 C10,14.9678037 9.11256671,15.8660131 8.00038502,15.8660131 L1.99961498,15.8660131 C0.895258123,15.8660131 0,14.9693182 0,13.8598062 L0,8.52036807 C0,7.49160454 0.765049117,6.6436976 1.76470588,6.52768929 L1.76470588,6.76183441 C1.76470588,7.41535306 2.29142971,7.94117647 2.94117647,7.94117647 C3.59545315,7.94117647 4.11764706,7.41316705 4.11764706,6.76183441 L4.11764706,6.51416122 L5.88235294,6.51416122 L5.88235294,6.76593346 C5.88235294,7.42039961 6.40907676,7.94117647 7.05882353,7.94117647 C7.71310021,7.94117647 8.23529412,7.41500225 8.23529412,6.76593346 L8.23529412,6.52783683 Z M1.17647059,10.5882353 C1.17647059,11.0789428 1.57151346,11.4705882 2.05882353,11.4705882 C2.54953104,11.4705882 2.94117647,11.0755454 2.94117647,10.5882353 C2.94117647,10.0975278 2.5461336,9.70588235 2.05882353,9.70588235 C1.56811602,9.70588235 1.17647059,10.1009252 1.17647059,10.5882353 Z M4.11764706,10.5882353 C4.11764706,11.0789428 4.51268993,11.4705882 5,11.4705882 C5.49070751,11.4705882 5.88235294,11.0755454 5.88235294,10.5882353 C5.88235294,10.0975278 5.48731007,9.70588235 5,9.70588235 C4.50929249,9.70588235 4.11764706,10.1009252 4.11764706,10.5882353 Z M7.05882353,10.5882353 C7.05882353,11.0789428 7.4538664,11.4705882 7.94117647,11.4705882 C8.43188398,11.4705882 8.82352941,11.0755454 8.82352941,10.5882353 C8.82352941,10.0975278 8.42848654,9.70588235 7.94117647,9.70588235 C7.45046896,9.70588235 7.05882353,10.1009252 7.05882353,10.5882353 Z M1.17647059,13.5294118 C1.17647059,14.0201193 1.57151346,14.4117647 2.05882353,14.4117647 C2.54953104,14.4117647 2.94117647,14.0167218 2.94117647,13.5294118 C2.94117647,13.0387043 2.5461336,12.6470588 2.05882353,12.6470588 C1.56811602,12.6470588 1.17647059,13.0421017 1.17647059,13.5294118 Z M4.11764706,13.5294118 C4.11764706,14.0201193 4.51268993,14.4117647 5,14.4117647 C5.49070751,14.4117647 5.88235294,14.0167218 5.88235294,13.5294118 C5.88235294,13.0387043 5.48731007,12.6470588 5,12.6470588 C4.50929249,12.6470588 4.11764706,13.0421017 4.11764706,13.5294118 Z M7.05882353,13.5294118 C7.05882353,14.0201193 7.4538664,14.4117647 7.94117647,14.4117647 C8.43188398,14.4117647 8.82352941,14.0167218 8.82352941,13.5294118 C8.82352941,13.0387043 8.42848654,12.6470588 7.94117647,12.6470588 C7.45046896,12.6470588 7.05882353,13.0421017 7.05882353,13.5294118 Z M2.35294118,5.59374641 C2.35294118,5.26582932 2.62580423,5 2.94117647,5 C3.26604985,5 3.52941176,5.26991227 3.52941176,5.59374641 L3.52941176,6.75919477 C3.52941176,7.08711185 3.25654871,7.35294118 2.94117647,7.35294118 C2.61630309,7.35294118 2.35294118,7.08302891 2.35294118,6.75919477 L2.35294118,5.59374641 Z M6.47058824,5.59374641 C6.47058824,5.26582932 6.74345129,5 7.05882353,5 C7.38369691,5 7.64705882,5.26991227 7.64705882,5.59374641 L7.64705882,6.75919477 C7.64705882,7.08711185 7.37419577,7.35294118 7.05882353,7.35294118 C6.73395015,7.35294118 6.47058824,7.08302891 6.47058824,6.75919477 L6.47058824,5.59374641 Z" id="Combined-Shape-Copy"></path>
+                          </g>
+                      </g>
+                  </svg>
+                  May 06, 2017 - Jun 06, 2017
+                </span>
+              </li>
+            </ul>
+            <ul class="form-fields">
+              <li class="choose-format">
+                <strong>Choose a File Format</strong>
+                <label class="format">
+                  <input type="radio" name="file-format" value="">
+                  <span>
+                    <svg width="29px" height="38px" viewBox="0 0 29 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Export-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-75.000000, -392.000000)">
+                            <g id="File-Format" transform="translate(44.000000, 352.000000)" fill="#C11E07" fill-rule="nonzero">
+                                <g id="Group-6" transform="translate(15.000000, 28.000000)">
+                                    <g id="Group-3">
+                                        <path d="M34.1500467,23.82066 C33.4519102,23.82066 32.8866571,23.2550212 32.8866571,22.5572704 L32.8866571,12 L17.5475272,12 C16.6928516,12 16,12.6919081 16,13.5483742 L16,48.4466043 C16,49.3017478 16.6953988,49.9949785 17.5536087,49.9949785 L43.1537084,49.9949785 C44.0117428,49.9949785 44.7073171,49.2972783 44.7073171,48.442391 L44.7073171,23.82066 L34.1500467,23.82066 L34.1500467,23.82066 Z M38.0014264,39.1191175 C37.7348236,39.253494 37.3349192,39.3878705 36.8017134,39.3878705 C35.7353018,39.3878705 34.1356845,39.1191175 32.80267,38.4472353 C30.5365454,38.7159882 28.8036265,38.9847411 27.470612,39.522247 C27.3373106,39.522247 27.3373106,39.522247 27.2040091,39.6566234 C25.6043918,42.478529 24.2713773,43.8222936 23.2049657,43.8222936 C22.9383628,43.8222936 22.8050614,43.8222936 22.6717599,43.6879172 L22.0052527,43.2847878 L22.0052527,43.1504114 C21.8719512,42.8816584 21.8719512,42.747282 21.8719512,42.478529 C22.0052527,41.8066468 22.8050614,40.5972586 24.4046787,39.6566234 C24.6712816,39.522247 25.071186,39.253494 25.6043918,38.9847411 C26.0042961,38.3128588 26.4042005,37.5066 26.9374062,36.5659648 C27.6039135,35.2222002 28.0038178,33.8784356 28.4037222,32.6690475 C27.8705164,31.05653 27.6039135,30.1158948 28.1371193,28.2346243 C28.2704207,27.6971185 28.6703251,27.1596126 29.2035309,27.1596126 L29.4701338,27.1596126 C29.7367367,27.1596126 30.0033396,27.2939891 30.2699425,27.4283655 C31.2030526,28.3690007 30.8031482,30.5190241 30.2699425,32.2659181 L30.2699425,32.4002946 C30.8031482,33.8784356 31.6029569,35.0878238 32.4027656,35.8940825 C32.80267,36.1628354 33.0692729,36.4315883 33.6024787,36.7003413 C34.2689859,36.7003413 34.8021917,36.5659648 35.3353975,36.5659648 C36.9350149,36.5659648 38.0014264,36.8347177 38.4013308,37.5066 C38.5346322,37.7753529 38.5346322,38.0441059 38.5346322,38.3128588 C38.4013308,38.4472353 38.2680293,38.8503646 38.0014264,39.1191175 L38.0014264,39.1191175 Z M29.3368323,33.8784356 C29.0702294,34.8190709 28.5370236,35.8940825 28.0038178,37.1034707 C27.7372149,37.6409765 27.470612,38.0441059 27.2040091,38.5816117 L27.3373106,38.5816117 L27.470612,38.5816117 C29.2035309,37.9097294 30.8031482,37.5066 31.8695598,37.3722236 C31.6029569,37.2378471 31.4696555,37.1034707 31.336354,36.9690942 C30.6698468,36.1628354 29.8700381,35.0878238 29.3368323,33.8784356 L29.3368323,33.8784356 Z M37.4682207,38.0441059 C37.3349192,37.9097294 36.8017134,37.5066 34.9354931,37.5066 L34.6688902,37.5066 C34.6688902,37.5066 34.6688902,37.5066 34.6688902,37.6409765 C35.6020004,38.0441059 36.5351105,38.3128588 37.2016178,38.3128588 L37.4682207,38.3128588 L37.6015221,38.3128588 C37.6015221,38.3128588 37.6015221,38.3128588 37.6015221,38.1784823 C37.6015221,38.1784823 37.4682207,38.1784823 37.4682207,38.0441059 L37.4682207,38.0441059 Z M25.2044874,40.0597527 C24.9378845,40.1941292 24.6712816,40.3285057 24.5379802,40.4628822 C23.60487,41.2691409 22.9383628,42.2097761 22.8050614,42.6129055 C23.60487,42.478529 24.4046787,41.6722703 25.2044874,40.0597527 L25.2044874,40.0597527 Z M29.2035309,30.787777 C29.3368323,30.2502712 29.4701338,29.9815183 29.4701338,29.5783889 L29.4701338,29.309636 C29.6034352,28.6377537 29.6034352,28.1002478 29.4701338,27.9658714 C29.4701338,27.9658714 29.4701338,27.9658714 29.4701338,27.8314949 L29.3368323,27.6971185 C29.3368323,27.6971185 29.3368323,27.8314949 29.2035309,27.8314949 C28.936928,28.6377537 28.936928,29.5783889 29.2035309,30.787777 L29.2035309,30.787777 Z M44.7073171,22.1319943 L35.421744,22.1319943 C34.9542785,22.1319943 34.5753228,21.7532999 34.5753228,21.2855731 L34.5753228,12 L44.7073171,22.1319943 L44.7073171,22.1319943 Z" id="Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                </label>
+                <label class="format">
+                  <input type="radio" name="file-format" value="">
+                  <span>
+                    <svg width="29px" height="38px" viewBox="0 0 29 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Export-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-146.000000, -392.000000)">
+                            <g id="File-Format" transform="translate(44.000000, 352.000000)" fill="#0F9D58" fill-rule="nonzero">
+                                <g id="Group-6" transform="translate(15.000000, 28.000000)">
+                                    <g id="Group-2" transform="translate(71.000000, 0.000000)">
+                                        <g id="Group-4">
+                                            <path d="M34.1500467,23.82066 L44.7073171,23.82066 L44.7073171,48.442391 C44.7073171,49.2972783 44.0117428,49.9949785 43.1537084,49.9949785 L17.5536087,49.9949785 C16.6953988,49.9949785 16,49.3017478 16,48.4466043 L16,13.5483742 C16,12.6919081 16.6928516,12 17.5475272,12 L32.8866571,12 L32.8866571,22.5572704 C32.8866571,23.2550212 33.4519102,23.82066 34.1500467,23.82066 Z M44.7073171,22.1319943 L35.421744,22.1319943 C34.9542785,22.1319943 34.5753228,21.7532999 34.5753228,21.2855731 L34.5753228,12 L44.7073171,22.1319943 Z M22.0991087,38.3150407 L23.789252,38.3150407 L24.4459319,36.8832632 C24.6074106,36.5172449 24.758124,36.1619919 24.9303679,35.7313821 L24.9734289,35.7313821 C25.156438,36.1619919 25.3179167,36.5172449 25.5009258,36.8832632 L26.1899014,38.3150407 L27.9554014,38.3150407 L26.0176575,34.7840407 L27.8369837,31.2961016 L26.1468404,31.2961016 L25.5870478,32.6202266 C25.4470996,32.9431839 25.3071514,33.3092022 25.1456728,33.7505772 L25.1026118,33.7505772 C24.8980722,33.3092022 24.7473587,32.9431839 24.5858801,32.6202266 L23.9830264,31.2961016 L22.2067612,31.2961016 L24.0368526,34.7086839 L22.0991087,38.3150407 Z M29.1745653,38.3150407 L33.5344891,38.3150407 L33.5344891,36.9801504 L30.7678214,36.9801504 L30.7678214,31.2961016 L29.1745653,31.2961016 L29.1745653,38.3150407 Z M34.2584517,37.4322907 C34.979723,38.0997358 35.948595,38.4442236 36.8636407,38.4442236 C38.5322535,38.4442236 39.5011255,37.4322907 39.5011255,36.2696443 C39.5011255,35.2792419 38.9628633,34.7086839 38.112409,34.3641961 L37.2188938,33.9981778 C36.6052749,33.7505772 36.1423694,33.5998638 36.1423694,33.1692541 C36.1423694,32.77094 36.4976224,32.5341047 37.0358846,32.5341047 C37.5956773,32.5341047 38.0370523,32.7386443 38.4999578,33.0938974 L39.2965858,32.0927297 C38.6937322,31.489876 37.8432779,31.1669187 37.0358846,31.1669187 C35.5825767,31.1669187 34.538348,32.0927297 34.538348,33.255376 C34.538348,34.2780742 35.2273236,34.8809278 35.9593602,35.1715894 L36.8636407,35.5591382 C37.4772596,35.8175041 37.8755736,35.9574522 37.8755736,36.3988272 C37.8755736,36.8186717 37.5526163,37.0770376 36.8959364,37.0770376 C36.3146133,37.0770376 35.6686986,36.7756108 35.1734974,36.345001 L34.2584517,37.4322907 Z" id="Combined-Shape"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                </label>
+                <label class="format">
+                  <input type="radio" name="file-format" value="">
+                  <span>
+                    <svg width="29px" height="38px" viewBox="0 0 29 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Export-Trips-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-217.000000, -392.000000)">
+                            <g id="File-Format" transform="translate(44.000000, 352.000000)" fill="#0078C9" fill-rule="nonzero">
+                                <g id="Group-6" transform="translate(15.000000, 28.000000)">
+                                    <g id="Group-2" transform="translate(71.000000, 0.000000)">
+                                        <g id="Group-5" transform="translate(71.000000, 0.000000)">
+                                            <path d="M34.1500467,23.82066 L44.7073171,23.82066 L44.7073171,48.442391 C44.7073171,49.2972783 44.0117428,49.9949785 43.1537084,49.9949785 L17.5536087,49.9949785 C16.6953988,49.9949785 16,49.3017478 16,48.4466043 L16,13.5483742 C16,12.6919081 16.6928516,12 17.5475272,12 L32.8866571,12 L32.8866571,22.5572704 C32.8866571,23.2550212 33.4519102,23.82066 34.1500467,23.82066 Z M44.7073171,22.1319943 L35.421744,22.1319943 C34.9542785,22.1319943 34.5753228,21.7532999 34.5753228,21.2855731 L34.5753228,12 L44.7073171,22.1319943 Z M34.9374616,38.3627012 C34.9374616,39.5069859 35.8645961,40.4337212 37.008526,40.4337212 C38.1518795,40.4337212 39.0789697,39.5069859 39.0789697,38.3627012 C39.0789697,37.2197468 38.1518795,36.2926123 37.008526,36.2926123 C35.8645961,36.2926123 34.9374616,37.2197468 34.9374616,38.3627012 Z M34.1793203,42.1495053 C34.1793203,42.1495053 34.3486239,42.0593549 34.2581631,41.9335523 C34.0797691,41.685539 33.3101429,41.1175428 32.7315929,39.8864778 C32.7315929,39.8864778 32.6705318,39.7552209 32.5272579,39.8073689 C32.2325952,39.9153011 31.3688276,40.209476 30.538096,40.2111167 C28.1286461,40.2152407 25.9890709,38.3033695 25.9890709,35.7384069 C25.9890709,33.1745972 27.8237844,31.2903521 30.233722,31.2903521 C31.7935499,31.2903521 32.7366037,31.7349846 33.4351916,32.1920777 C33.613896,32.3090559 33.7018736,32.1331895 33.7018736,32.1331895 C34.0309026,31.4551326 34.6839497,30.4887098 34.9237151,30.1552465 C34.9844214,30.070772 34.9896983,29.9816859 34.704392,29.7975272 C33.6219666,29.0987619 32.0667947,28.5071306 30.3986799,28.5071306 C26.3243523,28.3643001 22.9467946,31.4959286 22.9467946,35.7897124 C22.9467946,39.7290582 26.2695437,43.0668399 30.5412,43.0355333 C31.7624208,43.026709 33.2491262,42.7174129 34.1793203,42.1495053 Z" id="Concur"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                  </span>
+                </label>
+              </li>
+              <li class="hidden-md hidden-lg">
+                <label>
+                  <strong>Email</strong>
+                  <input type="email" name="" value="andrewdavis@kiausa.com" placeholder="Enter Email" />
+                  <span class="note">
+                    Your exported trips will be sent to this email address
+                  </span>
+                </label>
+              </li>
+            </ul>
+            <div class="form-actions">
+              <span class="button disabled full export-button" data-dismiss="modal">
+                <span class="hidden-md hidden-lg">Send Trip </span>Export
+              </span>
+            </div>
+          </form>
+        </div><!-- /.export-settings -->
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+    $(window).on('load',function(){
+      // $('#filters').modal('show');
+    });
+</script>
+<script type="text/javascript">
+  $(function() {
+
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      $('.daterange').each(function() {
+        var $this = $(this);
+        $this.find('span').html(start.format('MMM DD, YYYY') + ' - ' + end.format('MMM DD, YYYY'));
+        $this.daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+               'Today': [moment(), moment()],
+               'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+               'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+               'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+               'This Month': [moment().startOf('month'), moment().endOf('month')],
+               'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+        }, function(start, end) {
+          console.log('cb')
+          $this.find('span').html(start.format('MMM DD, YYYY') + ' - ' + end.format('MMM DD, YYYY'));
+        });
+      });
+
+  });
+</script>
+  <footer>
+    <div class="contain">
+      <ul class="footer-menu-items">
+        <li>
+          <a href="#">
+            Privacy / Legal
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Kia.com
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Other Kia Sites
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            MPG
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Global Disclaimer
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Terms of Service
+          </a>
+        </li>
+      </ul>
+      <div class="footer-bottom">
+        <p>&copy; 2017 Kia Motors America, Inc.</p>
+        <ul class="social-icons">
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-pinterest-p"></i>
+            </a>
+          </li>
+        </ul><!-- /.social-icons -->
+      </div><!-- /.footer-bottom -->
+    </div><!-- /.contain -->
+  </footer>
+</body>
+</html>
+

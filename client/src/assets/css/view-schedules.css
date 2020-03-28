@@ -1,0 +1,1265 @@
+@media (min-width: 992px) {
+  .mobile,
+  .tablet {
+    display: none !important; } }
+
+@media (max-width: 991px) and (min-width: 767px) {
+  .mobile,
+  .desktop {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .desktop,
+  .tablet {
+    display: none !important; } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.view-schedules .schedules-empty-state {
+  height: calc(100vh - 250px);
+  min-height: 450px;
+  max-width: 462px;
+  margin: 0 auto;
+  position: relative;
+  position: relative; }
+  .view-schedules .schedules-empty-state-inner {
+    padding: 0 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; }
+  .view-schedules .schedules-empty-state .icon-schedules-empty-state {
+    margin: 0 auto 21px; }
+  .view-schedules .schedules-empty-state h2 {
+    font: 500 29px "KIA", sans-serif;
+    margin: 0 0 26px; }
+  .view-schedules .schedules-empty-state p {
+    font: 14px/1.5em "Source Sans Pro", sans-serif;
+    letter-spacing: .6px;
+    margin-bottom: 30px; }
+    .view-schedules .schedules-empty-state p:last-of-type {
+      margin-bottom: 0; }
+    .view-schedules .schedules-empty-state p:first-of-type {
+      margin-bottom: 30px; }
+
+.view-schedules .schedules-wrapper {
+  padding: 0 50px;
+  margin: 0 auto; }
+  @media (max-width: 767px) {
+    .view-schedules .schedules-wrapper {
+      padding: 0 0px; }
+      .view-schedules .schedules-wrapper .schedules-alert-area-header {
+        padding: 0 16px; } }
+
+.view-schedules .schedules-header {
+  padding: 40px 0 0;
+  margin-bottom: 20px;
+  overflow: hidden; }
+  .view-schedules .schedules-header h2 {
+    margin: 0 0 28px;
+    font: 32px "KIA", sans-serif;
+    letter-spacing: 1.5px; }
+  .view-schedules .schedules-header p {
+    clear: both;
+    max-width: 685px;
+    font: 14px "Source Sans Pro", sans-serif;
+    letter-spacing: .6px;
+    color: #000; }
+    .view-schedules .schedules-header p strong {
+      font-weight: bold; }
+    .view-schedules .schedules-header p a {
+      color: #C4172C;
+      font: bold 11px "KIA", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin: 0 2.5px; }
+  @media (max-width: 767px) {
+    .view-schedules .schedules-header {
+      padding: 20px 0 0;
+      margin-bottom: 0; }
+      .view-schedules .schedules-header * {
+        display: none; } }
+
+.schedules-alert-area {
+  margin-bottom: 10px;
+  clear: both; }
+  @media (max-width: 767px) {
+    .schedules-alert-area {
+      margin-bottom: 30px; } }
+  .schedules-alert-area-header {
+    margin-bottom: 16px; }
+    .schedules-alert-area-header:after {
+      content: "";
+      display: block;
+      width: 100%;
+      clear: both; }
+  .schedules-alert-area .row > div {
+    margin-bottom: 10px; }
+    @media (max-width: 767px) {
+      .schedules-alert-area .row > div {
+        margin-bottom: 2px; } }
+    .schedules-alert-area .row > div:last-child {
+      margin-bottom: 0; }
+  .schedules-alert-area h3 {
+    font: bold 12px/18px "KIA", sans-serif;
+    letter-spacing: .3px;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+    min-height: 18px; }
+    .schedules-alert-area h3 i {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+      position: relative;
+      top: -2px; }
+  .schedules-alert-area .schedules-alert-area-toggle {
+    position: relative;
+    top: -2px; }
+    .schedules-alert-area .schedules-alert-area-toggle em {
+      font: 12px "Source Sans Pro", sans-serif;
+      color: #000;
+      letter-spacing: .3px; }
+      @media (max-width: 767px) {
+        .schedules-alert-area .schedules-alert-area-toggle em span {
+          display: none; } }
+
+.alert-card {
+  height: 174px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(39, 48, 59, 0.24);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .alert-card:hover {
+    box-shadow: 0 5px 10px 3px rgba(39, 48, 59, 0.1);
+    transform: scale(1.025); }
+  .alert-card.large {
+    height: 194px; }
+  .alert-card.alert-card-charge .icon-settings, .alert-card.alert-card-climate .icon-settings {
+    z-index: 1; }
+  .alert-card.alert-card-charge .alert-body, .alert-card.alert-card-climate .alert-body {
+    top: 35px; }
+    .alert-card.alert-card-charge .alert-body div > strong,
+    .alert-card.alert-card-charge .alert-body > strong, .alert-card.alert-card-climate .alert-body div > strong,
+    .alert-card.alert-card-climate .alert-body > strong {
+      font: bold 18px/1em "Source Sans Pro", sans-serif;
+      letter-spacing: .5px;
+      margin-bottom: 10px; }
+      .alert-card.alert-card-charge .alert-body div > strong span,
+      .alert-card.alert-card-charge .alert-body > strong span, .alert-card.alert-card-climate .alert-body div > strong span,
+      .alert-card.alert-card-climate .alert-body > strong span {
+        padding-top: 3px;
+        display: block;
+        font: bold 12px/1em "Source Sans Pro", sans-serif;
+        letter-spacing: .3px; }
+    .alert-card.alert-card-charge .alert-body > span, .alert-card.alert-card-climate .alert-body > span {
+      font: 12px "Source Sans Pro", sans-serif;
+      margin-bottom: 3px; }
+      .alert-card.alert-card-charge .alert-body > span:last-child, .alert-card.alert-card-climate .alert-body > span:last-child {
+        margin-bottom: 0; }
+      .alert-card.alert-card-charge .alert-body > span strong,
+      .alert-card.alert-card-charge .alert-body > span em, .alert-card.alert-card-climate .alert-body > span strong,
+      .alert-card.alert-card-climate .alert-body > span em {
+        color: #8EC439;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-style: normal; }
+      .alert-card.alert-card-charge .alert-body > span strong, .alert-card.alert-card-climate .alert-body > span strong {
+        color: #C4172C; }
+    .alert-card.alert-card-charge .alert-body.dual, .alert-card.alert-card-climate .alert-body.dual {
+      top: 25px;
+      padding-left: 101px; }
+      .alert-card.alert-card-charge .alert-body.dual em, .alert-card.alert-card-climate .alert-body.dual em {
+        display: block;
+        font: 12px/1.5em "Source Sans Pro", sans-serif;
+        color: #898989;
+        position: relative; }
+        .alert-card.alert-card-charge .alert-body.dual em:before, .alert-card.alert-card-climate .alert-body.dual em:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          background: #c4172c;
+          border-radius: 100%;
+          left: -12px;
+          top: 50%;
+          transform: translateY(-50%); }
+        .alert-card.alert-card-charge .alert-body.dual em.active:before, .alert-card.alert-card-climate .alert-body.dual em.active:before {
+          background: #8EC439; }
+      .alert-card.alert-card-charge .alert-body.dual strong, .alert-card.alert-card-climate .alert-body.dual strong {
+        margin-bottom: 15px; }
+      .alert-card.alert-card-charge .alert-body.dual > i.icon-3d-battery, .alert-card.alert-card-climate .alert-body.dual > i.icon-3d-battery {
+        top: 55px !important; }
+  .alert-card.alert-card-charge .alert-body {
+    top: 50px; }
+    .alert-card.alert-card-charge .alert-body div > strong,
+    .alert-card.alert-card-charge .alert-body > strong {
+      font-size: 16px;
+      letter-spacing: .4px; }
+  .alert-card .alert-title {
+    position: absolute;
+    top: 20px;
+    left: 19px;
+    font: bold 10px/1em "KIA", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #969696; }
+  .alert-card .icon-settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block; }
+    .alert-card .icon-settings svg * {
+      fill: #898989 !important;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .alert-card .icon-settings:hover svg * {
+      fill: #565656 !important; }
+  .alert-card .alert-body {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 49px;
+    padding-left: 91px;
+    font: 12px/1.58em "Source Sans Pro", sans-serif;
+    letter-spacing: .3px; }
+    .alert-card .alert-body .row > div {
+      margin-bottom: 0; }
+    .alert-card .alert-body > i {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 19px;
+      transform: translateY(-50%); }
+      .alert-card .alert-body > i.icon-alert-climate {
+        top: 36px;
+        transform: 0; }
+    .alert-card .alert-body div > strong,
+    .alert-card .alert-body > strong {
+      display: block;
+      font: bold 14px/1.64em "Source Sans Pro", sans-serif;
+      letter-spacing: .4px; }
+    .alert-card .alert-body div > span,
+    .alert-card .alert-body > span {
+      display: block; }
+  .alert-card.inactive .alert-status span:before {
+    background-color: #C4172C; }
+  .alert-card .alert-status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    padding-left: 23px;
+    background: #2f2f2f;
+    color: #fdfdfd; }
+    .alert-card .alert-status span {
+      font: bold 12px "Source Sans Pro", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .3px; }
+      .alert-card .alert-status span:before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        background: #8EC439;
+        margin-right: 7px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px; }
+  .alert-card .mobile-arrow {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer; }
+    .alert-card .mobile-arrow i {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .alert-card .mobile-arrow:hover i {
+      margin-right: -5px; }
+  .alert-card.alert-card-speed .alert-body {
+    top: 65px; }
+    .alert-card.alert-card-speed .alert-body > strong {
+      font-size: 18px;
+      letter-spacing: .6px;
+      line-height: 1.28em; }
+  @media (max-width: 767px) {
+    .alert-card {
+      height: auto !important;
+      margin-bottom: 0px !important; }
+      .alert-card .icon-settings {
+        display: none; }
+      .alert-card .mobile-arrow {
+        display: block; }
+      .alert-card .alert-status {
+        display: none; }
+      .alert-card .alert-title {
+        display: none; }
+      .alert-card.inactive .alert-body > strong:before {
+        background-color: #C4172C; }
+      .alert-card.alert-card-charge .alert-body {
+        padding-bottom: 5px !important; }
+      .alert-card.alert-card-charge .row {
+        max-width: 95%; }
+      .alert-card .alert-body {
+        position: relative;
+        left: 0;
+        top: 0 !important;
+        padding: 16px !important; }
+        .alert-card .alert-body.dual {
+          padding-left: 0px !important; }
+          .alert-card .alert-body.dual .row > div {
+            padding-left: 45px; }
+          .alert-card .alert-body.dual div > strong:before,
+          .alert-card .alert-body.dual > strong:before {
+            display: none; }
+          .alert-card .alert-body.dual div > strong > span,
+          .alert-card .alert-body.dual > strong > span {
+            padding-left: 0; }
+        .alert-card .alert-body > i {
+          display: none; }
+        .alert-card .alert-body span {
+          padding-left: 16px;
+          font-weight: normal !important; }
+        .alert-card .alert-body div > strong,
+        .alert-card .alert-body > strong {
+          font-size: 14px !important;
+          letter-spacing: .4px !important; }
+          .alert-card .alert-body div > strong > span,
+          .alert-card .alert-body > strong > span {
+            padding-top: 3px !important;
+            line-height: 1.4em !important; }
+            .alert-card .alert-body div > strong > span em,
+            .alert-card .alert-body div > strong > span strong,
+            .alert-card .alert-body > strong > span em,
+            .alert-card .alert-body > strong > span strong {
+              font-weight: bold;
+              font-style: normal;
+              text-transform: uppercase; }
+            .alert-card .alert-body div > strong > span strong,
+            .alert-card .alert-body > strong > span strong {
+              color: #C4172C; }
+            .alert-card .alert-body div > strong > span em,
+            .alert-card .alert-body > strong > span em {
+              color: #8EC439; }
+            .alert-card .alert-body div > strong > span > span,
+            .alert-card .alert-body > strong > span > span {
+              display: inline !important;
+              padding-left: 0; }
+          .alert-card .alert-body div > strong:before,
+          .alert-card .alert-body > strong:before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            background: #8EC439;
+            margin-right: 7px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px; } }
+
+.no-alerts-set {
+  height: 135px; }
+  .no-alerts-set strong {
+    text-align: center;
+    display: block;
+    font: 500 20px/135px "KIA", sans-serif;
+    color: #c0c0c0;
+    letter-spacing: .5px; }
+    .no-alerts-set strong i {
+      display: inline-block;
+      margin-right: 21px;
+      vertical-align: middle;
+      position: relative;
+      top: -5px; }
+  @media (max-width: 767px) {
+    .no-alerts-set {
+      height: 80px; }
+      .no-alerts-set strong {
+        font-size: 14px;
+        letter-spacing: .4px;
+        line-height: 80px; }
+        .no-alerts-set strong i {
+          margin-right: 18px; } }
+
+.icon-schedules-empty-state {
+  display: block;
+  width: 96px;
+  height: 96px;
+  background: url("/images/icon-no-schedules.svg") center/contain no-repeat; }
+
+.icon-climate-schedule {
+  width: 22px;
+  height: 22px;
+  background: url("/images/icon_schedule_climate.png") center/contain no-repeat; }
+
+.icon-charge-schedule {
+  width: 25px;
+  height: 14px;
+  background: url("/images/icon_schedule_charge.png") center/contain no-repeat; }
+
+.icon-speed-alerts {
+  width: 22px;
+  height: 22px;
+  background: url("/images/icon_carzone_speed.png") center/contain no-repeat; }
+
+.icon-alert-climate {
+  width: 57px;
+  height: 57px;
+  background: url("/images/icon_alert_climate.png") center/contain no-repeat;
+  text-align: center;
+  font: bold 18px/57px "KIA", sans-serif;
+  letter-spacing: .5px;
+  padding-left: 5px; }
+  .icon-alert-climate sup {
+    position: relative;
+    top: -4px; }
+
+.icon-alert-curfew {
+  width: 47px;
+  height: 47px;
+  background: url("/images/icon_alert_curfew.png") center no-repeat; }
+
+.icon-alert-speed {
+  width: 47px;
+  height: 47px;
+  background: url("/images/icon_alert_speed.png") center no-repeat; }
+
+.icon-no-alerts-speed {
+  width: 64px;
+  height: 52px;
+  background: url("/images/icon_no_alerts_speed.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-alerts-speed {
+      width: 40px;
+      height: 40px; } }
+
+.icon-arrow-right {
+  display: block;
+  background: url("/images/icon_arrow_right_dark.svg") center/contain no-repeat;
+  width: 11px !important;
+  height: 15px !important; }
+
+.icon-3d-battery {
+  background: url(/images/icon_3d_battery_small.svg) center/contain no-repeat;
+  width: 70px;
+  height: 115px;
+  left: 15px !important;
+  top: 30px !important; }
+
+.icon-no-schedule-charge {
+  width: 62px;
+  height: 62px;
+  background: url("/images/icon_no_charge_schedule.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-schedule-charge {
+      width: 40px;
+      height: 40px; } }
+
+.icon-no-schedule-climate {
+  width: 62px;
+  height: 62px;
+  background: url("/images/icon_no_climate_schedule.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-schedule-climate {
+      width: 40px;
+      height: 40px; } }
+
+.icon-schedule-red-climate {
+  background: url("/images/icon_schedule_red_climate.png") center/contain no-repeat;
+  width: 60px;
+  height: 60px;
+  left: 15px !important; }
+
+.icon-schedule-red-charge {
+  background: url("/images/icon_schedule_red_charge.png") center/contain no-repeat;
+  width: 60px;
+  height: 60px;
+  left: 15px !important; }
+
+.schedules-combined .schedules-timeline {
+  position: relative;
+  margin: 0 auto 24px; }
+  .schedules-combined .schedules-timeline em {
+    display: block;
+    text-align: center;
+    font: italic 10px "Source Sans Pro", sans-serif;
+    letter-spacing: .3px;
+    color: #9da0a4; }
+    @media (max-width: 767px) {
+      .schedules-combined .schedules-timeline em {
+        padding: 0 20px;
+        padding-top: 10px; } }
+  .schedules-combined .schedules-timeline .timeline-bar {
+    max-width: calc(100% - 75px);
+    margin: 0 auto 42px;
+    position: relative; }
+    @media (max-width: 767px) {
+      .schedules-combined .schedules-timeline .timeline-bar {
+        max-width: calc(100% - 75px);
+        right: -0px; } }
+    .schedules-combined .schedules-timeline .timeline-bar-start, .schedules-combined .schedules-timeline .timeline-bar-end {
+      position: absolute;
+      right: 0;
+      top: 30px; }
+      @media (max-width: 767px) {
+        .schedules-combined .schedules-timeline .timeline-bar-start, .schedules-combined .schedules-timeline .timeline-bar-end {
+          transform: scale(0.7);
+          transform-origin: center right;
+          right: 10px; } }
+      .schedules-combined .schedules-timeline .timeline-bar-start em, .schedules-combined .schedules-timeline .timeline-bar-end em {
+        display: block;
+        font: 600 12px "Source Sans Pro", sans-serif;
+        letter-spacing: .5px;
+        color: #2f2f2f;
+        position: absolute;
+        top: 32px;
+        right: 0;
+        white-space: nowrap; }
+        @media (max-width: 767px) {
+          .schedules-combined .schedules-timeline .timeline-bar-start em, .schedules-combined .schedules-timeline .timeline-bar-end em {
+            display: none; } }
+    .schedules-combined .schedules-timeline .timeline-bar-start {
+      left: 0;
+      top: 25px; }
+      @media (max-width: 767px) {
+        .schedules-combined .schedules-timeline .timeline-bar-start {
+          transform: scale(0.7);
+          transform-origin: center left;
+          left: 10px; } }
+    .schedules-combined .schedules-timeline .timeline-bar-legend {
+      text-align: center;
+      font: 600 10px/2.1 "Source Sans Pro", sans-serif;
+      letter-spacing: .4px;
+      margin-bottom: 17px;
+      white-space: nowrap; }
+      .schedules-combined .schedules-timeline .timeline-bar-legend span {
+        display: inline-block;
+        margin: 0 22px; }
+        .schedules-combined .schedules-timeline .timeline-bar-legend span:before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background: #2f2f2f;
+          margin-right: 4px; }
+        .schedules-combined .schedules-timeline .timeline-bar-legend span.charging:before {
+          background: #8ec439; }
+        .schedules-combined .schedules-timeline .timeline-bar-legend span.off-peak:before {
+          background: #4bbef0; }
+    .schedules-combined .schedules-timeline .timeline-bar-wrap {
+      position: relative; }
+    .schedules-combined .schedules-timeline .timeline-bar-base {
+      height: 4px;
+      border-radius: 5px;
+      background-color: #2f2f2f;
+      position: relative;
+      z-index: 2;
+      overflow: hidden; }
+    .schedules-combined .schedules-timeline .timeline-bar-charging {
+      position: absolute;
+      height: 100%;
+      border-radius: 5px;
+      background-color: #8ec439;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 3; }
+    .schedules-combined .schedules-timeline .timeline-bar-offpeak {
+      height: 14px;
+      border-radius: 8px;
+      background-color: #4bbef0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20%;
+      z-index: 1; }
+      .schedules-combined .schedules-timeline .timeline-bar-offpeak span {
+        position: absolute;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        margin-top: 15px;
+        font: 600 12px "Source Sans Pro", sans-serif;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        white-space: nowrap; }
+
+.schedules-combined .schedules-tabs {
+  max-width: 815px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(39, 48, 59, 0.24); }
+  .schedules-combined .schedules-tabs .row {
+    margin-left: 0;
+    margin-right: 0; }
+    .schedules-combined .schedules-tabs .row > div {
+      padding: 0; }
+  .schedules-combined .schedules-tabs .nav-tabs {
+    background-color: #2f2f2f;
+    overflow: hidden;
+    color: #FFF; }
+    .schedules-combined .schedules-tabs .nav-tabs a {
+      color: inherit;
+      display: block;
+      height: 190px;
+      position: relative;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+      .schedules-combined .schedules-tabs .nav-tabs a:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #c4172c;
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 0; }
+      .schedules-combined .schedules-tabs .nav-tabs a.active {
+        background-color: rgba(0, 0, 0, 0.3); }
+        .schedules-combined .schedules-tabs .nav-tabs a.active:after {
+          opacity: 1; }
+      .schedules-combined .schedules-tabs .nav-tabs a:not(.enabled) .nav-tab-header svg * {
+        fill: #434343 !important; }
+      .schedules-combined .schedules-tabs .nav-tabs a.enabled .nav-tab-footer {
+        opacity: 1 !important; }
+      .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 35px;
+        padding-right: 19px; }
+        .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-header {
+          font: 500 13px "KIA", sans-serif;
+          letter-spacing: 1.2px;
+          text-transform: uppercase;
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          color: #969696; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-header em {
+            display: inline-block;
+            width: 2px;
+            font-style: normal; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-header svg {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%); }
+            .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-header svg * {
+              transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-header .toggle {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%); }
+        .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer {
+          padding-top: 29px;
+          display: block;
+          opacity: .2;
+          transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer em {
+            display: block;
+            font: 10px/1.2em "Source Sans Pro", sans-serif;
+            letter-spacing: .4px; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer strong {
+            display: block;
+            padding-top: 7px;
+            font: 500 18px "KIA", sans-serif;
+            letter-spacing: .8px; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer span strong {
+            display: inline-block;
+            font: 500 36px "KIA", sans-serif;
+            letter-spacing: 1.7px;
+            vertical-align: middle;
+            padding-top: 0; }
+            .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer span strong sup {
+              font-size: .5em;
+              position: relative;
+              top: -15px; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer span span {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 15px; }
+          .schedules-combined .schedules-tabs .nav-tabs a .nav-tab-inner .nav-tab-footer span em {
+            display: block;
+            line-height: 1.4em; }
+
+@media (max-width: 767px) {
+  .schedules-combined .schedules-tabs {
+    display: none; } }
+
+.schedules-combined .schedules-tabs .tab-content {
+  box-shadow: none; }
+  .schedules-combined .schedules-tabs .tab-content .tab-inner {
+    padding: 26px 40px 0;
+    height: 570px;
+    position: relative; }
+    @media (max-width: 991px) {
+      .schedules-combined .schedules-tabs .tab-content .tab-inner {
+        padding-left: 28px;
+        padding-right: 28px; } }
+  .schedules-combined .schedules-tabs .tab-content .tab-header {
+    display: block;
+    font: bold 14px "KIA", sans-serif;
+    letter-spacing: .4px;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 21px; }
+    .schedules-combined .schedules-tabs .tab-content .tab-header + p {
+      margin: 0;
+      font: 14px "Source Sans Pro", sans-serif;
+      letter-spacing: .6px;
+      max-width: 376px; }
+  .schedules-combined .schedules-tabs .tab-content .checkbox-group {
+    white-space: nowrap; }
+    .schedules-combined .schedules-tabs .tab-content .checkbox-group label {
+      display: inline-block;
+      margin: 0px; }
+      .schedules-combined .schedules-tabs .tab-content .checkbox-group label > em {
+        display: block; }
+  .schedules-combined .schedules-tabs .tab-content .tab-footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 26px;
+    left: 0; }
+    .schedules-combined .schedules-tabs .tab-content .tab-footer p {
+      font: 11px "Source Sans Pro", sans-serif;
+      letter-spacing: .3px;
+      color: #808080; }
+      .schedules-combined .schedules-tabs .tab-content .tab-footer p a {
+        display: inline-block;
+        font: bold 11px "Source Sans Pro", sans-serif;
+        letter-spacing: .3px;
+        color: #C4172C;
+        margin-left: 3px; }
+  .schedules-combined .schedules-tabs .tab-content #climate-settings .tab-inner .tab-header + p {
+    width: 100%;
+    max-width: 100%; }
+  .schedules-combined .schedules-tabs .tab-content .climate-settings {
+    padding-top: 20px; }
+    .schedules-combined .schedules-tabs .tab-content .climate-settings .ui-dial {
+      transform: scale(0.9);
+      transform-origin: top center;
+      margin-bottom: 20px; }
+    .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer {
+      text-align: center;
+      font-size: 0;
+      white-space: nowrap; }
+      .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer > div {
+        display: inline-block;
+        vertical-align: top;
+        height: 125px;
+        padding: 10px 25px 0; }
+        .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer > div + div {
+          border-left: solid 1px #d4d4d4; }
+        @media (max-width: 991px) {
+          .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer > div:last-child em {
+            max-width: 90px;
+            white-space: normal;
+            margin-bottom: -7px;
+            margin-top: -3px; } }
+      .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer em {
+        display: block;
+        font: 500 9px "KIA", sans-serif;
+        letter-spacing: .2px;
+        color: #9ba1a9;
+        text-transform: uppercase; }
+      .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer i {
+        height: 60px;
+        display: inline-block;
+        transform: scale(0.9);
+        margin: 0 2.5px; }
+        .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer i.icon-heated-seats {
+          height: 21px;
+          margin-top: 20px;
+          margin-bottom: 20px; }
+      .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer a {
+        display: block;
+        font: bold 11px "KIA", sans-serif;
+        letter-spacing: .7px;
+        color: #C4172C;
+        margin-top: 10px;
+        text-decoration: none;
+        outline: none; }
+        .schedules-combined .schedules-tabs .tab-content .climate-settings .climate-footer a i {
+          display: inline-block;
+          vertical-align: middle; }
+
+.icon-defrost {
+  background: url("/images/icon_defrost.svg") center/contain no-repeat;
+  width: 34px;
+  height: 24px; }
+  .icon-defrost.green {
+    background-image: url("/images/icon_defrost_green.svg"); }
+
+.icon-defrost-rear {
+  background: url("/images/icon_defrost_rear.svg") center/contain no-repeat;
+  width: 28px;
+  height: 25px; }
+  .icon-defrost-rear.green {
+    background-image: url("/images/icon_defrost_rear_green.svg"); }
+
+.icon-defrost-mirror {
+  background: url("/images/icon_defrost_mirror.svg") center/contain no-repeat;
+  width: 35px;
+  height: 25px; }
+  .icon-defrost-mirror.green {
+    background-image: url("/images/icon_defrost_mirror_green.svg"); }
+
+.icon-defrost-steering {
+  background: url("/images/icon_defrost_steering.svg") center/contain no-repeat;
+  width: 24px;
+  height: 32px; }
+  .icon-defrost-steering.green {
+    background-image: url("/images/icon_defrost_steering_green.svg"); }
+
+.icon-heated-seats {
+  width: 26px;
+  height: 21px;
+  background: url("/images/icon_heated_seats.svg") center/contain no-repeat;
+  position: relative; }
+  .icon-heated-seats:before, .icon-heated-seats:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    margin-top: 3px;
+    display: block;
+    height: 3px;
+    background: #ec4446;
+    pointer-events: none;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0; }
+  .icon-heated-seats:after {
+    background: #56b5e4;
+    margin-top: 8px; }
+  .icon-heated-seats.hot:before {
+    opacity: 1; }
+  .icon-heated-seats.cold:after {
+    margin-top: 3px;
+    opacity: 1; }
+  .icon-heated-seats.hot.cold:after {
+    margin-top: 8px; }
+
+.save-text {
+  font: bold 11px "KIA", sans-serif;
+  letter-spacing: 1.4px;
+  color: #C4172C;
+  text-transform: uppercase;
+  transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative; }
+  .save-text.disabled {
+    color: #5f5f5f; }
+  .save-text.spinning {
+    opacity: .5;
+    color: transparent;
+    opacity: 1; }
+    .save-text.spinning .spinner {
+      opacity: 1; }
+
+.save-schedules-button:not(.save-text) {
+  width: 202px;
+  background: #8EC439; }
+  .save-schedules-button:not(.save-text):hover {
+    background: #719c2e; }
+  .save-schedules-button:not(.save-text).disabled {
+    opacity: 1;
+    background: #c5c5c5 !important; }
+
+.modal.confirm-changes .modal-dialog {
+  max-width: 340px;
+  text-align: center; }
+  .modal.confirm-changes .modal-dialog .modal-body {
+    padding: 26px 40px 35px !important; }
+    .modal.confirm-changes .modal-dialog .modal-body p {
+      font: 14px/1.5em "Source Sans Pro", sans-serif;
+      letter-spacing: .6px;
+      margin-bottom: 33px; }
+    .modal.confirm-changes .modal-dialog .modal-body .modal-actions .button:first-child {
+      width: 150px;
+      margin-right: 3px; }
+    .modal.confirm-changes .modal-dialog .modal-body .modal-actions .button:last-child {
+      padding: 0;
+      width: 100px; }
+
+.view-schedules-combined .schedules-header {
+  margin-bottom: 0; }
+  .view-schedules-combined .schedules-header h2 {
+    margin-bottom: 0; }
+
+@media (max-width: 991px) {
+  .view-schedules-combined .schedules-wrapper {
+    padding: 0 20px !important; } }
+
+@media (max-width: 767px) {
+  .view-schedules-combined .schedules-wrapper {
+    padding: 0 !important; } }
+
+.view-schedules-combined .schedules-alert-area.mobile-only {
+  display: none; }
+  @media (max-width: 767px) {
+    .view-schedules-combined .schedules-alert-area.mobile-only {
+      display: block; } }
+  .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-header {
+    padding-left: 35px;
+    position: relative; }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-header svg {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%); }
+  .view-schedules-combined .schedules-alert-area.mobile-only .alert-card {
+    height: 77px !important; }
+  .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer {
+    display: block;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-left: 23px;
+    top: 50%;
+    transform: translateY(-50%); }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer em {
+      display: block;
+      font: 10px/1.2em "Source Sans Pro", sans-serif;
+      letter-spacing: .4px; }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer strong {
+      display: block;
+      padding-top: 7px;
+      font: 500 18px "KIA", sans-serif;
+      letter-spacing: .8px; }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span strong {
+      display: inline-block;
+      font: 500 24px "KIA", sans-serif;
+      letter-spacing: 1.1px;
+      vertical-align: middle;
+      padding-top: 0; }
+      .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span strong sup {
+        font-size: .5em;
+        position: relative;
+        top: -10px; }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span span {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 15px; }
+    .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span em {
+      display: block;
+      line-height: 1.4em; }
+      .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span em em {
+        display: inline-block;
+        color: #C4172C; }
+      .view-schedules-combined .schedules-alert-area.mobile-only .nav-tab-footer span em strong {
+        font: inherit;
+        display: inline-block;
+        color: #8EC439; }
+
+.depature-times .row > div > strong {
+  display: block;
+  font: bold 10px "KIA", sans-serif;
+  letter-spacing: .4px;
+  color: #000;
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+
+.timepicker strong {
+  display: block;
+  font: bold 10px "KIA", sans-serif;
+  letter-spacing: .4px;
+  color: #000;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
+
+.timepicker .bootstrap-select {
+  width: 87px !important;
+  display: inline-block;
+  vertical-align: middle; }
+
+.timepicker .radio-choices {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 11px; }
+  .timepicker .radio-choices label {
+    margin: 0;
+    margin-bottom: 3px;
+    display: block; }
+    .timepicker .radio-choices label em {
+      font: 14px "Source Sans Pro", sans-serif;
+      letter-spacing: .6px;
+      padding-left: 25px;
+      display: block; }
+      .timepicker .radio-choices label em:before {
+        width: 16px;
+        height: 16px; }
+      .timepicker .radio-choices label em:after {
+        width: 8px;
+        height: 8px;
+        left: 1px; }
+
+.time-row {
+  padding-top: 40px;
+  margin-bottom: 45px; }
+  .time-row > strong {
+    display: block;
+    font: bold 12px "KIA", sans-serif;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 18px; }
+  .time-row + br + .time-row,
+  .time-row + .time-row {
+    border-top: solid 1px #d4d4d4; }
+
+.charge-settings {
+  text-align: center;
+  padding-top: 70px; }
+  @media (max-width: 991px) {
+    .charge-settings {
+      padding-top: 40px; } }
+  .charge-settings p {
+    font: 14px "Source Sans Pro", sans-serif;
+    letter-spacing: .6px;
+    margin-bottom: 28px; }
+  .charge-settings label {
+    display: inline-block;
+    margin: 0 10px; }
+    .charge-settings label:first-child {
+      margin-left: 0; }
+    .charge-settings label:last-child {
+      margin-right: 0; }
+    .charge-settings label input {
+      display: none; }
+      .charge-settings label input:checked + span {
+        background-color: #f0f0f0;
+        box-shadow: inset 1px 1px 2px 0 rgba(176, 176, 176, 0.5); }
+        .charge-settings label input:checked + span img {
+          filter: none; }
+    .charge-settings label span {
+      display: block;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.18);
+      width: 210px;
+      text-align: center;
+      height: 165px;
+      position: relative;
+      cursor: pointer;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .charge-settings label span img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: -20px;
+        filter: grayscale(100%);
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .charge-settings label span strong {
+        display: block;
+        font: bold 12px "KIA", sans-serif;
+        letter-spacing: .5px;
+        color: #000;
+        position: absolute;
+        width: 100%;
+        bottom: 26px; }
+      @media (max-width: 991px) {
+        .charge-settings label span {
+          width: 190px; } }
+  .charge-settings .off-peak-picker {
+    padding-top: 30px;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    opacity: 0; }
+    .charge-settings .off-peak-picker.show {
+      opacity: 1;
+      pointer-events: all; }
+  .charge-settings .timepicker {
+    text-align: left;
+    display: inline-block; }
+    .charge-settings .timepicker + .timepicker {
+      margin-left: 20px; }
+    .charge-settings .timepicker .bootstrap-select {
+      width: 117px !important; }
+  @media (max-width: 991px) {
+    .charge-settings .off-peak-picker {
+      margin-top: -10px; }
+      .charge-settings .off-peak-picker .bootstrap-select {
+        width: 150px !important; }
+      .charge-settings .off-peak-picker .radio-choices {
+        display: block;
+        padding-top: 10px; }
+        .charge-settings .off-peak-picker .radio-choices label {
+          display: inline-block; }
+          .charge-settings .off-peak-picker .radio-choices label + label {
+            margin-left: 20px; } }
+
+.modal-charge-times,
+.modal-depature-times {
+  text-align: center; }
+  @media (min-width: 767px) {
+    .modal-charge-times,
+    .modal-depature-times {
+      display: none !important; } }
+  .modal-charge-times .back,
+  .modal-depature-times .back {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    margin-top: 15px; }
+  .modal-charge-times .modal-title,
+  .modal-depature-times .modal-title {
+    padding-top: 30px; }
+  .modal-charge-times .row > div > strong,
+  .modal-depature-times .row > div > strong {
+    padding-top: 20px; }
+  .modal-charge-times p,
+  .modal-depature-times p {
+    font: 14px/1.57em "Source Sans Pro", sans-serif;
+    letter-spacing: .4px;
+    max-width: 265px;
+    padding-right: 20px;
+    margin: 0 auto;
+    text-align: left; }
+  .modal-charge-times .time-row,
+  .modal-depature-times .time-row {
+    padding-top: 30px;
+    text-align: left;
+    display: inline-block; }
+    .modal-charge-times .time-row > strong,
+    .modal-depature-times .time-row > strong {
+      padding-top: 0;
+      margin-bottom: 0; }
+  .modal-charge-times .checkbox-group,
+  .modal-depature-times .checkbox-group {
+    white-space: nowrap; }
+    .modal-charge-times .checkbox-group label,
+    .modal-depature-times .checkbox-group label {
+      display: inline-block;
+      margin: 0px; }
+      .modal-charge-times .checkbox-group label > em,
+      .modal-depature-times .checkbox-group label > em {
+        display: block; }
+  .modal-charge-times .timepicker,
+  .modal-depature-times .timepicker {
+    margin: 0 auto !important; }
+    .modal-charge-times .timepicker .bootstrap-select,
+    .modal-depature-times .timepicker .bootstrap-select {
+      width: 121px !important; }
+    .modal-charge-times .timepicker .radio-choices label,
+    .modal-depature-times .timepicker .radio-choices label {
+      display: inline-block !important; }
+      .modal-charge-times .timepicker .radio-choices label + label,
+      .modal-depature-times .timepicker .radio-choices label + label {
+        margin-left: 20px; }
+  .modal-charge-times .charge-settings,
+  .modal-depature-times .charge-settings {
+    padding-top: 10px; }
+    .modal-charge-times .charge-settings p,
+    .modal-depature-times .charge-settings p {
+      margin-bottom: 24px;
+      text-align: center; }
+  .modal-charge-times .charge-settings-options,
+  .modal-depature-times .charge-settings-options {
+    white-space: nowrap; }
+    .modal-charge-times .charge-settings-options label span,
+    .modal-depature-times .charge-settings-options label span {
+      width: 135px;
+      white-space: normal; }
+      .modal-charge-times .charge-settings-options label span strong,
+      .modal-depature-times .charge-settings-options label span strong {
+        transform: translateY(50%); }
+  .modal-charge-times .tab-footer,
+  .modal-depature-times .tab-footer {
+    text-align: center;
+    white-space: nowrap; }
+    .modal-charge-times .tab-footer p,
+    .modal-depature-times .tab-footer p {
+      font: 11px "Source Sans Pro", sans-serif;
+      letter-spacing: .3px;
+      color: #808080; }
+      .modal-charge-times .tab-footer p a,
+      .modal-depature-times .tab-footer p a {
+        display: inline-block;
+        font: bold 11px "Source Sans Pro", sans-serif;
+        letter-spacing: .3px;
+        color: #C4172C;
+        margin-left: 3px; }
+  .modal-charge-times .off-peak-picker,
+  .modal-depature-times .off-peak-picker {
+    margin-bottom: 20px !important; }
+    .modal-charge-times .off-peak-picker .timepicker + .timepicker,
+    .modal-depature-times .off-peak-picker .timepicker + .timepicker {
+      margin-left: 20px !important; }
+    .modal-charge-times .off-peak-picker .radio-choices,
+    .modal-depature-times .off-peak-picker .radio-choices {
+      display: block; }
+  .modal-charge-times .modal-footer,
+  .modal-depature-times .modal-footer {
+    margin-top: 20px; }
+
+.modal.edit-climate-schedule.combined .back {
+  opacity: 1 !important;
+  margin-top: 10px;
+  pointer-events: all; }
+
+.modal.edit-climate-schedule.combined .modal-title + p {
+  max-width: 243px;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 14px; }
+
+.modal.edit-climate-schedule.combined .footer-action {
+  padding-top: 20px; }
+
+.icon-communicating {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background: url("/images/icon_communicating.png") center/contain no-repeat;
+  animation: spin 1s infinite linear; }
+  .icon-communicating.white {
+    background-image: url("/images/icon_communicating_white.png");
+    width: 17px;
+    height: 17px; }
+
+.schedules-save {
+  max-width: 815px;
+  margin: 0 auto;
+  padding-top: 30px; }

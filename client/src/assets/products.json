@@ -1,0 +1,92 @@
+{
+    "status": {
+        "statusCode": 0,
+            "errorType": 0,
+                "errorCode": 0,
+                    "errorMessage": "Success with response body"
+    },
+    "payload": {
+        "vehicleInfoList": [
+            {
+                "vin": "KBILLIG2020SK3386",
+                "modelYear": "2017",
+                "modelName": "NERO",
+                "vehicleNickName": "MY Ride NERO",
+                "ignitionType": "battery",
+                "vehicleCategory": "Connected",
+                "mileage": "15919",
+                "nextServiceMiles": "6234",
+                "diagnosticsIssues": "0",
+                "chargeLevelPct": "31",
+                "batteryStatus": "Charging",
+                "drivingRangeMiles": "21",
+                "status": "connected",
+                "images": {
+                    "imageName": "2019-soul-jf_pe-eb.png",
+                    "imagePath": "/images/"
+                },
+                "lastRefreshed": "2020032617015"
+            },
+            {
+                "vin": "KBILLIG2020SK3387",
+                "modelYear": "2016",
+                "modelName": "K900",
+                "vehicleNickName": "Andrew's Car",
+                "ignitionType": "fuel",
+                "vehicleCategory": "embedded",
+                "mileage": "15919",
+                "nextServiceMiles": "6434",
+                "diagnosticsIssues": "3",
+                "chargeLevelPct": null,
+                "batteryStatus": null,
+                "drivingRangeMiles": "52",
+                "status": "End of life",
+                "images": {
+                    "imageName": "image_car_grid_2.png",
+                    "imagePath": "/images/"
+                },
+                "lastRefreshed": "2020032617015"
+            },
+            {
+                "vin": "KBILLIG2020SK3388",
+                "modelYear": "2018",
+                "modelName": "NIRO",
+                "vehicleNickName": "The New Hotness",
+                "ignitionType": "fuel",
+                "vehicleCategory": "embedded",
+                "mileage": "",
+                "nextServiceMiles": "",
+                "diagnosticsIssues": "",
+                "chargeLevelPct": "",
+                "batteryStatus": "",
+                "drivingRangeMiles": "",
+                "status": "Not Activated",
+                "images": {
+                    "imageName": "image_car_grid_3.png",
+                    "imagePath": "/images/"
+                },
+                "lastRefreshed": ""
+            },
+            {
+                "vin": "KBILLIG2020SK3389",
+                "modelYear": "2014",
+                "modelName": "SOUL",
+                "vehicleNickName": "OG SOUL",
+                "ignitionType": "fuel",
+                "vehicleCategory": "base",
+                "mileage": "80255",
+                "nextServiceMiles": "6234",
+                "diagnosticsIssues": "0",
+                "chargeLevelPct": "",
+                "batteryStatus": "",
+                "drivingRangeMiles": "",
+                "status": "Not Activated",
+                "images": {
+                    "imageName": "image_car_grid_4.png",
+                    "imagePath": "/images/"
+                },
+                "lastRefreshed": ""
+            }
+        ]
+    }
+}

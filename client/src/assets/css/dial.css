@@ -1,0 +1,249 @@
+@media (min-width: 992px) {
+  .mobile,
+  .tablet {
+    display: none !important; } }
+
+@media (max-width: 991px) and (min-width: 767px) {
+  .mobile,
+  .desktop {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .desktop,
+  .tablet {
+    display: none !important; } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.state-2-communicating .ui-dial {
+  pointer-events: none; }
+  .state-2-communicating .ui-dial:before {
+    opacity: 1; }
+  .state-2-communicating .ui-dial .ui-dial-controls, .state-2-communicating .ui-dial .ui-dial-handle {
+    pointer-events: none;
+    opacity: 0; }
+
+.state-1-communicating .ui-dial {
+  pointer-events: none; }
+  .state-1-communicating .ui-dial:after {
+    opacity: 1; }
+  .state-1-communicating .ui-dial .ui-dial-controls, .state-1-communicating .ui-dial .ui-dial-handle {
+    pointer-events: none;
+    opacity: 0; }
+
+.state-1 .ui-dial {
+  pointer-events: none; }
+  .state-1 .ui-dial:before {
+    opacity: 1; }
+  .state-1 .ui-dial .ui-dial-controls, .state-1 .ui-dial .ui-dial-handle {
+    pointer-events: none;
+    opacity: 0; }
+
+.ui-dial {
+  margin: 0 auto 60px;
+  background: url("/images/dial.png") top center no-repeat;
+  width: 295px;
+  height: 295px;
+  position: relative;
+  user-select: none; }
+  @media (max-width: 767px) {
+    .ui-dial {
+      margin-bottom: 75px; } }
+  .ui-dial.steps {
+    background: url("/images/dial_heated_seats.png") top center/contain no-repeat; }
+  .ui-dial:after, .ui-dial:before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF;
+    background-image: url("/images/climate_dial_locked.png");
+    transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    z-index: 1; }
+  .ui-dial:after {
+    background-image: url("/images/climate_dial_communicating.png"); }
+  .ui-dial-handle {
+    position: absolute;
+    display: block;
+    width: 31px;
+    height: 31px;
+    background-color: #e0e0e0;
+    box-shadow: 0 1px 3px 0 rgba(39, 48, 59, 0.44);
+    border: solid 10px #ffffff;
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    margin: -15.5px 0 0 -15.5px;
+    transform: rotate(-43deg) translate(-140px) rotate(43deg);
+    transition: opacity 350ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .ui-dial-handle-pin {
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: rotate(-120deg); }
+      .ui-dial-handle-pin:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 130px;
+        background: url("/images/dial_pin.png") center bottom/contain no-repeat;
+        margin-top: -63px;
+        transform-origin: bottom center; }
+  .ui-dial-value {
+    display: none; }
+  .ui-dial.hot:before {
+    background-image: url("/images/climate_dial_locked_hot.png"); }
+  .ui-dial.hot:after {
+    background-image: url("/images/climate_dial_communicating_hot.png"); }
+  .ui-dial.hot .ui-dial-temperateure {
+    color: #de4e54; }
+  .ui-dial.setting .ui-dial-handle,
+  .ui-dial.setting .ui-dial-handle-pin {
+    transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .ui-dial-temperateure {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateY(-10px) translateX(-5px);
+    font: 500 70px/1em "KIA", sans-serif;
+    display: block;
+    color: #56b5e4;
+    transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    z-index: 2; }
+    .ui-dial-temperateure .degree {
+      position: absolute;
+      font-size: 30px;
+      left: 100%;
+      top: -10px; }
+  .ui-dial-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+    transform: translateY(-20px);
+    transition: opacity 350ms cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3; }
+    .ui-dial-controls > span:not(.button) {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: 0 20px;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: all; }
+      .ui-dial-controls > span:not(.button):before {
+        content: "+";
+        font: 40px "KIA", sans-serif;
+        color: #C4172C; }
+      .ui-dial-controls > span:not(.button).down:before {
+        content: "-";
+        color: #5bb1df; }
+  .ui-dial > div {
+    opacity: 0;
+    position: relative; }
+    .ui-dial > div canvas {
+      border-radius: 100%; }
+  .ui-dial.nuetral .seat-status > span {
+    opacity: 0 !important;
+    transition-delay: 250ms !important; }
+    .ui-dial.nuetral .seat-status > span.seat-status-off {
+      opacity: 1 !important;
+      transition-delay: 0ms !important;
+      z-index: 1; }
+  .ui-dial.hot .seat-status > span {
+    opacity: 0 !important;
+    transition-delay: 250ms !important; }
+    .ui-dial.hot .seat-status > span.seat-status-on.hot {
+      opacity: 1 !important;
+      transition-delay: 0ms !important;
+      z-index: 1; }
+  .ui-dial .seat-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 71px;
+    height: 145px;
+    display: block; }
+    .ui-dial .seat-status > span {
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 250ms;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #FFF url("/images/seat_off.png") center no-repeat;
+      display: block;
+      opacity: 0; }
+      .ui-dial .seat-status > span.seat-status-on.cold {
+        opacity: 1;
+        background-image: url("/images/seat_on_cold.png");
+        transition-delay: 0ms; }
+      .ui-dial .seat-status > span.seat-status-on.hot {
+        background-image: url("/images/seat_on_hot.png"); }
+  .ui-dial.speed {
+    background-image: url("/images/dial_speed.png"); }
+    .ui-dial.speed > div {
+      opacity: 1; }
+    .ui-dial.speed canvas {
+      transform: scale(1.05); }
+    .ui-dial.speed .ui-dial-handle {
+      transform: rotate(-43deg) translate(-145px) rotate(43deg);
+      border-color: #000;
+      z-index: 5;
+      pointer-events: none; }
+    .ui-dial.speed .ui-dial-temperateure {
+      font: bold 41px/1em "KIA", sans-serif;
+      letter-spacing: 2.7px;
+      color: #000;
+      transform: translate(-50%, -50%) translateY(45px); }
+      .ui-dial.speed .ui-dial-temperateure .mph {
+        font: bold 15px/1em "KIA", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        color: #c1c1c1;
+        padding-top: 1px; }
+    .ui-dial.speed .ui-dial-controls {
+      transform: translateY(-50px); }
+      .ui-dial.speed .ui-dial-controls > * {
+        margin: 0 60px; }
+        .ui-dial.speed .ui-dial-controls > *:first-child {
+          margin-left: 0px; }
+        .ui-dial.speed .ui-dial-controls > *:last-child {
+          margin-right: 0px; }
+        .ui-dial.speed .ui-dial-controls > *:before, .ui-dial.speed .ui-dial-controls > *:after {
+          color: #C4172C !important;
+          line-height: 40px; }

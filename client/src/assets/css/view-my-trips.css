@@ -1,0 +1,1042 @@
+@media (min-width: 992px) {
+  .mobile,
+  .tablet {
+    display: none !important; } }
+
+@media (max-width: 991px) and (min-width: 767px) {
+  .mobile,
+  .desktop {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .desktop,
+  .tablet {
+    display: none !important; } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden; } }
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden; } }
+
+.my-trips-page-view .locations-map {
+  height: calc(100vh - 125px);
+  position: relative;
+  overflow: hidden; }
+  @media (max-width: 991px) {
+    .my-trips-page-view .locations-map {
+      height: calc(100vh - 193px); } }
+  @media (max-width: 767px) {
+    .my-trips-page-view .locations-map {
+      height: calc(100vh - 147px); } }
+  .my-trips-page-view .locations-map .map {
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 0;
+    right: 0;
+    width: calc(100% - 422px);
+    bottom: 0; }
+    @media (max-width: 767px) {
+      .my-trips-page-view .locations-map .map {
+        display: none; } }
+
+.my-trips-page-view .my-trips-toolbar {
+  position: relative;
+  width: 100%;
+  height: 102px;
+  background: #F7F7F7;
+  z-index: 5;
+  padding-top: 26px; }
+  @media (max-width: 767px) {
+    .my-trips-page-view .my-trips-toolbar {
+      height: 43px;
+      padding-top: 0; } }
+  .my-trips-page-view .my-trips-toolbar-inner {
+    white-space: nowrap; }
+    .my-trips-page-view .my-trips-toolbar-inner > * {
+      white-space: normal; }
+  .my-trips-page-view .my-trips-toolbar .edit-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding-left: 62px;
+    font: bold 10px/19px "KIA", sans-serif;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    color: #C4172C;
+    pointer-events: none;
+    background: #F7F7F7;
+    height: 102px;
+    z-index: 3;
+    padding-top: 55px;
+    opacity: 0;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .my-trips-page-view .my-trips-toolbar .edit-toolbar .checkbox {
+      position: absolute;
+      left: 16px; }
+    .my-trips-page-view .my-trips-toolbar .edit-toolbar > span {
+      margin-left: 35px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer; }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar > span.disabled {
+        opacity: .3;
+        pointer-events: none; }
+        .my-trips-page-view .my-trips-toolbar .edit-toolbar > span.disabled > * {
+          pointer-events: none; }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar > span:hover {
+        color: #690c18; }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar > span:first-of-type {
+        margin-left: 0; }
+    .my-trips-page-view .my-trips-toolbar .edit-toolbar .merge-toggle {
+      position: relative;
+      width: 125px;
+      height: 19px; }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar .merge-toggle.disabled span.active {
+        pointer-events: none; }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar .merge-toggle span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none; }
+        .my-trips-page-view .my-trips-toolbar .edit-toolbar .merge-toggle span.active {
+          opacity: 1;
+          pointer-events: all; }
+    .my-trips-page-view .my-trips-toolbar .edit-toolbar span {
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar span i {
+        display: inline-block;
+        vertical-align: middle;
+        height: 17px;
+        margin-right: 2px;
+        position: relative;
+        top: -1px; }
+    @media (max-width: 767px) {
+      .my-trips-page-view .my-trips-toolbar .edit-toolbar {
+        height: 43px;
+        padding-top: 12px;
+        padding-left: 51px; }
+        .my-trips-page-view .my-trips-toolbar .edit-toolbar > span {
+          margin-left: 25px; }
+        .my-trips-page-view .my-trips-toolbar .edit-toolbar .cancel {
+          display: none; } }
+  .my-trips-page-view .my-trips-toolbar-inner {
+    padding-left: 16px; }
+    .my-trips-page-view .my-trips-toolbar-inner > * {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left; }
+  .my-trips-page-view .my-trips-toolbar .start-edit {
+    margin-right: 15px; }
+    @media (max-width: 991px) {
+      .my-trips-page-view .my-trips-toolbar .start-edit {
+        margin-right: 3px; } }
+    @media (max-width: 767px) {
+      .my-trips-page-view .my-trips-toolbar .start-edit {
+        display: none; } }
+  @media (max-width: 767px) {
+    .my-trips-page-view .my-trips-toolbar form {
+      display: none; } }
+  .my-trips-page-view .my-trips-toolbar form .form-fields {
+    font-size: 0;
+    width: 100%;
+    white-space: nowrap; }
+    .my-trips-page-view .my-trips-toolbar form .form-fields > li {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 10px;
+      text-align: left;
+      position: relative;
+      white-space: normal; }
+      @media (max-width: 991px) {
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li {
+          margin-right: 6px; } }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-search {
+        width: 223px; }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-search input[type="text"] {
+          padding: 0 10px 0 36px; }
+        @media (max-width: 991px) {
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-search {
+            width: 143px; } }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-alerts {
+        width: 120px; }
+        @media (max-width: 991px) {
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-alerts {
+            width: 120px; } }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-type {
+        width: 140px; }
+        @media (max-width: 991px) {
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li.trips-type {
+            width: 100px; } }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li .icon-search {
+        position: absolute;
+        bottom: 20px;
+        left: 12px;
+        transform: translateY(50%); }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li .bootstrap-select {
+        outline: none !important;
+        box-shadow: none !important; }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li .bootstrap-select * {
+          outline: none !important;
+          box-shadow: none !important; }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li .bootstrap-select .btn {
+          background: #FFF !important;
+          font-weight: normal; }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li label strong {
+        margin-bottom: 3px; }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li input[type="text"] {
+        font-weight: normal; }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li #reportrange {
+        font-size: 12px;
+        min-width: 230px;
+        height: 40px;
+        background: #FFF;
+        border-radius: 2px;
+        border: solid 1px #b1b5b8;
+        padding: 0 19px 0 14px;
+        font: 14px/40px "Source Sans Pro", sans-serif;
+        letter-spacing: .4px; }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li #reportrange .fa {
+          color: #8d9094;
+          margin-right: 5px; }
+        @media (max-width: 767px) {
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li #reportrange {
+            width: 155px;
+            min-width: 155px; } }
+      .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn {
+        font: bold 11px/40px "KIA", sans-serif;
+        text-transform: uppercase;
+        color: #C4172C;
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        transition: color 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn i {
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          top: 3px;
+          margin-right: 5px; }
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn i svg path {
+            fill: #C4172C !important;
+            transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+        .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn:hover {
+          color: #690c18; }
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn:hover i svg path {
+            fill: #690c18 !important; }
+        @media (max-width: 991px) {
+          .my-trips-page-view .my-trips-toolbar form .form-fields > li .export-btn {
+            margin-left: 0px; } }
+
+.my-trips-page-view .trips-list {
+  position: absolute;
+  width: 422px;
+  top: 102px;
+  bottom: 0;
+  background: #eaeaea;
+  padding: 0 4px; }
+  @media (max-width: 767px) {
+    .my-trips-page-view .trips-list {
+      position: absolute;
+      width: 100%;
+      top: 43px;
+      height: 100%;
+      padding: 0; } }
+  .my-trips-page-view .trips-list-inner {
+    max-height: 100%;
+    overflow: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 100px; }
+    .my-trips-page-view .trips-list-inner + .scroll-top {
+      opacity: 0;
+      pointer-events: none; }
+    .my-trips-page-view .trips-list-inner.scrolled + .scroll-top {
+      opacity: 1;
+      pointer-events: all; }
+    .my-trips-page-view .trips-list-inner > strong {
+      display: block;
+      padding: 16px 19px;
+      font: bold 10px/1em "KIA", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #969696; }
+
+@media (max-width: 767px) {
+  .my-trips-page-view .trips-list .trip-meta {
+    display: none; }
+  .my-trips-page-view .trips-list .trip-tags {
+    display: none; } }
+
+.trip {
+  background-color: #FFF;
+  margin-bottom: 4px;
+  border: solid 1px #FFF;
+  transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  cursor: pointer; }
+  .trip.hide-trip {
+    transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1);
+    height: 0 !important;
+    margin-bottom: 0 !important;
+    box-shadow: none;
+    border: none; }
+  .trip.merged .trip-points .merge {
+    opacity: 1; }
+  @media (min-width: 767px) {
+    .trip:hover .trip-main .trip-points > .merge {
+      opacity: 0 !important; }
+    .trip:hover .trip-main .trip-points > span, .trip:hover .trip-main .trip-points:after {
+      background: #FFF; }
+    .trip:hover .trip-main .checkbox {
+      opacity: 1; } }
+  .trip:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #FFF;
+    content: "";
+    display: block;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+  @media (min-width: 767px) {
+    .trip.active {
+      cursor: default;
+      border-color: rgba(196, 23, 44, 0.5); }
+      .trip.active:after {
+        background: #C4172C; } }
+  .trip .map {
+    height: 214px; }
+  .trip-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font: bold 8px/1em "KIA", sans-serif;
+    color: #969696; }
+  .trip-main {
+    padding: 51px 0;
+    position: relative; }
+    .trip-main .checkbox {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 14px;
+      z-index: 1;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0; }
+    .trip-main .trip-points {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      bottom: 16px;
+      width: 16px;
+      pointer-events: none;
+      user-select: none; }
+      .trip-main .trip-points:after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #000;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .trip-main .trip-points > span {
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000;
+        color: #FFF;
+        text-align: center;
+        width: 17px;
+        height: 17px;
+        font: bold 11px/17px "Source Sans Pro", sans-serif;
+        border-radius: 100%; }
+        .trip-main .trip-points > span.merge {
+          top: 50%;
+          transform: translateY(-50%);
+          border: 1px solid #FFF;
+          width: 19px;
+          height: 19px;
+          left: -1px;
+          transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+          opacity: 0; }
+          .trip-main .trip-points > span.merge svg {
+            width: 9px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+        .trip-main .trip-points > span:last-child {
+          top: auto;
+          bottom: 0; }
+        .trip-main .trip-points > span em {
+          position: absolute;
+          left: 100%;
+          white-space: nowrap;
+          color: #000;
+          font: bold 10px/1em "KIA", sans-serif;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: 13px;
+          letter-spacing: .4px; }
+      @media (max-width: 767px) {
+        .trip-main .trip-points {
+          left: 10px; } }
+    .trip-main .trip-data {
+      width: 320px;
+      margin: 0 auto; }
+      @media (max-width: 767px) {
+        .trip-main .trip-data {
+          width: 100%;
+          padding: 0 0px 0 60px; }
+          .trip-main .trip-data .row > * {
+            padding: 0; }
+            .trip-main .trip-data .row > *:nth-child(2) {
+              position: relative;
+              left: -20px; } }
+      .trip-main .trip-data strong {
+        display: block;
+        font: bold 16px/1em "KIA", sans-serif; }
+        .trip-main .trip-data strong span {
+          font-size: 12px; }
+      .trip-main .trip-data em {
+        display: block;
+        font: bold 10px/1em "KIA", sans-serif;
+        letter-spacing: .1px;
+        text-transform: uppercase;
+        color: #969696; }
+
+.trip-meta {
+  border-top: solid 1px #d4d4d4;
+  padding: 23px 30px 21px; }
+  .trip-meta .trip-alerts {
+    max-width: 340px;
+    margin: 0 auto 16px; }
+    .trip-meta .trip-alerts i {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      vertical-align: top;
+      position: relative;
+      top: 2px;
+      margin-right: 5px; }
+    .trip-meta .trip-alerts span {
+      display: inline-block;
+      vertical-align: top; }
+    .trip-meta .trip-alerts strong {
+      display: block;
+      font: 600 19px/1em "KIA", sans-serif;
+      margin-bottom: 3px; }
+    .trip-meta .trip-alerts em {
+      display: block;
+      width: 65px;
+      font: bold 10px "KIA", sans-serif;
+      letter-spacing: 1px;
+      color: #969696;
+      text-transform: uppercase; }
+  .trip-meta .radio-toggle span {
+    height: 30px;
+    line-height: 30px; }
+  @media (max-width: 767px) {
+    .trip-meta {
+      padding: 13px 16px 20px; } }
+
+.trip-tags {
+  border-top: solid 1px #d4d4d4;
+  padding: 20px 0 15px;
+  line-height: 1em;
+  padding-left: 60px;
+  position: relative;
+  font-size: 0;
+  padding-right: 85px; }
+  .trip-tags.focused em {
+    opacity: 1; }
+  .trip-tags > strong {
+    position: absolute;
+    left: 18px;
+    font: bold 10px/1em "KIA", sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block; }
+  .trip-tags > em {
+    position: absolute;
+    bottom: 25px;
+    display: block;
+    font: italic 11px/1em "Source Sans Pro", sans-serif;
+    color: #9da0a4;
+    right: 30px;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .trip-tags .badge {
+    background: #000;
+    height: 21px;
+    font: 600 11px/21px "Source Sans Pro", sans-serif;
+    letter-spacing: 1.1px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    min-width: 21px;
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    padding: 0 11px 0 0;
+    text-align: left;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .trip-tags .badge em {
+      font-style: normal;
+      pointer-events: none;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      display: block;
+      opacity: 0;
+      width: 21px;
+      height: 21px;
+      line-height: 19px;
+      position: absolute;
+      right: 0;
+      font-size: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      border-radius: 100%; }
+    .trip-tags .badge span {
+      font: 600 11px/21px "Source Sans Pro", sans-serif;
+      letter-spacing: 1.1px;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      height: 21px;
+      text-transform: capitalize;
+      padding: 0 0 0 11px; }
+    .trip-tags .badge input {
+      position: absolute;
+      display: block;
+      -webkit-appearance: none;
+      background: none;
+      width: 100%;
+      height: 21px;
+      border-radius: 100%;
+      border: none;
+      outline: none;
+      opacity: 0;
+      cursor: pointer;
+      top: 0;
+      left: 0; }
+    .trip-tags .badge.remove {
+      display: none; }
+    .trip-tags .badge.add {
+      width: 21px;
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 0px;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .trip-tags .badge.add:not(.adding) {
+        text-align: center;
+        padding-right: 0px;
+        letter-spacing: 0; }
+        .trip-tags .badge.add:not(.adding) span {
+          padding: 0; }
+        .trip-tags .badge.add:not(.adding) em {
+          margin: 0 !important; }
+      .trip-tags .badge.add em {
+        opacity: 1; }
+    .trip-tags .badge.adding {
+      width: auto !important;
+      padding-right: 25px; }
+      .trip-tags .badge.adding em {
+        transform: translateY(-50%) rotate(45deg);
+        pointer-events: all;
+        opacity: 1; }
+      .trip-tags .badge.adding span:after {
+        content: "";
+        position: absolute;
+        right: -3px;
+        height: 75%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: .5;
+        width: 1px;
+        background: #FFF;
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite; }
+  @media (max-width: 767px) {
+    .trip-tags {
+      padding: 12px 0 0;
+      padding-left: 50px;
+      padding-right: 10px; }
+      .trip-tags > strong {
+        left: 13px;
+        padding-top: 3px; }
+      .trip-tags > em {
+        display: none; } }
+
+.scroll-top {
+  position: absolute;
+  bottom: 11px;
+  z-index: 10;
+  display: block;
+  right: 17px;
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+  color: #FFF;
+  text-align: center;
+  padding-top: 10px;
+  transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer; }
+  .scroll-top:hover {
+    background: rgba(0, 0, 0, 0.65); }
+  .scroll-top em {
+    display: block;
+    font: bold 10px/1em "KIA", sans-serif;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+    padding-left: 2px; }
+  @media (max-width: 767px) {
+    .scroll-top {
+      bottom: 50px;
+      right: 10px;
+      width: 44px;
+      height: 44px; }
+      .scroll-top em {
+        display: none; } }
+
+.icon-trip-alert-geo {
+  background: url("/images/ic_mcz_geofence_white_small.png") top center/contain no-repeat; }
+
+.icon-trip-alert-curfew {
+  background: url("/images/ic_mcz_curfew_white_small.png") top center/contain no-repeat; }
+
+.icon-trip-alert-speed {
+  background: url("/images/ic_mcz_speed_white_small.png") top center/contain no-repeat; }
+
+.editing .my-trips-toolbar .edit-toolbar {
+  opacity: 1;
+  pointer-events: all; }
+
+.editing .trip .trip-main .trip-points > span, .editing .trip .trip-main .trip-points:after {
+  background: #FFF; }
+
+.editing .trip .trip-main .trip-points > .merge {
+  opacity: 0 !important; }
+
+.editing .trip .trip-main .checkbox {
+  opacity: 1;
+  z-index: 6;
+  pointer-events: all; }
+
+.edit-tablet {
+  color: #C4172C;
+  font: bold 11px/40px "KIA", sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase; }
+  .edit-tablet svg {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+    margin-right: 2px; }
+
+.mobile-nav-options .icon-export svg {
+  width: 16px;
+  height: 18px; }
+
+.mobile-nav-options .stop-edit {
+  font: bold 11px "KIA", sans-serif;
+  color: #C4172C;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  display: none !important; }
+
+.editing .mobile-nav-options li {
+  display: none !important; }
+  .editing .mobile-nav-options li.stop-edit {
+    display: inline-block !important; }
+
+.mobile-toolbar {
+  font: 11px/43px "Source Sans Pro", sans-serif;
+  letter-spacing: .5px;
+  color: #2f2f2f;
+  white-space: nowrap !important;
+  position: relative;
+  overflow: hidden;
+  width: 100%; }
+  .mobile-toolbar > span {
+    display: inline-block;
+    margin-right: 21px; }
+    .mobile-toolbar > span svg {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      margin-right: 3px; }
+  .mobile-toolbar .fade-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+    width: 70px;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 72%); }
+    .mobile-toolbar .fade-arrow i {
+      right: 10px; }
+
+.trip .mobile-modal {
+  display: none; }
+  @media (max-width: 767px) {
+    .trip .mobile-modal {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5; } }
+
+.modal-trip-details .icon-delete {
+  position: absolute;
+  right: 13px;
+  top: 19px;
+  z-index: 5; }
+  .modal-trip-details .icon-delete svg {
+    width: 14px;
+    height: 18px; }
+
+.modal-trip-details .modal-body .modal-title {
+  padding-top: 20px; }
+
+.modal-trip-details .modal-body .back {
+  opacity: 1 !important;
+  top: 18px !important;
+  z-index: 2;
+  pointer-events: all;
+  left: 15px; }
+
+.modal-trip-details .modal-body .trip {
+  border-bottom: none;
+  box-shadow: none; }
+  .modal-trip-details .modal-body .trip .trip-points > span, .modal-trip-details .modal-body .trip .trip-points:after {
+    background: #000 !important; }
+
+.modal-filters .carousel .item {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.modal-filters .modal-body .back {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  z-index: 5 !important;
+  top: 25px !important; }
+
+.modal-filters .modal-title {
+  border-bottom: 1px solid #e2e6eb;
+  padding-bottom: 12px; }
+
+.modal-filters form {
+  max-width: 290px; }
+  .modal-filters form .form-actions {
+    padding-top: 30px; }
+
+.modal-filters .form-fields label {
+  position: relative; }
+  .modal-filters .form-fields label strong {
+    margin-bottom: 3px; }
+  .modal-filters .form-fields label input[type="text"] {
+    padding-left: 36px; }
+  .modal-filters .form-fields label i {
+    position: absolute;
+    bottom: 12px;
+    left: 12px; }
+
+.modal-filters .form-fields .daterange {
+  font: 14px "Source Sans Pro", sans-serif;
+  letter-spacing: .6px;
+  text-align: left;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border: solid 1px #b1b5b8;
+  border-radius: 2px;
+  padding-left: 14px;
+  color: #2f2f2f;
+  margin-bottom: 0px; }
+  .modal-filters .form-fields .daterange i {
+    color: #8d9094;
+    margin-right: 4px; }
+
+body .daterangepicker.dropdown-menu {
+  z-index: 1000000; }
+
+body .daterangepicker {
+  padding: 0;
+  margin: 0; }
+  @media (max-width: 767px) {
+    body .daterangepicker {
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100vh !important;
+      box-shadow: none !important;
+      border-radius: 0px; }
+      body .daterangepicker .ranges {
+        margin: 0 auto !important;
+        float: none !important; }
+        body .daterangepicker .ranges ul {
+          margin: 0 auto !important; }
+      body .daterangepicker:after {
+        display: none; }
+      body .daterangepicker.show-calendar {
+        top: 0 !important;
+        width: 100%;
+        left: 0 !important;
+        height: 100vh;
+        overflow: auto; }
+        body .daterangepicker.show-calendar .daterangepicker_input {
+          display: none; }
+        body .daterangepicker.show-calendar .ranges {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding-top: 50px;
+          text-align: right; }
+          body .daterangepicker.show-calendar .ranges li {
+            padding: 0 10px 0; }
+          body .daterangepicker.show-calendar .ranges .range_inputs {
+            padding-right: 10px; }
+            body .daterangepicker.show-calendar .ranges .range_inputs > * {
+              display: block;
+              width: 100% !important;
+              margin-bottom: 10px; }
+        body .daterangepicker.show-calendar .calendar-table {
+          margin: 0 auto;
+          max-width: 270px;
+          transform: translateX(-80px); } }
+      @media (max-width: 767px) and (max-width: 450px) {
+        body .daterangepicker.show-calendar .calendar-table {
+          transform: translateX(0px); } }
+  @media (max-width: 767px) {
+        body .daterangepicker.show-calendar .calendar {
+          padding-top: 40px;
+          max-width: 100% !important;
+          width: 100% !important;
+          float: none; } }
+      @media (max-width: 767px) and (max-width: 450px) {
+        body .daterangepicker.show-calendar .calendar {
+          padding-right: 120px; } }
+  @media (max-width: 767px) {
+          body .daterangepicker.show-calendar .calendar table {
+            width: 100%;
+            position: relative;
+            transform-origin: top left;
+            margin: 0 auto !important; } }
+        @media (max-width: 767px) and (max-width: 374px) {
+          body .daterangepicker.show-calendar .calendar table {
+            transform-origin: top left;
+            margin-bottom: -40px;
+            transform: scale(0.8); } }
+  @media (max-width: 767px) {
+          body .daterangepicker.show-calendar .calendar:before {
+            content: "Custom Date Range";
+            display: block;
+            font: 500 14px "KIA", sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 10px;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%); }
+          body .daterangepicker.show-calendar .calendar + .calendar {
+            padding-top: 0px; }
+            body .daterangepicker.show-calendar .calendar + .calendar:before {
+              display: none; } }
+  body .daterangepicker .ranges {
+    padding: 0;
+    margin: 0;
+    background: none; }
+    body .daterangepicker .ranges ul {
+      margin: 0;
+      padding: 0; }
+      body .daterangepicker .ranges ul li {
+        padding: 0 20px;
+        margin: 0;
+        background: none;
+        font: 14px/2.79em "Source Sans Pro", sans-serif;
+        letter-spacing: .6px;
+        color: #2f2f2f;
+        border: none;
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 0px; }
+        @media (min-width: 991px) {
+          body .daterangepicker .ranges ul li:hover {
+            background: #f4f4f4; } }
+        body .daterangepicker .ranges ul li.active {
+          background: #efefef; }
+    body .daterangepicker .ranges .range_inputs {
+      text-align: center;
+      padding: 9px 0; }
+      body .daterangepicker .ranges .range_inputs .btn {
+        width: 73px;
+        font: bold 11px/30px "KIA", sans-serif;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        padding: 0;
+        height: 30px;
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+        body .daterangepicker .ranges .range_inputs .btn-success {
+          background: #c4172c;
+          border-color: #c4172c; }
+          body .daterangepicker .ranges .range_inputs .btn-success:hover {
+            background: #961222;
+            border-color: #961222; }
+  body .daterangepicker .input-mini {
+    height: 40px;
+    border-radius: 0px !important;
+    border: solid 1px #cecece !important; }
+    body .daterangepicker .input-mini + i {
+      opacity: .65 !important;
+      top: 13px; }
+  body .daterangepicker thead tr:last-child {
+    text-transform: uppercase; }
+  body .daterangepicker td.off {
+    background: #FFF !important;
+    color: #999 !important; }
+  body .daterangepicker td.active:not(.off) {
+    background: #bb1a30 !important; }
+  body .daterangepicker td.in-range:not(.active):not(.off) {
+    background: rgba(187, 26, 48, 0.26); }
+
+.modal-export .modal-dialog {
+  width: 302px; }
+  .modal-export .modal-dialog .modal-content .export-settings {
+    padding: 18px 40px 40px; }
+    .modal-export .modal-dialog .modal-content .export-settings .export-data {
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      list-style: none; }
+      .modal-export .modal-dialog .modal-content .export-settings .export-data li {
+        border-bottom: solid 1px #d4d4d4;
+        margin-bottom: 10px; }
+      .modal-export .modal-dialog .modal-content .export-settings .export-data strong {
+        display: block;
+        font: bold 10px "KIA", sans-serif;
+        letter-spacing: 1px;
+        color: #000;
+        text-transform: uppercase;
+        margin-bottom: 5px; }
+      .modal-export .modal-dialog .modal-content .export-settings .export-data span {
+        display: block;
+        font: 14px/1.5em "Source Sans Pro", sans-serif;
+        letter-spacing: .6px;
+        margin-bottom: 10px; }
+        .modal-export .modal-dialog .modal-content .export-settings .export-data span svg {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 3px;
+          position: relative;
+          top: -2px;
+          width: 13px;
+          height: 14px; }
+    @media (max-width: 991px) {
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .choose-format {
+        text-align: center; } }
+    .modal-export .modal-dialog .modal-content .export-settings .form-fields .choose-format strong {
+      text-align: left;
+      display: block;
+      font: bold 10px "KIA", sans-serif;
+      letter-spacing: 1px;
+      color: #000;
+      text-transform: uppercase;
+      margin-bottom: 16px; }
+    .modal-export .modal-dialog .modal-content .export-settings .form-fields input {
+      font-weight: normal !important; }
+    .modal-export .modal-dialog .modal-content .export-settings .form-fields .note {
+      font: 10px "Source Sans Pro", sans-serif;
+      letter-spacing: .4px;
+      padding: 5px 4px 0;
+      white-space: normal;
+      display: block; }
+    .modal-export .modal-dialog .modal-content .export-settings .form-fields .format {
+      display: inline-block;
+      width: 61px;
+      height: 61px;
+      border: solid 1px #d2d2d2;
+      border-radius: 6px;
+      vertical-align: top;
+      text-align: center;
+      line-height: 61px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden; }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format svg {
+        display: inline-block;
+        vertical-align: middle; }
+        .modal-export .modal-dialog .modal-content .export-settings .form-fields .format svg path {
+          transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format input {
+        display: none; }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(1) input:checked + span {
+        background: #C11E07; }
+        .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(1) input:checked + span svg path {
+          fill: #FFF; }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(2) {
+        margin: 0 10px; }
+        .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(2) input:checked + span {
+          background: #0F9D58; }
+          .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(2) input:checked + span svg path {
+            fill: #FFF; }
+      .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(3) input:checked + span {
+        background: #0078C9; }
+        .modal-export .modal-dialog .modal-content .export-settings .form-fields .format:nth-of-type(3) input:checked + span svg path {
+          fill: #FFF; }

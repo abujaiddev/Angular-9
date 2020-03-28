@@ -1,0 +1,421 @@
+@media (min-width: 992px) {
+  .mobile,
+  .tablet {
+    display: none !important; } }
+
+@media (max-width: 991px) and (min-width: 767px) {
+  .mobile,
+  .desktop {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .desktop,
+  .tablet {
+    display: none !important; } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.view-my-car-zone .page-view {
+  padding-bottom: 116px; }
+  @media (max-width: 767px) {
+    .view-my-car-zone .page-view {
+      padding-bottom: 50px; } }
+
+.view-my-car-zone .my-car-zone-empty-state {
+  height: calc(100vh - 250px);
+  min-height: 450px;
+  max-width: 462px;
+  margin: 0 auto;
+  position: relative;
+  position: relative; }
+  .view-my-car-zone .my-car-zone-empty-state-inner {
+    padding: 0 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; }
+  .view-my-car-zone .my-car-zone-empty-state .icon-my-car-zone-empty-state {
+    margin: 0 auto 21px; }
+  .view-my-car-zone .my-car-zone-empty-state h2 {
+    font: 500 29px "KIA", sans-serif;
+    margin: 0 0 26px; }
+  .view-my-car-zone .my-car-zone-empty-state p {
+    font: 14px/1.5em "Source Sans Pro", sans-serif;
+    letter-spacing: .6px;
+    margin-bottom: 30px; }
+    .view-my-car-zone .my-car-zone-empty-state p:last-of-type {
+      margin-bottom: 0; }
+    .view-my-car-zone .my-car-zone-empty-state p:first-of-type {
+      margin-bottom: 30px; }
+
+.view-my-car-zone .my-car-zone-wrapper {
+  padding: 0 50px;
+  margin: 0 auto; }
+  @media (max-width: 767px) {
+    .view-my-car-zone .my-car-zone-wrapper {
+      padding: 0; } }
+
+.view-my-car-zone .my-car-zone-header {
+  padding: 40px 0 0;
+  margin-bottom: 47px; }
+  .view-my-car-zone .my-car-zone-header h2 {
+    margin: 0 0 28px;
+    font: 32px "KIA", sans-serif;
+    letter-spacing: 1.5px; }
+  .view-my-car-zone .my-car-zone-header p {
+    clear: both;
+    max-width: 685px;
+    font: 14px "Source Sans Pro", sans-serif;
+    letter-spacing: .6px;
+    color: #000; }
+    .view-my-car-zone .my-car-zone-header p strong {
+      font-weight: bold; }
+    .view-my-car-zone .my-car-zone-header p a {
+      color: #C4172C;
+      font: bold 11px "KIA", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin: 0 2.5px;
+      cursor: pointer; }
+  @media (max-width: 767px) {
+    .view-my-car-zone .my-car-zone-header {
+      padding: 23px 20px 0; }
+      .view-my-car-zone .my-car-zone-header h2,
+      .view-my-car-zone .my-car-zone-header .button {
+        display: none; } }
+
+.my-car-zone-alert-area {
+  margin-bottom: 10px; }
+  .my-car-zone-alert-area-header {
+    margin-bottom: 16px; }
+    .my-car-zone-alert-area-header:after {
+      content: "";
+      display: block;
+      width: 100%;
+      clear: both; }
+  .my-car-zone-alert-area h3 {
+    font: bold 12px/1em "KIA", sans-serif;
+    letter-spacing: .3px;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0; }
+    .my-car-zone-alert-area h3 i {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+      position: relative;
+      top: -2px; }
+    @media (max-width: 767px) {
+      .my-car-zone-alert-area h3 {
+        padding-left: 16px; } }
+  .my-car-zone-alert-area .my-car-zone-alert-area-toggle {
+    position: relative;
+    top: -2px; }
+    .my-car-zone-alert-area .my-car-zone-alert-area-toggle em {
+      font: 12px "Source Sans Pro", sans-serif;
+      color: #000;
+      letter-spacing: .3px; }
+      @media (max-width: 767px) {
+        .my-car-zone-alert-area .my-car-zone-alert-area-toggle em span {
+          display: none; } }
+    @media (max-width: 767px) {
+      .my-car-zone-alert-area .my-car-zone-alert-area-toggle {
+        padding-right: 16px; } }
+
+.alert-card {
+  height: 174px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(39, 48, 59, 0.24);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .alert-card:hover {
+    box-shadow: 0 5px 10px 3px rgba(39, 48, 59, 0.1);
+    transform: scale(1.025); }
+  .alert-card .alert-title {
+    position: absolute;
+    top: 20px;
+    left: 19px;
+    font: bold 10px/1em "KIA", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #969696; }
+  .alert-card .icon-settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block; }
+    .alert-card .icon-settings svg * {
+      fill: #898989 !important;
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .alert-card .icon-settings:hover svg * {
+      fill: #565656 !important; }
+  .alert-card .alert-body {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 49px;
+    padding-left: 91px;
+    font: 12px/1.58em "Source Sans Pro", sans-serif;
+    letter-spacing: .3px; }
+    .alert-card .alert-body > i {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 24px;
+      transform: translateY(-50%); }
+    .alert-card .alert-body > strong {
+      display: block;
+      font: bold 14px/1.64em "Source Sans Pro", sans-serif;
+      letter-spacing: .4px; }
+    .alert-card .alert-body > span {
+      display: block; }
+  .alert-card.inactive .alert-status span:before {
+    background-color: #C4172C; }
+  .alert-card .alert-status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    padding-left: 23px;
+    background: #2f2f2f;
+    color: #fdfdfd; }
+    .alert-card .alert-status span {
+      font: bold 12px "Source Sans Pro", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .3px; }
+      .alert-card .alert-status span:before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        background: #8EC439;
+        margin-right: 7px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px; }
+  .alert-card .mobile-arrow {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer; }
+    .alert-card .mobile-arrow i {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .alert-card .mobile-arrow:hover i {
+      margin-right: -5px; }
+  .alert-card.alert-card-speed .alert-body {
+    top: 65px; }
+    .alert-card.alert-card-speed .alert-body > strong {
+      font-size: 18px;
+      letter-spacing: .6px;
+      line-height: 1.28em; }
+  @media (max-width: 767px) {
+    .alert-card {
+      height: auto; }
+      .alert-card .mobile-arrow {
+        display: block; }
+      .alert-card .alert-title {
+        display: none; }
+      .alert-card .icon-settings {
+        display: none; }
+      .alert-card .alert-status {
+        display: none; }
+      .alert-card.inactive .alert-body > strong:before {
+        background-color: #C4172C; }
+      .alert-card .alert-body {
+        position: relative;
+        left: 0;
+        top: 0 !important;
+        padding: 16px; }
+        .alert-card .alert-body > i {
+          display: none; }
+        .alert-card .alert-body span {
+          padding-left: 16px; }
+        .alert-card .alert-body > strong {
+          font-size: 14px !important;
+          letter-spacing: .4px !important; }
+          .alert-card .alert-body > strong:before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            background: #8EC439;
+            margin-right: 7px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px; } }
+
+.no-alerts-set {
+  height: 135px; }
+  .no-alerts-set strong {
+    text-align: center;
+    display: block;
+    font: 500 20px/135px "KIA", sans-serif;
+    color: #c0c0c0;
+    letter-spacing: .5px; }
+    .no-alerts-set strong i {
+      display: inline-block;
+      margin-right: 21px;
+      vertical-align: middle;
+      position: relative;
+      top: -5px; }
+  @media (max-width: 767px) {
+    .no-alerts-set {
+      height: 80px; }
+      .no-alerts-set strong {
+        font-size: 14px;
+        letter-spacing: .4px;
+        line-height: 80px; }
+        .no-alerts-set strong i {
+          margin-right: 18px; } }
+
+.notifications-footer {
+  background: #e6e6e6;
+  padding: 43px 0;
+  text-align: center;
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  right: 0; }
+  .notifications-footer > * {
+    display: block; }
+  .notifications-footer > strong {
+    font: bold 10px "KIA", sans-serif;
+    color: #000;
+    letter-spacing: .4px;
+    margin-bottom: 5px; }
+  .notifications-footer > span {
+    color: #808080;
+    font: 11px "Source Sans Pro", sans-serif;
+    letter-spacing: .3px; }
+    .notifications-footer > span .icon-settings {
+      position: relative;
+      top: 2px; }
+    .notifications-footer > span em {
+      font-style: normal;
+      font-weight: bold; }
+  @media (max-width: 991px) {
+    .notifications-footer {
+      bottom: 70px; } }
+  @media (max-width: 767px) {
+    .notifications-footer {
+      bottom: 44px;
+      padding: 15px 0 16px; }
+      .notifications-footer > strong {
+        display: none; } }
+
+.icon-my-car-zone-empty-state {
+  display: block;
+  width: 96px;
+  height: 96px;
+  background: url("/images/icon-my-car-zone-empty.png") center/contain no-repeat; }
+
+.icon-geo-fence-alerts {
+  width: 22px;
+  height: 22px;
+  background: url("/images/icon_carzone_geofence.png") center/contain no-repeat; }
+
+.icon-curfew-alerts {
+  width: 22px;
+  height: 22px;
+  background: url("/images/icon_carzone_curfew.png") center/contain no-repeat; }
+
+.icon-speed-alerts {
+  width: 22px;
+  height: 22px;
+  background: url("/images/icon_carzone_speed.png") center/contain no-repeat; }
+
+.icon-alert-geofence {
+  width: 47px;
+  height: 47px;
+  background: url("/images/icon_alert_geofence.png") center no-repeat; }
+
+.icon-alert-curfew {
+  width: 47px;
+  height: 47px;
+  background: url("/images/icon_alert_curfew.png") center no-repeat; }
+
+.icon-alert-speed {
+  width: 47px;
+  height: 47px;
+  background: url("/images/icon_alert_speed.png") center no-repeat; }
+
+.icon-no-alerts-speed {
+  width: 64px;
+  height: 52px;
+  background: url("/images/icon_no_alerts_speed.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-alerts-speed {
+      width: 40px;
+      height: 40px; } }
+
+.icon-no-alerts-geofence {
+  width: 71px;
+  height: 71px;
+  background: url("/images/icon_no_alerts_geofence.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-alerts-geofence {
+      width: 40px;
+      height: 40px; } }
+
+.icon-no-alerts-curfew {
+  width: 71px;
+  height: 71px;
+  background: url("/images/icon_no_alerts_curfew.png") center/contain no-repeat; }
+  @media (max-width: 767px) {
+    .icon-no-alerts-curfew {
+      width: 40px;
+      height: 40px; } }
+
+.icon-arrow-right {
+  display: block;
+  background: url("/images/icon_arrow_right_dark.svg") center/contain no-repeat;
+  width: 11px !important;
+  height: 15px !important; }
+
+.icon-alert-red-speed {
+  background: url("/images/icon_alert_red_speed.png") center no-repeat;
+  width: 46px;
+  height: 38px; }
+
+.icon-alert-red-curfew {
+  background: url("/images/icon_alert_red_curfew.png") center no-repeat;
+  width: 47px;
+  height: 44px; }
+
+.icon-alert-red-geofence {
+  background: url("/images/icon_alert_red_geofence.png") center no-repeat;
+  width: 50px;
+  height: 50px; }

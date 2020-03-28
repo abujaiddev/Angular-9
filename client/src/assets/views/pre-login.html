@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+<html ontouchstart="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="format-detection" content="telephone=no">
+
+
+  <!-- GLOBAL VENDOR CSS -->
+  <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/css/global.css?v=3.1.0" />
+  <link rel="stylesheet" href="/css/alerts.css?v=3.1.0" />
+  
+  <!-- VIEW CSS -->
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/view-pre-login.css">
+  <!-- GLOBAL VENDOR JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- GLOBAL JS -->
+  <script type="text/javascript" src="/scripts/modals.js"></script>
+  <script type="text/javascript" src="/scripts/forms.js"></script>
+  <script type="text/javascript" src="/scripts/loading.js"></script>
+  <script type="text/javascript" src="/scripts/nav.js"></script>
+  <script type="text/javascript" src="/scripts/alerts.js"></script>
+  <script type="text/javascript" src="/scripts/account-settings.js"></script>
+  
+
+  <!-- VIEW JS -->
+  <script type="text/javascript" src="/scripts/login.js"></script>
+  <script type="text/javascript" src="/scripts/pre-login.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+  <title>KIA</title>
+  </head>
+<body ontouchstart="">
+
+<div class="view-pre-login">
+  <header>
+    <nav>
+      <div class="contain">
+        <div class="pull-left">
+          <div class="hidden-sm hidden-md hidden-lg icon-bars" data-action="nav-toggle">
+            <svg width="25px" height="18px" viewBox="0 0 25 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Pre_Login-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-14.000000, -23.000000)" stroke-linecap="square">
+                    <g id="HERO-IMAGE" transform="translate(-217.000000, -3.000000)" stroke="#FFFFFF" stroke-width="2">
+                        <g id="Icons-/-Mobile-Menu-Icon" transform="translate(232.000000, 27.000000)">
+                            <path d="M1.5,2 L0.5,2 L0.5,0 L1.5,0 L21.8960781,0 L22.8960781,0 L22.8960781,2 L21.8960781,2 L1.5,2 Z M1.5,9 L0.5,9 L0.5,7 L1.5,7 L21.8960781,7 L22.8960781,7 L22.8960781,9 L21.8960781,9 L1.5,9 Z M1.5,16 L0.5,16 L0.5,14 L1.5,14 L21.8960781,14 L22.8960781,14 L22.8960781,16 L21.8960781,16 L1.5,16 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </div>
+          <a href="/" class="logo white">KIA</a>
+        </div>
+        <div class="pull-right">
+          <ul class="nav-items">
+            <li>
+              <a href="#">
+                UVO Availability
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Explore
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#login">
+                Sign In
+              </a>
+            </li>
+            <li>
+              <a href="#" class="button outline white transparent less-padding" data-toggle="modal" data-target="#login"  data-go-to-slide="1">
+                Create Account
+              </a>
+            </li>
+          </ul>
+          <span class="hidden-sm hidden-md hidden-lg">
+            <span data-toggle="modal" data-target="#login">
+              SIGN IN / CREATE ACCOUNT
+            </span>
+          </span>
+        </div><!-- /.float-right -->
+      </div><!-- /.contain  -->
+    </nav>
+    <nav class="scroll">
+      <div class="contain">
+        <div class="pull-left">
+          <div class="hidden-sm hidden-md hidden-lg icon-bars" data-action="nav-toggle">
+            <svg width="25px" height="18px" viewBox="0 0 25 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Pre_Login-|-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-14.000000, -23.000000)" stroke-linecap="square">
+                    <g id="HERO-IMAGE" transform="translate(-217.000000, -3.000000)" stroke="#FFFFFF" stroke-width="2">
+                        <g id="Icons-/-Mobile-Menu-Icon" transform="translate(232.000000, 27.000000)">
+                            <path d="M1.5,2 L0.5,2 L0.5,0 L1.5,0 L21.8960781,0 L22.8960781,0 L22.8960781,2 L21.8960781,2 L1.5,2 Z M1.5,9 L0.5,9 L0.5,7 L1.5,7 L21.8960781,7 L22.8960781,7 L22.8960781,9 L21.8960781,9 L1.5,9 Z M1.5,16 L0.5,16 L0.5,14 L1.5,14 L21.8960781,14 L22.8960781,14 L22.8960781,16 L21.8960781,16 L1.5,16 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </div>
+          <a href="/" class="logo">KIA</a>
+        </div>
+        <div class="pull-right">
+          <ul class="nav-items">
+            <li>
+              <a href="#">
+                UVO Availability
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Explore
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#login">
+                Sign In
+              </a>
+            </li>
+            <li>
+              <a href="#" class="button less-padding" data-toggle="modal" data-target="#login" data-go-to-slide="1">
+                Create Account
+              </a>
+            </li>
+          </ul>
+          <span class="hidden-sm hidden-md hidden-lg">
+            <span data-toggle="modal" data-target="#login">
+              SIGN IN / CREATE ACCOUNT
+            </span>
+          </span>
+        </div><!-- /.float-right -->
+      </div><!-- /.contain  -->
+    </nav>
+    <video class="object-fit__cover" preload="auto" autoplay="autoplay" loop="true" playsinline>
+      <source type="video/mp4" src="https://www.kia.com/us/k3/content/media/mediabin/content_pages/owners/Clip_00_1600x1000_FINAL_new.mp4">
+      <source type="video/webm" src="https://www.kia.com/us/k3/content/media/mediabin/content_pages/owners/Clip_00_1600x1000_FINAL_new-2500kv.webm">
+      <source type="video/ogg" src="https://www.kia.com/us/k3/content/media/mediabin/content_pages/owners/Clip_00_1600x1000_FINAL_new.ogg">
+    </video>
+    <div class="header-content">
+      <div class="contain">
+        <div class="header-content-inner">
+          <h1>Get The Most Out of Your Kia</h1>
+          <p>The owners portal is <em>the</em> destination for anything you need for your vehicle. Scroll and discover all of the exciting features available to all Kia owners.</p>
+          <div class="header-cta">
+            <a href="#" class="button large" data-toggle="modal" data-target="#login" data-go-to-slide="1">
+              Create Account
+            </a>
+            <p>
+              Already have an account?
+              <a href="#" data-toggle="modal" data-target="#login">Sign In</a>
+            </p>
+          </div>
+        </div><!-- /.header-content-inner -->
+      </div><!-- /.contain -->
+    </div><!-- /.header-content -->
+  </header>
+  <span class="trigger-nav-scroll"></span>
+  <div class="page-content">
+    <div class="contain">
+      <section class="intro-panels">
+        <div class="panel-row">
+          <div class="panel">
+            <strong>Kia owners portal</strong>
+            <h2>Welcome Kia Owners!</h2>
+            <p>The Owners Portal is your one-stop-shop for all things Kia. When you sign up, you can book dealership appointments, see maintenance milestones, make car payments, view owners manuals and more! Log in anytime from your desktop or mobile device and get the info you need fast. At Kia, we are commited to providing the best experience for you both on and off the road. Create an account today and thank you for being a loyal Kia customer!</p>
+          </div><!-- /.panel -->
+          <div class="image">
+            <img src="/images/pre-login/niro-image.jpg" alt="Niro">
+          </div>
+        </div><!-- /.panel-row -->
+        <div class="panel-row map">
+          <div class="text">
+            <h2>There for you. Always.</h2>
+            <p>We know that everyone needs help sometimes. Thats why we’ve made it easy to choose your preferred dealership and quickly book a service appointment any time you find yourself in a bind!</p>
+          </div>
+          <div class="panel">
+            <img src="/images/pre-login/appt-modal.png" alt="Make an Appointment" />
+          </div><!-- /.panel -->
+        </div><!-- /.panel-row -->
+      </section><!-- /.intro-panels -->
+      <section class="maintenance">
+        <div class="text pull-left">
+          <strong>Maintenance</strong>
+          <h2>Keep your vehicle in good health</h2>
+          <p>Get notified about upcoming maintenance milestones, vehicle diagnostic issues, and recalls and easily schedule appointments with your preferred dealer.</p>
+        </div><!-- /.text -->
+        <div class="status pull-right">
+          <div class="status-header hidden-sm hidden-md hidden-lg">
+            <strong>1,415 mi.</strong>
+            <em>until Maintenance Milestone </em>
+          </div>
+          <div class="progress-bar">
+            <div class="bar">
+              <div class="tip hidden-xs">
+                <span>Milestone is approaching!</span>
+                <span>Request Appointment</span>
+              </div>
+            </div>
+          </div>
+          <div class="pull-left">
+            <strong>28,985 mi.</strong>
+            <em class="hidden-xs">Current Mileage</em>
+          </div>
+          <div class="pull-right">
+            <strong>30,000 mi. <span>or</span> 6 mo.</strong>
+            <em class="hidden-xs">Maintenance Milestone</em>
+          </div>
+        </div><!-- /.status -->
+        <div class="image">
+          <img src="/images/pre-login/maintenance-history-dtop.png" alt="User Interface" class="hidden-xs">
+          <img src="/images/pre-login/maintenance-history-mobile.png" alt="User Interface" class="hidden-sm hidden-md hidden-lg">
+        </div>
+        <div class="text-last">
+          <h3>View your maintenance history</h3>
+          <p>No more trying to recall the last time you serviced your vehicle. Maintenance History helps you track all services completed on your vehicle. </p>
+        </div><!-- /.text-last -->
+      </section><!-- /.maintenance -->
+      <section class="dark">
+        <div class="row">
+          <div class="col-sm-7 hidden-xs">
+            <img src="/images/pre-login/manuals.png" alt="Owner's Manuals" class="manual-image" />
+          </div>
+          <div class="col-sm-4">
+            <div class="text">
+              <strong>Manuals, documents<span class="hidden-sm hidden-xs">, and more</span></strong>
+              <h2>Stop searching<br /> through the glove box</h2>
+              <img src="/images/pre-login/manuals.png" alt="Owner's Manuals" class="manual-image hidden-sm hidden-md hidden-lg" />
+              <p class="hidden-sm hidden-xs">Owners manuals, Bluetooth connectivity guides, warranty information– everything stored in one convenient location with easy access. You can even upload your own documents like maintenance receipts, insurance cards, registraion, etc. The days of digging around in the glove box are long gone.</p>
+              <p class="hidden-md hidden-lg">Owners manuals, warranty info, user guides – everything stored in one convenient location with easy access. You can even upload your own documents like maintenance receipts, insurance cards, registraion, etc. The days of digging around in the glove box are long gone.</p>
+            </div><!-- /.text -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+          <div class="col-sm-6 col-sm-push-6">
+            <div class="image">
+              <img src="/images/pre-login/radio.png" alt="Car Panel" class="hidden-xs" />
+              <img src="/images/pre-login/radio-mobile.png" alt="Car Panel" class="hidden-sm hidden-md hidden-lg" />
+            </div><!-- /.image -->
+          </div><!-- /.col -->
+          <div class="col-sm-6 col-sm-pull-6">
+            <div class="text">
+              <h3>Bluetooth® connectivity guides</h3>
+              <p>Not very tech savvy? Doesn’t mean you need to miss out on incredible technology like Bluetooth® connectivity. We’ll walk you though connecting your phone to your car so you can make take phone calls, listen to Pandora, and more all through your vehicles head unit.</p>
+            </div><!-- /.text -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="/images/pre-login/store.png" alt="Store" class="hidden-xs" />
+              <img src="/images/pre-login/store-mobile.png" alt="Store" class="hidden-sm hidden-md hidden-lg" />
+            </div><!-- /.image -->
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <div class="text">
+              <h3>10 years. 100,000 miles.</h3>
+              <p>Our cars last. So do our warranties. We offer one of the best warranties out there and you shouldn’t have to dig around to find out what it covers. The Kia Owners Portal puts all of that information in an easy-to-access location for you to reference when you need it!</p>
+            </div><!-- /.text -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </section><!-- /.dark -->
+      <section class="tracking">
+        <div class="image">
+          <img src="/images/pre-login/ui-form.png" alt="Tracking Form">
+        </div>
+        <div class="text">
+          <h3>Keep track of it all.</h3>
+          <p>We’ve designed the Kia Owners Portal to be customizeable so you can keep track of the information that is important to you. For example, in your vehicle settings you can add custom fields to store information like your insurance info, license plate number, and more!</p>
+        </div>
+      </section><!-- /.tracking -->
+    </div><!-- /.contain -->
+    <section class="uvo-intro">
+      <div class="image">
+        <img src="/images/pre-login/kia_uvo_logos.png" alt="Kia | UVO" />
+      </div><!-- /.logo -->
+      <p>Owners of Kias with UVO get access to these great features:</p>
+    </section><!-- /.uvo-intro -->
+    <div class="contain">
+      <section class="remote-promo">
+        <div class="text">
+          <strong>
+            <img src="/images/pre-login/uvo.png" alt="UVO">
+            Remote
+          </strong>
+          <h2>Command your car remotely</h2>
+          <p>Lock or unlock your car, adjust the in-car temperature, even start charging your battery all from your phone or desktop computer.</p>
+        </div><!-- /.text -->
+        <ul class="tab-nav">
+          <li class="active"><a data-toggle="tab" href="#security-tab">Security</a></li>
+          <li><a data-toggle="tab" href="#climate-tab">Climate</a></li>
+          <li><a data-toggle="tab" href="#battery-tab">Battery</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="security-tab" class="tab-pane fade in active">
+            <img src="/images/pre-login/tabs/security/optima-render.png" alt="Security" class="car-render">
+            <img src="/images/pre-login/tabs/security/security-buttons.png" alt="Security Buttons" class="button-render">
+            <div class="text">
+              <h3>Unlock your car from anywhere</h3>
+              <p>Locked your keys in your car? No worries. Unlock your car from your desktop or phone with the push of a button.</p>
+            </div>
+          </div>
+          <div id="climate-tab" class="tab-pane fade">
+            <div class="dial-render-wrap">
+              <img src="/images/pre-login/tabs/climate/dial.png" alt="Climate" class="dial-render">
+            </div>
+            <img src="/images/pre-login/tabs/climate/climate-buttons.png" alt="Climate Buttons" class="button-render">
+            <div class="text">
+              <h3>Hot out? Don’t sweat it</h3>
+              <p>Your driving experience should be comfortable from start to finish. Set your in-car climate to the perfect temperature and start your journey off right.</p>
+            </div>
+          </div>
+          <div id="battery-tab" class="tab-pane fade">
+            <div class="battery-render-wrap">
+              <img src="/images/pre-login/tabs/battery/battery-render.png" alt="Battery" class="battery-render">
+            </div>
+            <img src="/images/pre-login/tabs/battery/battery-buttons.png" alt="Battery Buttons" class="button-render">
+            <div class="text">
+              <h3>Stay charged up</h3>
+              <p>See your battery’s range at a glance and choose when your car starts and stops charging. Charge during off-peak hours to save money or just while your car is parked at the office. It’s all just a button away.</p>
+            </div>
+          </div>
+        </div>
+      </section><!-- /.remote-promo -->
+    </div><!-- /.contain -->
+    <section class="map-scroll">
+      <div class="contain">
+        <div class="white-box map-intro-box">
+          <strong>
+            <img src="/images/pre-login/uvo.png" alt="UVO">
+            Locations
+          </strong>
+          <h2>Know before you go</h2>
+          <p>If you’re planing a trip, or you’re on the go, it helps to know whats around you and what you’ll be passing. Using Locations, you will know exactly what to expect on your trip.</p>
+        </div><!-- /.white-box -->
+        <div class="white-box charging-box on-scroll">
+          <h3>Find nearby charging stations</h3>
+          <p>FInd charging stations near your location. Even see which ones are unoccupied!</p>
+        </div><!-- /.white-box -->
+        <div class="white-box geo-box on-scroll">
+          <h3>GEO FENCE ALERTS</h3>
+          <p>Get notified if your vehicle enters or leaves a boundary of your choosing.</p>
+        </div><!-- /.white-box -->
+        <div class="white-box curfew-box on-scroll">
+          <h3>Curfew Alerts</h3>
+          <p>Know if your car is being driven when its not supposed to be.</p>
+        </div><!-- /.white-box -->
+        <div class="white-box speed-box on-scroll">
+          <h3>Speed Alerts</h3>
+          <p>Know immediately if your car is traveling just a bit too fast.</p>
+        </div><!-- /.white-box -->
+        <div class="map-info on-scroll geo-info">
+          <img src="/images/pre-login/popover.png" alt="Charge Point" />
+        </div>
+        <div class="alert-circle on-scroll alert-geo">
+          <img src="/images/pre-login/alert_geo.png" alt="Geofence Alert">
+          <span>
+            9:19 AM
+          </span>
+        </div>
+        <div class="alert-circle on-scroll alert-curfew">
+          <img src="/images/pre-login/alert_curfew.png" alt="Curfew Alert">
+          <span>
+            9:22 AM
+          </span>
+        </div>
+        <div class="alert-circle on-scroll alert-speed">
+          <img src="/images/pre-login/alert_speed.png" alt="Speed Alert">
+          <span>
+            9:30 AM
+          </span>
+        </div>
+        <div class="map-stats">
+          <div class="trip-points">
+            <span>A <em>JAN 7, 9:16 AM</em></span>
+            <span>B <em>JAN 7 9:34 AM</em></span>
+          </div>
+          <div class="trip-data">
+            <div class="row">
+              <div class="col-xs-4">
+                <strong>
+                  <span class="count" data-count="18">0</span>
+                  <span>MI</span>
+                </strong>
+                <em>Distance</em>
+              </div>
+              <div class="col-xs-4">
+                <strong>
+                  <span class="count" data-count="17">0</span>
+                  <span>MIN</span></strong>
+                <em>Duration</em>
+              </div>
+              <div class="col-xs-4">
+                <strong>
+                  <span class="count" data-count="65">0</span>
+                  <span>MPH</span>
+                </strong>
+                <em>Avg Speed</em>
+              </div>
+            </div><!-- /.row -->
+          </div><!-- /.trip-data -->
+        </div>
+        <div class="map-element"></div>
+        <svg class="map-path" width="314px" height="1896px" viewBox="0 0 314 1896" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet">
+            <g id="Pre-Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Pre_Login-|-Desktop" transform="translate(-563.000000, -6689.000000)" stroke="#000000" stroke-width="5">
+                    <g id="TRIPS-/-MY-CAR-ZONE" transform="translate(50.000000, 6479.000000)">
+                        <g id="Map" transform="translate(58.000000, 69.000000)">
+                            <g id="Trip" transform="translate(458.000000, 129.000000)">
+                                <path id="pathy" d="M53.8007813,13.8710938 C60.3242188,21.15625 62.2460938,41.8242188 74.4765625,56.0429688 C86.7070313,70.2617188 96.3242188,101.300781 98,109.994141 C99.6757813,118.6875 104.832031,135.490234 106.478516,142.310547 C108.125,149.130859 112.746094,157.636719 112.130859,174.818359 C111.515625,192 114.59375,213.429687 115.169922,218.289063 C115.746094,223.148438 107.589844,267.123047 88.7832031,287.275391 C69.9765625,307.427734 30.8789063,372.486328 23.7480469,382.677734 C16.6171875,392.869141 -20.453125,438.697266 16.6171875,490.773438 C20.4589844,495.355469 23.8164063,499.753906 28.8964844,506.292969 C33.9765625,512.832031 45.8378906,529.564453 45.9355469,561.136719 C46.0332031,592.708984 45.6855469,610.150391 45.9355469,622.833984 C46.1855469,635.517578 40.8066406,656.398438 60.4882813,692.064453 C67.6132813,708.207031 71.734375,718.183594 71.4355469,735.435547 C71.1367188,752.6875 72.2011719,773.90625 73.1015625,778.980469 C74.0019531,784.054688 72.3948667,813.980469 57.7960662,837.292969 C43.1972656,860.605469 47.5546875,888.019531 53.8007813,908.644531 C57.9648438,922.394531 68.2871094,950.902995 84.7675781,994.169922 C91.4160156,1015.35742 102.264974,1036.77995 117.314453,1058.4375 C139.888672,1090.92383 181.644531,1184.87109 188.638672,1200.89844 C195.632813,1216.92578 207.160156,1229.24023 205.048828,1269.69531 C202.9375,1310.15039 203.121094,1299.09766 202.59375,1317.30664 C202.066406,1335.51563 202.808594,1352.88281 221.035156,1391.24805 C239.261719,1429.61328 255.4375,1453.19141 291.361328,1496.89258 C315.310547,1526.02669 313.660156,1575.51563 286.410156,1645.35938 C281.003906,1682.51042 278.759115,1705.91797 279.675781,1715.58203 C281.050781,1730.07813 274.917969,1771.58984 272.109375,1780.55859 C269.300781,1789.52734 260.841797,1808.54688 268.324219,1831.14063 C270.721354,1841.24479 261.005859,1866.25521 239.177734,1906.17188" id="Path-2"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <div class="mobile-map"><svg class="map-path map-path-m" width="156px" height="1748px" viewBox="0 0 156 1748" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet">
+            <g id="Pre-Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Pre_Login-|-Mobile" transform="translate(-88.000000, -6443.000000)" stroke="#000000" stroke-width="3">
+                    <g id="TRIPS-AND-LOCATIONS" transform="translate(0.000000, 6101.000000)">
+                        <g id="Trips-and-Locations">
+                            <g id="Group-7" transform="translate(0.000000, 68.000000)">
+                                <path id="pathm" d="M221.180711,274.409098 C219.301338,287.576104 171.469566,348.121556 163.731101,353.714116 C155.992637,359.306677 144.317739,397.304199 140.597718,418.275733 C136.877697,439.247266 136.205679,456.498779 108.313493,478.684502 C110.773764,484.320346 139.376695,551.617874 140.597718,555.54064 C141.818742,559.463406 157.081053,604.976224 134.467543,635.292153 C119.339153,655.573444 76.1149919,704.257124 94.2808354,730.272288 C116.001841,761.378772 111.256707,766.249198 112.318268,780.377533 C113.379829,794.505868 106.716595,814.128809 118.1523,832.902045 C129.588005,851.675281 127.530945,886.745535 124.845149,890.025897 C124.095677,900.283861 107.561744,924.788617 118.1523,946.566573 C128.742856,968.344529 132.704348,998.578528 144.757399,1016.12163 C156.81045,1033.66473 167.353167,1056.13065 170.294103,1065.55258 C173.235038,1074.9745 192.778248,1102.32907 191.805529,1112.31823 C190.832811,1122.30739 192.19735,1139.51562 192.388705,1159.91309 C192.580059,1180.31056 215.287451,1218.77963 224.119369,1226.13767 C232.951287,1233.4957 246.088679,1259.55635 240.999563,1288.17978 C235.910446,1316.80321 227.643479,1333.92488 227.914565,1347.82769 C228.18565,1361.7305 229.654979,1370.9998 224.119369,1382.27149 C218.583759,1393.54317 222.49969,1403.65307 224.119369,1408.19773 C225.739047,1412.7424 225.379119,1422.8409 212.638103,1435.57053 C199.897088,1448.30015 205.43042,1460.9865 199.897088,1465.32158 C194.363756,1469.65667 178.882271,1506.11197 176.86166,1529.47316 C174.841048,1552.83434 172.638194,1563.6322 176.86166,1575.92444 C181.085125,1588.21669 195.509604,1603.35874 185.417936,1620.31639 C175.326268,1637.27404 166.710763,1665.14572 170.294103,1676.68166 C173.877442,1688.2176 182.38588,1720.80936 180.481448,1729.213 C178.577016,1737.61665 176.447059,1764.46322 179.157913,1772.7917 C181.868767,1781.12017 189.887429,1821.40028 185.417936,1828.22981 C180.948444,1835.05934 182.572678,1864.5917 176.86166,1872.4304 C171.150641,1880.2691 166.890056,1914.73112 169.036631,1919.72228 C171.183206,1924.71344 188.823589,1937.97613 185.417936,1951.66025 C182.012283,1965.34437 189.229079,1980.18572 191.805529,1986.33412 C194.38198,1992.48252 199.165841,2018.57279 203.596607,2023.46372" id="Path-2"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg></div>
+
+      </div>
+      <div class="car">
+        <div class="contain car-container">
+          <div class="car-element"></div>
+        </div>
+      </div>
+      <span class="car-stop"></span>
+    </section>
+    <div class="contain">
+      <section class="awards">
+        <div class="row">
+          <div class="col-xs-3">
+            <img src="/images/pre-login/awards/1.png" alt="Award 1">
+          </div>
+          <div class="col-xs-3">
+            <img src="/images/pre-login/awards/2.png" alt="Award 2">
+          </div>
+          <div class="col-xs-3">
+            <img src="/images/pre-login/awards/3.png" alt="Award 3">
+          </div>
+          <div class="col-xs-3">
+            <img src="/images/pre-login/awards/4.png" alt="Award 4">
+          </div>
+        </div><!-- /.row -->
+        <div class="text">
+          <strong>Awards</strong>
+          <h3>Earn Awards</h3>
+          <p>Badges are awarded for completing certain tasks throughout the portal like adding another Kia to your account, scheduling an appointment with your preferred dealer, and more. Try to win them all!</p>
+        </div>
+      </section><!-- /.awards -->
+      <section class="account-cta">
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="account-cta-box" data-toggle="modal" data-target="#login"  data-go-to-slide="1">
+              <span class="account-cta-box-inner">
+                <img src="/images/pre-login/icon_account.svg" alt="Account">
+                <strong>NEW TO THE OWNERS PORTAL?</strong>
+                <em>Create account</em>
+              </span>
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a class="account-cta-box" data-toggle="modal" data-target="#login">
+              <span class="account-cta-box-inner">
+                <img src="/images/pre-login/icon_sign_in.svg" alt="Account">
+                <strong>RETURNING USER?</strong>
+                <em >Sign in</em>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="app-cta">
+        <div class="text">
+          <strong>MOBILE APP</strong>
+          <h3>Get the mobile app now!</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="#">
+              <img src="/images/pre-login/btn_app_store.png" alt="Download on the App Store">
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a href="#">
+              <img src="/images/pre-login/btn_google.png" alt="Get it on Google Play">
+            </a>
+          </div>
+        </div>
+      </section><!-- /.app-cta -->
+    </div><!-- /.contain -->
+  </div><!-- /.page-content -->
+  <nav class="nav-app">
+    <div class="nav-app-mobile-menu">
+      <div class="nav-app-mobile-menu-inner">
+        <div class="nav-app-mobile-menu-default">
+          <div class="nav-app-mobile-menu-body">
+            <div class="nav-app-mobile-menu-body-inner">
+              <ul class="nav-list main-nav">
+                <li>
+                  <a href="#">
+                    <span>UVO Availability</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Explore</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Contact</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="sign-in-link" data-toggle="modal" data-target="#login">
+                    <span>Sign In</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="button less-padding" data-toggle="modal" data-target="#login"  data-go-to-slide="1">
+                    Create Account
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav-list text-nav">
+                <li>
+                  <a href="#">
+                    <span>Privacy / Legal</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Contact Us</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Kia.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Other Kia Sites</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>MPG</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Global Disclaimer</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Terms of Service</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="nav-list-footer">
+                <p>
+                  2017® Kia Motors America, Inc
+                </p>
+                <ul class="social-icons">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-facebook-square"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-pinterest-p"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-youtube"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div><!-- /.nav-list-footer -->
+            </div><!-- /.nav-app-mobile-menu-body-inner -->
+          </div><!-- /.nav-app-mobile-menu-body -->
+        </div><!-- /.nav-app-mobile-menu-default -->
+      </div><!-- /.nav-app-mobile-menu-inner -->
+    </div><!-- /.nav-app-mobile-menu -->
+    <div class="nav-app-mobile-menu-close" data-action="nav-toggle"></div>
+  </nav><!-- /.app-nav -->
+</div><!-- /.view-pre-login -->
+<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <span class="icon-close" data-dismiss="modal"></span>
+      <div class="modal-body">
+        <ul class="nav-tabs modal-nav">
+          <li class="active" data-target="#login-slider" data-slide-to="0">Sign In</li>
+          <li data-target="#login-slider" data-slide-to="1">Create Account</li>
+        </ul>
+        <span class="back" data-target="#login-slider" data-slide-to="0"></span>
+        <div id="login-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <div class="item active remember-back">
+              <form class="login-form" autocomplete="off">
+                <input type="text" style="display:none" />
+                <ul class="form-fields">
+                  <li>
+                    <label>
+                      <strong>
+                        Email or Phone Number
+                      </strong>
+                      <input type="text" class="login-email" />
+                      <span class="error-message">
+                        <span class="error-message-inner">
+                          There is no account with this email. Click
+                            <em data-target="#login-slider" data-slide-to="1" class="use-email-to-craete">
+                              HERE
+                            </em>
+                          to create an account using this email
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <strong>
+                        Password
+                      </strong>
+                      <input type="password" />
+                      <span class="toggle-show-password"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checkbox">
+                      <input type="checkbox" name="" value="">
+                      <em>
+                        Remember Me
+                      </em>
+                    </label>
+                  </li>
+                </ul>
+                <div class="form-footer">
+                  <input type="submit" value="Sign In" class="button full main" data-action="login.demo.error" />
+                  <a class="secondary" data-target="#login-slider" data-slide-to="2">
+                    Forgot Password
+                  </a>
+                </div><!-- /.footer-action -->
+              </form>
+            </div><!-- /.item -->
+            <div class="item remember-back">
+              <form class="create-form" autocomplete="off">
+                <input type="text" style="display:none" />
+                <span class="error-message error-message-main">
+                  <span class="error-message-inner">Oops! Looks like you missed a few things. Please review the form below and see what you missed.</span>
+                </span><!-- /.error-message -->
+                <ul class="form-fields">
+                  <li>
+                    <label>
+                      <strong>
+                        Email or Phone Number
+                      </strong>
+                      <input type="text" class="create-email" />
+                      <span class="error-message">
+                        <span class="error-message-inner">
+                          This email address is already linked to an account. Did you
+                            <em data-target="#login-slider" data-slide-to="2" class="use-email-to-recover">
+                               Forget Your Password?
+                            </em>
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <strong>
+                        Choose a password
+                      </strong>
+                      <input type="password" class="create-password" autocomplete="off" />
+                      <span class="toggle-show-password"></span>
+                      <span class="toggle-show-password-rules"></span>
+                      <span class="inline-validator create-password-validator">
+                        <span class="inline-validator-rule">
+                          Have at least 8 characters
+                        </span>
+                        <span class="inline-validator-rule">
+                          Have at least one number
+                        </span>
+                        <span class="inline-validator-rule passed">
+                          Have at least one uppercase letter
+                        </span>
+                        <span class="inline-validator-rule passed">
+                          No special charasters ˆ &amp; * (
+                        </span>
+                      </span><!-- /.inline-validator -->
+                    </label>
+                  </li>
+                  <li>
+                    <div class="g-recaptcha" data-sitekey="6LdmFTQUAAAAAJGKzEG-S4t0OrfT3HIjQjN5BRGp"></div>
+                    <span class="error-message">
+                      <span class="error-message-inner">
+                          You must verify that you are not a robot.
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <label class="checkbox">
+                      <input type="checkbox" name="" value="" checked>
+                      <em class="smaller">
+                        I have read and agree to the <a href="#" target="_blank">Terms of Service</a>
+                        and the <a href="#" target="_blank">Privacy Policy</a>
+                      </em>
+                      <span class="error-message">
+                        <span class="error-message-inner">
+                          You must agree to the Terms of Service and Privacy Policy to create your account.
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+                <div class="form-footer">
+                  <input type="submit" value="Create Account" class="button full main" data-action="login.demo.error_create" />
+                </div><!-- /.footer-action -->
+              </form>
+            </div><!-- /.item -->
+            <div class="item hide-nav show-back">
+              <div class="reset-password-flow">
+                <div class="reset-password-first">
+                  <strong>
+                    Forgot Password
+                  </strong>
+                  <p>
+                    Enter the email address or phone number you used to set up your account.
+                  </p>
+                  <form class="recover-form" autocomplete="off">
+                    <ul class="form-fields">
+                      <li>
+                        <label>
+                          <strong>
+                            Email or Phone Number
+                          </strong>
+                          <input type="text" class="reset-email" />
+                          <span class="helper">
+                            Standard SMS rates apply
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                    <div class="form-footer">
+                      <input type="submit" value="Send Password Reset Link" class="button full main" data-target="#login-slider" data-slide-to="3" />
+                    </div><!-- /.footer-action -->
+                  </form>
+                </div><!-- /.reset-password-first -->
+              </div><!-- /.reset-password-flow -->
+            </div><!-- /.item -->
+            <div class="item hide-nav hide-close">
+              <div class="reset-password-last">
+                <span class="completed-icon"></span>
+                <p>
+                  Success! A password reset link has been sent to <strong>andrewdavis@kiausa.com</strong>
+                </p>
+                <a class="button full" data-target="#login-slider" data-slide-to="0" >Back To Sign In</a>
+              </div><!-- /.reset-password-last -->
+            </div><!-- /.item -->
+          </div><!-- /.carousel-inner -->
+        </div><!-- /.carousel -->
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+(function(Modernizr) {
+
+// switch between height:100% and width:100% based on comparison of img and container aspect ratios
+function coverFillSwitch(container, img, invert) {
+  if (!container || !img) return false;
+
+  var imgHeight = img.naturalHeight || img.videoHeight;
+  var imgWidth = img.naturalWidth || img.videoWidth;
+  var containerRatio = container.offsetWidth / container.offsetHeight;
+  var imgRatio = imgWidth / imgHeight;
+
+  var ratioComparison = false;
+  if (imgRatio >= containerRatio) ratioComparison = true;
+  if (invert) ratioComparison = !ratioComparison; // flip the bool
+
+  if (ratioComparison) {
+    img.style.height = '100%';
+    img.style.width = 'auto';
+  } else {
+    img.style.height = 'auto';
+    img.style.width = '100%';
+  }
+
+}
+
+function objectFitResize() {
+  var i, img, container;
+
+  var imgsCover = document.getElementsByClassName('object-fit__cover');
+  for (i = 0; i < imgsCover.length; i++) {
+    img = imgsCover[i];
+    container = img.parentElement;
+    if (container.classList.contains('object-fit__container')) {
+      coverFillSwitch(container, img);
+    }
+  }
+
+  var imgsContain = document.getElementsByClassName('object-fit__contain');
+  for (i = 0; i < imgsContain.length; i++) {
+    img = imgsContain[i];
+    container = img.parentElement;
+    if (container.classList.contains('object-fit__container')) {
+      coverFillSwitch(container, img, true);
+    }
+  }
+}
+
+// add absolute center image css properties
+function applyStandardProperties(container, img) {
+  var containerStyle = window.getComputedStyle(container);
+  if (containerStyle.overflow !== 'hidden') container.style.overflow = 'hidden';
+  if (containerStyle.position !== 'relative' &&
+    containerStyle.position !== 'absolute' &&
+    containerStyle.position !== 'fixed') container.style.position = 'relative';
+  img.style.position = 'absolute';
+  img.style.top = '50%';
+  img.style.left = '50%';
+  img.style.transform = 'translate(-50%,-50%)';
+}
+
+function objectFitInt() {
+
+  var imgs = document.querySelectorAll('[class*="object-fit__"]');
+  for (var i = 0; i < imgs.length; i++) {
+
+    var type = 'cover';
+    var img = imgs[i];
+    var container = img.parentElement;
+
+    if (img.classList.contains('object-fit__container')) type = 'container';
+    if (img.classList.contains('object-fit__cover')) type = 'cover';
+    if (img.classList.contains('object-fit__fill')) type = 'fill';
+    if (img.classList.contains('object-fit__contain')) type = 'contain';
+    if (img.classList.contains('object-fit__none')) type = 'none';
+    if (img.classList.contains('object-fit__scale-down')) type = 'scale-down';
+
+    switch (type) {
+      case 'container':
+        break;
+      case 'cover':
+        coverFillSwitch(container, img);
+        applyStandardProperties(container, img);
+        break;
+      case 'contain': // opposite of cover
+        coverFillSwitch(container, img, true);
+        applyStandardProperties(container, img);
+        break;
+      case 'fill':
+        img.style.height = '100%';
+        img.style.width = '100%';
+        applyStandardProperties(container, img);
+        break;
+      case 'none':
+        img.style.height = 'auto';
+        img.style.width = 'auto';
+        applyStandardProperties(container, img);
+        break;
+      case 'scale-down':
+        img.style.maxHeight = '100%';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        img.style.width = 'auto';
+        applyStandardProperties(container, img);
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+var resizeTimeout;
+
+function resizeThrottler() { // @source https://developer.mozilla.org/en-US/docs/Web/Events/resize
+  if (!resizeTimeout) {
+    resizeTimeout = setTimeout(function() {
+      resizeTimeout = null;
+      objectFitResize();
+    }, 66); // The objectFitResize will execute at a rate of 15fps
+  }
+}
+
+// Modernizr.objectfit = Modernizr.testAllProps('objectFit'); // detect IE and Edge
+if (!Modernizr.objectfit) {
+  objectFitInt();
+  window.addEventListener('resize', resizeThrottler, false);
+}
+
+})(Modernizr);
+</script>
+  <footer>
+    <div class="contain">
+      <ul class="footer-menu-items">
+        <li>
+          <a href="#">
+            Privacy / Legal
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Kia.com
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Other Kia Sites
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            MPG
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Global Disclaimer
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Terms of Service
+          </a>
+        </li>
+      </ul>
+      <div class="footer-bottom">
+        <p>&copy; 2017 Kia Motors America, Inc.</p>
+        <ul class="social-icons">
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-pinterest-p"></i>
+            </a>
+          </li>
+        </ul><!-- /.social-icons -->
+      </div><!-- /.footer-bottom -->
+    </div><!-- /.contain -->
+  </footer>
+</body>
+</html>
+
