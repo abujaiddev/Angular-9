@@ -677,7 +677,7 @@
                                                 Mileage
                                             </strong>
                                             <em>
-                                                15,919 mi.
+                                                {{product.mileage |number}} mi.
                                             </em>
                                         </div>
                                         <div class="car-meta-data">
@@ -685,7 +685,7 @@
                                                 Next service in
                                             </strong>
                                             <em>
-                                                6,234 mi.
+                                                {{product.nextServiceMiles |number}} mi.
                                             </em>
                                         </div>
                                         <div class="car-meta-data">
@@ -693,7 +693,7 @@
                                                 Diagnostic Issues
                                             </strong>
                                             <em>
-                                                None
+                                                {{product.diagnosticsIssues?product.diagnosticsIssues:'None'}}
                                             </em>
                                         </div>
                                         <div class="car-meta-data">
@@ -718,7 +718,7 @@
                                                               style="height:31%"></span>
                                                     </span>
                                                 </span>
-                                                31%
+                                                {{product.chargeLevelPct}}%
                                             </em>
                                         </div>
                                         <div class="car-meta-data">
@@ -726,7 +726,7 @@
                                                 Battery status
                                             </strong>
                                             <em>
-                                                Charging
+                                                {{product.batteryStatus}}
                                             </em>
                                         </div>
                                         <div class="car-meta-data">
@@ -734,7 +734,7 @@
                                                 Driving range
                                             </strong>
                                             <em>
-                                                71 mi.
+                                                {{product.drivingRangeMiles}} mi.
                                             </em>
                                         </div>
                                     </div>
