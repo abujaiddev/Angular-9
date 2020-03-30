@@ -4141,7 +4141,7 @@ nav.nav-main {
       display: block;
       width: 21.5px;
       height: 25px;
-      background: url("/images/icon_nav_service.svg") left center/contain no-repeat;
+      background: url("../../assets/images/icon_nav_service.svg") left center/contain no-repeat;
       position: absolute;
       top: 50%;
       left: 0;
@@ -5100,14 +5100,14 @@ body {
   margin: 0 auto; }
 
 .logo {
-  background: url("/images/logo_kia.svg") center/contain no-repeat;
+  background: url("../../assets/images/logo_kia.svg") center/contain no-repeat;
   color: transparent !important;
   text-decoration: none;
   width: 47px;
   height: 24px;
   display: inline-block; }
   .logo.white {
-    background-image: url("/images/logo_kia_white.svg"); }
+    background-image: url("../../assets/images/logo_kia_white.svg"); }
 
 .progress-bar {
   height: 7px;
