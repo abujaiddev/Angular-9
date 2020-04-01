@@ -1,3 +1,5 @@
+<!-- <button class="btn btn-lg btn-outline-primary"
+        (click)="open()">Launch demo modal</button> -->
 <div class="view-my-vehicles nav-no-selector nav-no-service">
     <div class="has-mobile-nav">
         <nav class="nav-main">
@@ -515,7 +517,8 @@
                                        class="mobile" />
                             </form>
                         </div><!-- /.my-vehicles-search -->
-                        <div class="my-vehicles-ulility-buttons">
+                        <div class="my-vehicles-ulility-buttons"
+                             (click)="open()">
                             <span class="button dark-icon less-padding desktop"
                                   data-toggle="modal"
                                   data-target="#add">
@@ -749,7 +752,7 @@
                                             {{product.status}}
                                         </span>
                                         <span class="status-uvo-last-updated">
-                                            Last refreshed {{product.lastRefreshed |date:'h'}} hrs ago
+                                            Last refreshed {{product.lastRefreshed | date:'h'}} hrs ago
                                         </span>
                                     </div>
                                 </div>
@@ -924,7 +927,7 @@
                                             Last Refreshed:
                                         </strong>
                                         <em>
-                                            {{product.lastRefreshed|date:'m'}} mins ago.
+                                            {{product.lastRefreshed| date:'m'}} mins ago.
                                         </em>
                                     </div><!-- /.car-meta-data -->
                                     <div class="my-vehicles-list-item-meta-data-actions"

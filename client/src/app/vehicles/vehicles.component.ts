@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { VehicleAddModalComponent } from '../vehicle-add-modal/vehicle-add-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { HttpClient } from '@angular/common/http';
 import { VehicleService } from '../vehicle.service';
+import { VehicleModalComponent } from '../vehicle-modal/vehicle-modal.component';
 
 
 @Component({
@@ -13,16 +14,12 @@ import { VehicleService } from '../vehicle.service';
 export class VehiclesComponent implements OnInit {
 
   products: any = []
+  constructor(private modalService: NgbModal, private httpClient: HttpClient, private vs: VehicleService) { }
 
-
-  fullImagePath: String
-  constructor(private modalService: NgbModal, private httpClient: HttpClient, private vs: VehicleService) {
-
-  }
   open() {
-    const modalRef = this.modalService.open(VehicleAddModalComponent, { size: 'lg', centered: true });
-    modalRef.componentInstance.my_modal_title = 'Add your vehicle';
-    modalRef.componentInstance.my_modal_content = 'I am your content';
+    const modalRef = this.modalService.open(VehicleModalComponent, { size: 'sm', centered: true });
+    modalRef.componentInstance.modal_title = 'Add your vehicle';
+    modalRef.componentInstance.modal_content = 'I am your content';
   }
 
 

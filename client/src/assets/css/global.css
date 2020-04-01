@@ -186,13 +186,13 @@
       width: 17px;
       height: 17px; }
 
-.modal-backdrop {
+/* .modal-backdrop {
   background: #111111;
   z-index: 100000; }
   .modal-backdrop.in {
-    opacity: .89; }
+    opacity: .89; } */
 
-body .modal {
+/* body .modal {
   z-index: 100001; }
   body .modal.in .modal-dialog {
     position: absolute !important;
@@ -1224,7 +1224,7 @@ body.modal-open {
       height: auto !important; } }
 
 .modal.vehicle-settings .modal-dialog {
-  width: 455px; }
+  width: 455px; } */
 
 .modal.vehicle-settings .back {
   top: 27px; }

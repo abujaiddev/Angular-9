@@ -1,81 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-th{
-    text-transform: uppercase;
-        color: #6c757d73;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: inherit;
-}
-.btn-vehicle{
-    text-transform: uppercase;
-    background-color: #bd2130!important;
-    border: 1px solid #a38c8e !important;
-    position: relative;
-    top: -4px;
-    left: 20px;
-    font-weight: 600!important;
-}
-.btn-plus {
-    font-size: 18px;
-    font-weight: bolder;
-}
-input[type="checkbox"]{
-    width: 20px;
-    height: 20px;
-}
-.myVehicle{
-    font-family: inherit;
-    color: #333!important;
-}
-.awarded{
-    text-align: center;
-}
-.unstylelist li{
-    list-style: none;
-    display: inline-block;
-    padding: 0 20px 0 0;
-}
-.unstylelist >li a {
-    font-size: 18px;
-    color: #808080d6;
-    text-transform: uppercase;
-}
-.link:active{
-    color: #333;
-    border-bottom: 2px solid #bd2130!important;
-}.link:visited{
-    color: #333;
-    border-bottom: 2px solid #bd2130!important;
-}
-a:hover{
-    text-decoration: none!important;
-}
 
-.link:focus{
-    border-bottom: 2px solid #bd2130 !important;
-    color: #333!important;
+.dropdown-toggle::after {
+    content: none!important;
 }
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 30px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #808080c7;
+/* .fade {
+    opacity: 0.7 !important;
+} */
+.btn-v {
+    font-size: 14px!important;
 }
-.search{
-    width: 30%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-
+.red{
+    background-color: #c4172c!important;
+    border-color: #c4172c!important;
 }
+/* .modal-header{
+    display: block!important;
+} */
