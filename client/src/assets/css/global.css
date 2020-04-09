@@ -1226,10 +1226,10 @@ body.modal-open {
 .modal.vehicle-settings .modal-dialog {
   width: 455px; } */
 
-.modal.vehicle-settings .back {
-  top: 27px; }
+/* .modal.vehicle-settings .back {
+  top: 27px; } */
 
-.modal.vehicle-settings form {
+/* .modal.vehicle-settings form {
   width: 100%;
   max-width: 100%; }
   .modal.vehicle-settings form.vehicle-settings-main {
@@ -1361,8 +1361,8 @@ body.modal-open {
           float: right;
           width: 230px;
           font-style: normal;
-          padding-left: 2px; }
-    @media (max-width: 767px) {
+          padding-left: 2px; } */
+    /* @media (max-width: 767px) {
       .modal.vehicle-settings form.vehicle-settings-main {
         padding: 60px 5px 0; }
         .modal.vehicle-settings form.vehicle-settings-main .form-fields li strong {
@@ -2761,9 +2761,9 @@ ul.issues-list {
   .icon-heated-seats.hot.cold {
     margin-top: -6px; }
     .icon-heated-seats.hot.cold:after {
-      margin-top: 8px; }
+      margin-top: 8px; } */
 
-.modal.award-details .modal-dialog {
+/* .modal.award-details .modal-dialog {
   width: 398px; }
   .modal.award-details .modal-dialog .modal-award-details {
     padding: 45px 50px 45px; }
@@ -3069,9 +3069,9 @@ ul.issues-list {
     .modal .modal-verify-number .modal-title + p {
       margin-bottom: 21px; }
   .modal .modal-verify-number span.back {
-    top: -20px !important; } }
+    top: -20px !important; } } */
 
-.modal-notification-settings .dropdown {
+/* .modal-notification-settings .dropdown {
   width: 100%;
   font-size: 14px;
   text-align: left; }
@@ -3089,14 +3089,14 @@ ul.issues-list {
       position: absolute;
       right: 15px;
       top: 50%;
-      transform: translateY(-50%); }
-    .modal-notification-settings .dropdown button .placeholder {
+      transform: translateY(-50%); } */
+    /* .modal-notification-settings .dropdown button .placeholder {
       display: inline-block;
       font: italic 14px "Source Sans Pro", sans-serif;
       letter-spacing: .4px;
       color: #9da0a4;
-      padding: 0 4px; }
-  .modal-notification-settings .dropdown-menu {
+      padding: 0 4px; } */
+  /* .modal-notification-settings .dropdown-menu {
     width: 100%;
     max-height: 250px !important;
     margin-top: -1px;
@@ -3105,24 +3105,24 @@ ul.issues-list {
     border: solid 1px #a9adb1 !important;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0 !important; }
-    .modal-notification-settings .dropdown-menu .car-data {
+    padding: 0 !important; } */
+    /* .modal-notification-settings .dropdown-menu .car-data {
       padding: 10px 7px 10px 12px; }
       .modal-notification-settings .dropdown-menu .car-data:hover {
-        background-color: rgba(0, 0, 0, 0.05); }
-  .modal-notification-settings .dropdown .car-data {
+        background-color: rgba(0, 0, 0, 0.05); } */
+  /* .modal-notification-settings .dropdown .car-data {
     display: block;
     transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
-    white-space: nowrap; }
-    .modal-notification-settings .dropdown .car-data img {
-      margin-right: 13px; }
-    .modal-notification-settings .dropdown .car-data > * {
+    white-space: nowrap; } */
+    /* .modal-notification-settings .dropdown .car-data img {
+      margin-right: 13px; } */
+    /* .modal-notification-settings .dropdown .car-data > * {
       display: inline-block;
       vertical-align: middle;
-      white-space: normal; }
-      .modal-notification-settings .dropdown .car-data > * > * {
-        display: block; }
-      .modal-notification-settings .dropdown .car-data > * em {
+      white-space: normal; } */
+      /* .modal-notification-settings .dropdown .car-data > * > * {
+        display: block; } */
+      /* .modal-notification-settings .dropdown .car-data > * em {
         font: 10px/1em "Source Sans Pro", sans-serif;
         letter-spacing: .4px;
         text-transform: uppercase; }
@@ -3134,8 +3134,8 @@ ul.issues-list {
         margin-right: 10px;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap; }
-        .modal-notification-settings .dropdown .car-data > *.car-meta * {
+        white-space: nowrap; } */
+        /* .modal-notification-settings .dropdown .car-data > *.car-meta * {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap; }
@@ -3149,9 +3149,9 @@ ul.issues-list {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 65px; } }
+            width: 65px; } } */
 
-.modal-notification-settings .modal-actions {
+/* .modal-notification-settings .modal-actions {
   padding-left: 40px !important;
   padding-right: 40px !important; }
   .modal-notification-settings .modal-actions .button {
@@ -3164,9 +3164,9 @@ ul.issues-list {
     @media (max-width: 767px) {
       .modal-notification-settings .modal-actions .button {
         width: 100% !important;
-        margin-bottom: 10px; } }
+        margin-bottom: 10px; } } */
 
-.modal-notification-settings-apply-to .modal-title {
+/* .modal-notification-settings-apply-to .modal-title {
   margin-bottom: 45px !important; }
   .modal-notification-settings-apply-to .modal-title + p {
     margin-bottom: 0px;
@@ -3175,9 +3175,9 @@ ul.issues-list {
     @media (max-width: 767px) {
       .modal-notification-settings-apply-to .modal-title + p {
         padding-left: 0px;
-        padding-right: 0px; } }
+        padding-right: 0px; } } */
 
-.modal-notification-settings-apply-to .modal-options {
+/* .modal-notification-settings-apply-to .modal-options {
   padding-top: 46px;
   margin-bottom: 75px; }
   .modal-notification-settings-apply-to .modal-options .select-all {
@@ -3193,8 +3193,8 @@ ul.issues-list {
   .modal-notification-settings-apply-to .modal-options ul {
     padding: 0;
     margin: 0 0 45px;
-    list-style: none; }
-    .modal-notification-settings-apply-to .modal-options ul li {
+    list-style: none; } */
+    /* .modal-notification-settings-apply-to .modal-options ul li {
       margin-bottom: 25px; }
       .modal-notification-settings-apply-to .modal-options ul li:last-child {
         margin-bottom: 0; }
@@ -3212,89 +3212,70 @@ ul.issues-list {
           letter-spacing: .4px; }
         .modal-notification-settings-apply-to .modal-options ul li .car-data > span strong {
           font: 600 14px "Source Sans Pro", sans-serif;
-          letter-spacing: .6px; }
+          letter-spacing: .6px; } */
 
-.disable-modal {
+/* .disable-modal {
   pointer-events: none; }
   .disable-modal * {
-    pointer-events: none !important; }
+    pointer-events: none !important; } */
 
-.modal.software-update .modal-dialog {
-  width: 365px; }
-  .modal.software-update .modal-dialog .update-checking {
-    text-align: center;
-    padding: 20px 0; }
-    .modal.software-update .modal-dialog .update-checking .update,
-    .modal.software-update .modal-dialog .update-checking .complete,
-    .modal.software-update .modal-dialog .update-checking .loading {
-      display: block;
-      width: 42px;
-      height: 42px;
-      background: url("/images/software-update/loading.png") center/contain no-repeat;
-      margin: 0 auto; }
-    .modal.software-update .modal-dialog .update-checking .loading {
-      animation: spin 1s infinite linear; }
-    .modal.software-update .modal-dialog .update-checking .complete {
-      background: url("/images/software-update/complete.png") center/contain no-repeat; }
-    .modal.software-update .modal-dialog .update-checking .update {
-      background: url("/images/software-update/update.png") center/contain no-repeat;
-      height: 49px; }
-    .modal.software-update .modal-dialog .update-checking em {
+/*   */
+    /* .modal.software-update .modal-dialog .update-checking em {
       padding-top: 13px;
       display: block;
       font: 14px/1.5em "Source Sans Pro", sans-serif;
       letter-spacing: .6px;
       max-width: 230px;
-      margin: 0 auto; }
-    .modal.software-update .modal-dialog .update-checking .modal-action {
+      margin: 0 auto; } */
+    /* .modal.software-update .modal-dialog .update-checking .modal-action {
       padding-top: 16px; }
       .modal.software-update .modal-dialog .update-checking .modal-action .match-w {
         padding: 0;
         width: 115px;
-        text-align: center; }
-        .modal.software-update .modal-dialog .update-checking .modal-action .match-w + .match-w {
+        text-align: center; } */
+        /* .modal.software-update .modal-dialog .update-checking .modal-action .match-w + .match-w {
           width: 99px; }
       @media (max-width: 767px) {
         .modal.software-update .modal-dialog .update-checking .modal-action {
-          padding-top: 30px; } }
-    @media (max-width: 767px) {
+          padding-top: 30px; } } */
+    /* @media (max-width: 767px) {
       .modal.software-update .modal-dialog .update-checking {
         position: absolute;
         top: 50%;
         left: 0;
         width: 100%;
-        transform: translateY(-50%); } }
+        transform: translateY(-50%); } } */
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .modal.software-update .modal-dialog .modal-content {
     padding-bottom: 0; }
   .modal.software-update .item {
     height: 100vh;
     width: 100%;
-    overflow: hidden; } }
+    overflow: hidden; } } */
 
-.modal {
+/* .modal {
   min-width: 355px; }
   .modal form {
     width: 100%;
     max-width: 275px;
     margin: 0 auto;
-    font-size: 0px; }
-    .modal form .half {
+    font-size: 0px; } */
+    /* .modal form .half {
       width: 45%;
       display: inline-block;
-      vertical-align: top; }
-      .modal form .half + .half {
-        margin-left: 10%; }
-      .modal form .half.wider {
+      vertical-align: top; } */
+      /* .modal form .half + .half {
+        margin-left: 10%; } */
+      /* .modal form .half.wider {
         width: 48.5%; }
         .modal form .half.wider + .wider {
           margin-left: 2.5%; }
     .modal form .form-footer {
       padding-top: 25px;
       padding-bottom: 25px;
-      text-align: center; }
-      .modal form .form-footer .secondary {
+      text-align: center; } */
+      /* .modal form .form-footer .secondary {
         display: inline-block;
         color: #C4172C;
         line-height: 1em;
@@ -3306,8 +3287,8 @@ ul.issues-list {
         margin-top: 45px;
         cursor: pointer;
         position: relative;
-        text-decoration: none; }
-        .modal form .form-footer .secondary:before {
+        text-decoration: none; } */
+        /* .modal form .form-footer .secondary:before {
           content: "";
           display: block;
           position: absolute;
@@ -3321,9 +3302,9 @@ ul.issues-list {
           transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
           opacity: 0; }
         .modal form .form-footer .secondary:hover:before {
-          opacity: 1; }
+          opacity: 1; } */
 
-form .form-fields {
+/* form .form-fields {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -3568,9 +3549,9 @@ form .form-fields {
           form .form-fields > li label .inline-validator .passed:before {
             opacity: 0; }
           form .form-fields > li label .inline-validator .passed:after {
-            opacity: 1; }
+            opacity: 1; } */
 
-.bootstrap-select {
+/* .bootstrap-select {
   width: 100% !important;
   outline: none !important; }
   .bootstrap-select * {
@@ -3620,7 +3601,7 @@ form .form-fields {
   .checkbox-group .checkbox-round:first-child {
     margin-left: 0px; }
   .checkbox-group .checkbox-round:last-child {
-    margin-right: 0px; }
+    margin-right: 0px; } */
 
 .checkbox {
   cursor: pointer;
@@ -5368,5 +5349,6 @@ body {
     padding: 0 35px 0 !important; }
   nav.nav-app + nav.nav-main + .nav-mobile + .page-view, nav.nav-app + nav.nav-main + .page-view {
     padding: 0 !important; }
-  footer {
+  
+    footer {
     display: none !important; } }

@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AwardsComponent } from './awards/awards.component';
 import { VehicleService } from './vehicle.service';
 import { VehicleModalComponent } from './vehicle-modal/vehicle-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { VehicleModalComponent } from './vehicle-modal/vehicle-modal.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     VehicleModalComponent

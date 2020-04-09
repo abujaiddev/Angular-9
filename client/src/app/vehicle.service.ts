@@ -5,9 +5,33 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class VehicleService {
-  uri = "assets/products.json"
+
+  // uri = "assets/products.json"
+  url = "http://localhost:5000/api"
   constructor(private http: HttpClient) { }
-  getProducts() {
-    return this.http.get(this.uri)
+  ids: any = []
+
+  // get vehicle form database
+  getVehicles() {
+    return this.http.get<any[]>(`${this.url}/vehicles`)
+  }
+  // create vehicle from database
+  createVehicle(obj) {
+    console.log('==========abu', obj)
+    this.http.post(`${this.url}/create`, obj).subscribe(res => console.log('Done'))
+  }
+
+  // delete vehicle
+  deleteVehicle(id) {
+    this.ids.push(id)
+    console.log('===========ids', this.ids)
+
+  }
+
+  deleteRecord(id) {
+    console.log('++++++++++++++++++++', id.checkArray)
+    this.http.post(`${this.url}/delete`, id.checkArray).subscribe(res => console.log('done'));
+
+    // SSthis.http.delete(`${this.url}/delete`, data).subscribe(res => console.log('=======>', res))
   }
 }

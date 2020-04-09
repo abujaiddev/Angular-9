@@ -3,34 +3,58 @@ const Schema = mongoose.Schema;
 
 const vechicleSchema = new Schema(
   {
-    nickName: {
+    vin: {
+      type: String,
+      default: 'KBILLIG2020SK3386'
+    },
+    modelYear: {
       type: String
     },
-    model: {
+    vehicleModelName: {
       type: String
     },
-    year: {
+    vehicleNickName: {
       type: String
     },
-    milage: {
+    ignitionType: {
+      type: String,
+      default: 'fuel'
+    },
+    vehicleCategory: {
+      type: String,
+      default: 'embedded'
+    },
+    mileage: {
       type: String
     },
-    nextServiceIn: {
+    nextServiceMiles: {
       type: String
     },
-    issues: {
+    diagnosticsIssues: {
+      type: Number
+    },
+    chargeLevelPct: {
+      type: Number,
+      default: 31
+    },
+    batteryStatus: {
+      type: String,
+      default: null
+    },
+    drivingRangeMiles: {
+      type: Number
+    },
+    status: {
+      type: String,
+      default: 'Not Activated'
+    },
+    imageName: {
       type: String
     },
-    addtional_features: [
-      {
-        charge: {
-          type: String
-        },
-        derving_rage: {
-          type: String
-        }
-      }
-    ]
+    lastRefreshed: {
+      type: Date,
+      default: Date.now()
+    }
   },
   { timestamps: true }
 );

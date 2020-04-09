@@ -422,7 +422,8 @@
                     <h1>
                         My Vehicles
                     </h1>
-                    <div class="my-vehicles-ulility-nav-tools">
+                    <div class="my-vehicles-ulility-nav-tools"
+                         *ngIf="showHide">
                         <div class="my-vehicles-switch-views nav nav-tabs">
 
                             <a href="#grid-view"
@@ -537,7 +538,72 @@
                             </span>
                         </div><!-- /.my-vehicles-ulility-buttons -->
                     </div><!-- /.my-vehicles-ulility-nav-tools -->
-                    <ul class="my-vehicles-ulility-nav-edit">
+                    <ul class="myVehiclesCheckbox"
+                        *ngIf="!showHide">
+                        <li><span class="select-all">
+                                <svg id="67a12eff-8b2a-4248-b0fd-f0700a2d4f7d"
+                                     data-name="Layer 1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="10.56"
+                                     height="9.38"
+                                     viewBox="0 0 10.56 9.38">
+                                    <polyline id="507e9d9c-8a7a-4e81-a2f2-d9c547b0ca50"
+                                              data-name="Path-2"
+                                              points="9.75 0.58 4.41 8 0.56 5.38"
+                                              style="fill: none;stroke: #fff;stroke-width: 2px" />
+                                </svg>
+                                Select all
+                            </span></li>
+                        <li><span class="deselect-all">
+                                <svg id="8ab12c7e-0390-4a7d-888c-7c764dceb441"
+                                     data-name="Layer 1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="11"
+                                     height="2"
+                                     viewBox="0 0 11 2">
+                                    <rect width="11"
+                                          height="2"
+                                          style="fill: #c4172c" />
+                                </svg>
+                                Deselect all
+                            </span></li>
+                        <li (click)="submitForm()"><span class="delete-selected">
+                                <svg id="228f8ef6-c798-4f2c-bfe5-23841bb21bff"
+                                     data-name="Layer 1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="11"
+                                     height="15"
+                                     viewBox="0 0 11 15">
+                                    <path id="6129b869-ea0c-400d-95f7-8658d7ff74a6"
+                                          data-name="Combined-Shape"
+                                          d="M0,2A1,1,0,0,1,1,1h9a1,1,0,0,1,1,1V3H0ZM4,0H7V1H4ZM1,4h9V14a1,1,0,0,1-1,1H2a1,1,0,0,1-1-1Z"
+                                          style="fill: #c4172c" />
+                                </svg>
+                                Delete <em>Selected</em>
+                                <!-- <p class="error"
+                                   *ngIf="this.form.controls['checkArray'].errors?.required">
+                                    Checkbox is required, select atleast one value.
+                                </p> -->
+                            </span></li>
+                        <li (click)="cancelSelected()">
+                            <span class="cancel"
+                                  data-action="editing-stop">
+                                <svg id="83423d78-0e91-4301-a1e9-92d10df4f68d"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="14.99"
+                                     height="15"
+                                     viewBox="0 0 14.99 15">
+                                    <path id="80148eb1-3817-49e4-8928-d5cb855e2703"
+                                          data-name="cancel"
+                                          d="M12.82,12.8a7.5,7.5,0,1,0-10.6,0,7.49,7.49,0,0,0,10.6,0ZM4.34,9.62,6.47,7.49,4.34,5.37,5.39,4.32,7.52,6.44,9.65,4.32,10.7,5.37,8.57,7.49,10.7,9.62,9.65,10.67,7.52,8.55,5.39,10.67Z"
+                                          transform="translate(-0.03 0)"
+                                          style="fill: #c4172c" />
+                                </svg>
+                                Cancel
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- <ul class="my-vehicles-ulility-nav-edit">
                         <li>
                             <span class="select-all">
                                 <svg id="67a12eff-8b2a-4248-b0fd-f0700a2d4f7d"
@@ -604,7 +670,8 @@
                                 Cancel
                             </span>
                         </li>
-                    </ul><!-- /.my-vehicles-ulility-nav-edit -->
+                    </ul> -->
+                    <!-- /.my-vehicles-ulility-nav-edit -->
                 </div><!-- /.contain -->
             </div><!-- /.my-vehicles-ulility-nav -->
 
@@ -623,11 +690,12 @@
                              data-mileage="15919"
                              data-next-service="6234"
                              data-issues="0"
-                             *ngFor="let product of products">
+                             *ngFor="let product of vehicles$ | async">
                             <div class="my-vehicles-grid-item-card">
                                 <div class="my-vehicles-item-edit">
                                     <label class="checkbox solo">
                                         <input type="checkbox"
+                                               product
                                                name="edit"
                                                value="" />
                                         <em></em>
@@ -636,7 +704,7 @@
 
                                 <div class="my-vehicles-grid-item-header">
                                     <em>
-                                        {{product.modelYear}} {{product.modelName}}
+                                        {{product.modelYear |date:'y'}} {{product.modelName}}
                                     </em>
                                     <strong>
                                         {{product.vehicleNickName}}
@@ -663,9 +731,12 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- <p>../assets//images/image_car_grid_1.png</p> -->
                                 <div class="my-vehicles-grid-item-image">
-                                    <img src="../assets{{product.images.imagePath}}{{product.images.imageName}}"
+                                    <!-- <img src="../assets{{product.images.imagePath}}{{product.images.imageName}}"
+                                         alt="{{product.vehicleNickName}}"
+                                         title="{{product.vehicleNickName}}"
+                                         height="90" /> -->
+                                    <img src="../assets/images/2019-soul-jf_pe-eb.png"
                                          alt="{{product.vehicleNickName}}"
                                          title="{{product.vehicleNickName}}"
                                          height="90" />
@@ -764,7 +835,8 @@
                 </div><!-- /.contain -->
                 <div class="no-results-found">
                     No vehicles matched this search
-                </div><!-- /.no-results-found -->
+                </div>
+                <!-- /.no-results-found -->
             </div><!-- /.my-vehicles-grid -->
             <div class="my-vehicles-list-view tab-pane"
                  id="list-view">
@@ -774,8 +846,9 @@
                             <label class="checkbox solo">
                                 <input type="checkbox"
                                        class="toggle-select-all"
-                                       name="edit"
-                                       value="" />
+                                       name="list_name"
+                                       value="m1" />
+
                                 <em></em>
                             </label>
                         </div><!-- /.checkbox-toggle -->
@@ -809,153 +882,188 @@
                         <div class="header-additional-features cell-meta-data">
                             <span>Addtional</span> Features
                         </div><!-- /.header-issues-->
-                    </div><!-- /.my-vehicles-list-header -->
-                    <div class="my-vehicles-list"
-                         id="mixitup">
-                        <div class="my-vehicles-list-item"
-                             data-model="niro"
-                             data-year="2017"
-                             data-nickname="my ride"
-                             data-mileage="15912"
-                             data-next-service="6102"
-                             data-issues="3"
-                             *ngFor="let product of products">
-                            <div class="my-vehicles-item-edit cell-checkbox">
-                                <label class="checkbox solo">
-                                    <input type="checkbox"
-                                           name="edit"
-                                           value="" />
-                                    <em></em>
-                                </label>
-                            </div><!-- /.my-vehicles-item-edit -->
-                            <div class="my-vehicles-list-item-image cell-image">
-                                <img src="../assets/{{product.images.imagePath}}{{product.images.imageName}}"
-                                     alt="My Ride"
-                                     title="My Ride"
-                                     height="32" />
-                            </div><!-- /.my-vehicles-list-item-image -->
-                            <div class="my-vehicles-list-item-mobile-header">
-                                <span>
-                                    <em>
-                                        2017 Niro
-                                    </em>
-                                    <strong>
-                                        My Ride
-                                    </strong>
-                                </span>
-                            </div><!-- /.my-vehicles-list-item-mobile-header -->
-                            <div class="my-vehicles-list-item-model cell-model">
-                                {{product.modelName}}
-                            </div><!-- /.my-vehicles-list-item-model -->
-                            <div class="my-vehicles-list-item-year cell-year">
-                                {{product.modelYear}}
-                            </div><!-- /.my-vehicles-list-item-year -->
-                            <div class="my-vehicles-list-item-nickname cell-nickname">
-                                <span class="no-cut-off">
-                                    {{product.vehicleNickName}}
-                                </span>
-                            </div><!-- /.my-vehicles-list-item-nickname -->
-                            <div class="my-vehicles-list-item-mileage cell-mileage">
-                                {{product.mileage | number}} mi.
-                            </div><!-- /.my-vehicles-list-item-mileage -->
-                            <div class="my-vehicles-list-item-next-service cell-service">
-                                {{product.nextServiceMiles|number}} mi.
-                            </div><!-- /.my-vehicles-list-item-service -->
-                            <div class="my-vehicles-list-item-issues cell-issues">
-                                {{product.diagnosticsIssues}}
-                            </div><!-- /.my-vehicles-list-item-service -->
-                            <div class="my-vehicles-list-item-meta-data cell-meta-data">
-                                <div class="meta-data-inner">
-                                    <div class="car-meta-data mileage">
-                                        <strong>
-                                            Mileage:
-                                        </strong>
-                                        <em>
-                                            {{product.mileage | number}} mi.
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data next-service">
-                                        <strong>
-                                            Next Service In:
-                                        </strong>
-                                        <em>
-                                            {{product.nextServiceMiles|number}} mi.
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data issues">
-                                        <strong>
-                                            Diagnostic Issues:
-                                        </strong>
-                                        <em>
-                                            {{product.diagnosticsIssues}}
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data">
-                                        <strong>
-                                            Charge:
-                                        </strong>
-                                        <em>
-                                            {{product.chargeLevelPct?product.chargeLevelPct:''}}%
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data">
-                                        <strong>
-                                            Driving Rage:
-                                        </strong>
-                                        <em>
-                                            {{product.drivingRangeMiles}}mi
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data">
-                                        <strong>
-                                            Battery Status:
-                                        </strong>
-                                        <em>
-                                            {{product.batteryStatus}}
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data">
-                                        <strong>
-                                            UVO Status:
-                                        </strong>
-                                        <em>
-                                            {{product.status}}
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="car-meta-data">
-                                        <strong>
-                                            Last Refreshed:
-                                        </strong>
-                                        <em>
-                                            {{product.lastRefreshed| date:'m'}} mins ago.
-                                        </em>
-                                    </div><!-- /.car-meta-data -->
-                                    <div class="my-vehicles-list-item-meta-data-actions"
-                                         data-toggle="modal"
-                                         data-target="#software-update"
-                                         data-software-update="1">
-                                        <a href="#">Check for software update</a>
-                                    </div><!-- /.my-vehicles-list-meta-data-actions -->
-                                </div><!-- /.meta-data-inner -->
-                            </div><!-- /.my-vehicles-list-meta-data -->
-                            <div class="my-vehicles-list-item-settings cell-settings">
-                                <a href="#"
-                                   class="my-vehicles-list-item-settings-icon">
-                                    <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6"
-                                         data-name="Layer 1"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         width="14"
-                                         height="14"
-                                         viewBox="0 0 14 14">
-                                        <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z"
-                                              style="fill: #898989"></path>
-                                    </svg>
-                                </a>
-                            </div><!-- /.my-vehicles-list-item-settings -->
-                            <div class="my-vehicles-list-item-toggle"></div>
-                        </div><!-- /.my-vehicles-list-item -->
+                    </div>
+                    <form [formGroup]="form"
+                          (ngSubmit)="submitForm()"
+                          novalidate>
+                        <!-- 
+                        <button class="btn btn-primary"
+                                type="submit">Delete selected</button> -->
+                        <div class="my-vehicles-list"
+                             id="mixitup">
+                            <div class="my-vehicles-list-item"
+                                 data-model="niro"
+                                 data-year="2017"
+                                 data-nickname="my ride"
+                                 data-mileage="15912"
+                                 data-next-service="6102"
+                                 data-issues="3"
+                                 *ngFor="let product of vehicles$ | async">
+                                <div class="my-vehicles-item-edit cell-checkbox">
+                                    <label class="checkbox solo">
+                                        <input type="checkbox"
+                                               [value]="product._id"
+                                               (change)="onCheckboxChange($event)" />
+                                        <em></em>
+                                    </label>
+                                </div>
+                                <div class="my-vehicles-list-item-image cell-image">
 
-                    </div><!-- /.my-vehicles-list -->
+                                    <img src="../assets/images/image_car_grid_3.png"
+                                         alt="My Ride"
+                                         title="My Ride"
+                                         height="32" />
+                                </div>
+                                <div class="my-vehicles-list-item-mobile-header">
+                                    <span>
+                                        <em>
+                                            2017 Niro
+                                        </em>
+                                        <strong>
+                                            My Ride
+                                        </strong>
+                                    </span>
+                                </div>
+                                <div class="my-vehicles-list-item-model cell-model">
+                                    {{product.modelName}}
+                                </div>
+                                <div class="my-vehicles-list-item-year cell-year">
+                                    {{product.modelYear}}
+                                </div>
+                                <div class="my-vehicles-list-item-nickname cell-nickname">
+                                    <span class="no-cut-off">
+                                        {{product.vehicleNickName}}
+                                    </span>
+                                </div>
+                                <div class="my-vehicles-list-item-mileage cell-mileage">
+                                    {{product.mileage | number}} mi.
+                                </div>
+                                <div class="my-vehicles-list-item-next-service cell-service">
+                                    {{product.nextServiceMiles|number}} mi.
+                                </div>
+                                <div class="my-vehicles-list-item-issues cell-issues">
+                                    {{product.diagnosticsIssues}}
+                                </div>
+                                <div class="my-vehicles-list-item-meta-data cell-meta-data">
+                                    <div class="meta-data-inner">
+                                        <div class="car-meta-data mileage">
+                                            <strong>
+                                                Mileage:
+                                            </strong>
+                                            <em>
+                                                {{product.mileage | number}} mi.
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data next-service">
+                                            <strong>
+                                                Next Service In:
+                                            </strong>
+                                            <em>
+                                                {{product.nextServiceMiles|number}} mi.
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data issues">
+                                            <strong>
+                                                Diagnostic Issues:
+                                            </strong>
+                                            <em>
+                                                {{product.diagnosticsIssues}}
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data">
+                                            <strong>
+                                                Charge:
+                                            </strong>
+                                            <em>
+                                                {{product.chargeLevelPct?product.chargeLevelPct:''}}%
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data">
+                                            <strong>
+                                                Driving Rage:
+                                            </strong>
+                                            <em>
+                                                {{product.drivingRangeMiles}}mi
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data">
+                                            <strong>
+                                                Battery Status:
+                                            </strong>
+                                            <em>
+                                                {{product.batteryStatus}}
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data">
+                                            <strong>
+                                                UVO Status:
+                                            </strong>
+                                            <em>
+                                                {{product.status}}
+                                            </em>
+                                        </div>
+                                        <div class="car-meta-data">
+                                            <strong>
+                                                Last Refreshed:
+                                            </strong>
+                                            <em>
+                                                {{product.lastRefreshed| date:'m'}} mins ago.
+                                            </em>
+                                        </div>
+                                        <div class="my-vehicles-list-item-meta-data-actions"
+                                             data-toggle="modal"
+                                             data-target="#software-update"
+                                             data-software-update="1">
+                                            <a href="#">Check for software update</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-vehicles-list-item-settings cell-settings">
+                                    <a href="#"
+                                       class="my-vehicles-list-item-settings-icon">
+                                        <svg id="6e2e1aa2-3972-48cc-a3d8-42bb0b6343c6"
+                                             data-name="Layer 1"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             width="14"
+                                             height="14"
+                                             viewBox="0 0 14 14">
+                                            <path d="M1.84,8.26a5.34,5.34,0,0,0,.69,1.61l-.87.88c-.39.39-.39.63,0,1l.85.85c.35.35.59.34,1,0l.92-.92a5.34,5.34,0,0,0,1.39.56v1.12c0,.56.17.72.65.72H7.6c.49,0,.65-.17.65-.72V12.16a5.37,5.37,0,0,0,1.39-.56l.94.94c.39.39.62.39,1,0l.85-.85c.34-.34.35-.57,0-1l-.9-.9a5.29,5.29,0,0,0,.7-1.61h1.18c.49,0,.65-.17.65-.72V6.46c0-.53-.14-.72-.65-.72H12.16a5.37,5.37,0,0,0-.56-1.39l.85-.85c.38-.38.41-.61,0-1l-.85-.85c-.34-.34-.59-.34-1,0l-.81.81a5.38,5.38,0,0,0-1.61-.69V.72C8.26.19,8.12,0,7.6,0H6.4c-.49,0-.65.18-.65.72V1.84a5.38,5.38,0,0,0-1.61.69l-.81-.81c-.38-.38-.63-.39-1,0l-.85.86c-.36.36-.33.59,0,1l.85.85a5.5,5.5,0,0,0-.56,1.39H.65c-.48,0-.65.18-.65.72V7.54c0,.56.17.72.65.72ZM4.95,7A2.05,2.05,0,0,1,9.05,7h0A2.05,2.05,0,0,1,4.95,7Z"
+                                                  style="fill: #898989"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="my-vehicles-list-item-toggle"></div>
+                            </div>
+                        </div>
+                        <!-- <p class="error"
+                           *ngIf="this.form.controls['checkArray'].errors?.required">
+                            Checkbox is required, select atleast one value.
+                        </p> -->
+
+                    </form>
+                    <!-- /.my-vehicles-list -->
+
+
+                    <!-- <form [formGroup]="form"
+                          (ngSubmit)="submitForm()"
+                          novalidate>
+                        
+                        <div *ngFor="let data of vehicles let i=index">
+                            <label>
+                                <input type="checkbox"
+                                       [value]="data._id"
+                                       (change)="onCheckboxChange($event)" />
+                                {{data.vehicleNickName}}
+                            </label>
+                        </div>
+                        <p class="error"
+                           *ngIf="this.form.controls['checkArray'].errors?.required">
+                            Checkbox is required, select atleast one value.
+                        </p>
+                        <input type="submit"
+                               value="Submit">
+                    </form> -->
+
                 </div><!-- /.contain -->
                 <div class="no-results-found">
                     No vehicles matched this search
@@ -970,15 +1078,14 @@
                     <em>
                         Only embedded vehicles will appear on the map.
                     </em>
-                </div><!-- /.my-vehicles-map-view-note -->
+                </div>
                 <div class="map">
 
-                </div><!-- /#map -->
-            </div><!-- /.my-vehicles-map-view -->
-        </div><!-- /.my-vehicles-car-listings -->
-    </div><!-- /.page-view -->
-</div><!-- /.view-my-vehicles -->
-
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade delete"
      id="delete"
