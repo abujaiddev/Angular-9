@@ -18,6 +18,8 @@ export class VehiclesComponent implements OnInit {
   showHide = true
   vehicles$: Observable<any>;
   term: any
+  spinner = true
+  vehicles = []
   constructor(private modalService: NgbModal, private vs: VehicleService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
       checkArray: this.fb.array([], [Validators.required])
@@ -59,8 +61,17 @@ export class VehiclesComponent implements OnInit {
     modalRef.componentInstance.modal_content = 'vehicle content';
   }
 
+  // public getVehiclesUsingAsyncPipe() {
+  //   this.vehicles$ = this.vs.getVehicles()
+  //   this.spinner = false
+  // }
+
   public getVehiclesUsingAsyncPipe() {
-    this.vehicles$ = this.vs.getVehicles()
+    this.vs.getVehicles().subscribe((data: any[]) => {
+      this.vehicles = data
+      this.spinner = false
+    })
+
   }
 
   ngOnInit() {

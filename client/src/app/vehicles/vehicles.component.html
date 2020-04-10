@@ -691,7 +691,7 @@
                              data-mileage="15919"
                              data-next-service="6234"
                              data-issues="0"
-                             *ngFor="let product of vehicles$ | async | filter:term">
+                             *ngFor="let product of vehicles| filter:term">
                             <div class="my-vehicles-grid-item-card">
                                 <div class="my-vehicles-item-edit">
                                     <label class="checkbox solo">
@@ -836,6 +836,10 @@
                                 </div>
                             </div>
                         </div>
+
+                        <img *ngIf="spinner"
+                             src="../assets/images/Loadingsome.gif"
+                             height="360px">
                         <!-- /.col -->
 
                     </div><!-- /.row -->
@@ -903,7 +907,7 @@
                                  data-mileage="15912"
                                  data-next-service="6102"
                                  data-issues="3"
-                                 *ngFor="let product of vehicles$ | async | filter:term">
+                                 *ngFor="let product of vehicles | filter:term">
                                 <div class="my-vehicles-item-edit cell-checkbox">
                                     <label class="checkbox solo">
                                         <input type="checkbox"
