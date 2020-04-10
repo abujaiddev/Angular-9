@@ -35,7 +35,7 @@ const vechicleSchema = new Schema(
     },
     chargeLevelPct: {
       type: Number,
-      default: 31
+      default: 35
     },
     batteryStatus: {
       type: String,

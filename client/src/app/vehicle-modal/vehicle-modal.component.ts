@@ -13,12 +13,11 @@ export class VehicleModalComponent implements OnInit {
 
   @Input() modal_title;
   @Input() modal_content;
-  selectedFile: File
+
   myForm: FormGroup
   vehicles$: Observable<any>;
 
-  public imagePath;
-  imgURL: any;
+  uploadedFiles: Array<File>;
 
   constructor(public activeModal: NgbActiveModal, public fb: FormBuilder, private vs: VehicleService) {
     this.vehicle()
@@ -49,10 +48,6 @@ export class VehicleModalComponent implements OnInit {
 
 
   public submitForm() {
-    // const formData = new FormData()
-    // formData.append('imageName', this.selectedFile)
-    // console.log('=========formdaata', formData)
-
     this.vs.createVehicle(this.myForm.value)
     this.activeModal.close()
     window.location.reload()
@@ -62,5 +57,12 @@ export class VehicleModalComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  // file upload
+  fileChange(event) {
+    this.uploadedFiles = event.target.files[0].name;
+    console.log(this.uploadedFiles)
+  }
+
 
 }

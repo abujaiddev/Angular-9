@@ -505,7 +505,8 @@
                                        name="my-vehicles-text-filter"
                                        value=""
                                        placeholder="Year, model, or nickname"
-                                       class="desktop" />
+                                       class="desktop"
+                                       [(ngModel)]="term" />
                                 <input type="text"
                                        name="my-vehicles-text-filter"
                                        value=""
@@ -690,7 +691,7 @@
                              data-mileage="15919"
                              data-next-service="6234"
                              data-issues="0"
-                             *ngFor="let product of vehicles$ | async">
+                             *ngFor="let product of vehicles$ | async | filter:term">
                             <div class="my-vehicles-grid-item-card">
                                 <div class="my-vehicles-item-edit">
                                     <label class="checkbox solo">
@@ -839,9 +840,9 @@
 
                     </div><!-- /.row -->
                 </div><!-- /.contain -->
-                <div class="no-results-found">
+                <!-- <div class="no-results-found">
                     No vehicles matched this search
-                </div>
+                </div> -->
                 <!-- /.no-results-found -->
             </div><!-- /.my-vehicles-grid -->
             <div class="my-vehicles-list-view tab-pane"
@@ -902,7 +903,7 @@
                                  data-mileage="15912"
                                  data-next-service="6102"
                                  data-issues="3"
-                                 *ngFor="let product of vehicles$ | async">
+                                 *ngFor="let product of vehicles$ | async | filter:term">
                                 <div class="my-vehicles-item-edit cell-checkbox">
                                     <label class="checkbox solo">
                                         <input type="checkbox"
@@ -913,10 +914,20 @@
                                 </div>
                                 <div class="my-vehicles-list-item-image cell-image">
 
-                                    <img src="../assets/images/image_car_grid_3.png"
+                                    <!-- <img src="../assets/images/image_car_grid_3.png"
                                          alt="My Ride"
                                          title="My Ride"
-                                         height="32" />
+                                         height="32" /> -->
+                                    <img src="{{product.imageName}}"
+                                         alt="{{product.vehicleNickName}}"
+                                         title="{{product.vehicleNickName}}"
+                                         height="90"
+                                         *ngIf="product.imageName" />
+                                    <img src="../assets/images/2019-soul-jf_pe-eb.png"
+                                         alt="{{product.vehicleNickName}}"
+                                         title="{{product.vehicleNickName}}"
+                                         height="90"
+                                         *ngIf="!product.imageName" />
                                 </div>
                                 <div class="my-vehicles-list-item-mobile-header">
                                     <span>
@@ -1039,39 +1050,14 @@
                                 <div class="my-vehicles-list-item-toggle"></div>
                             </div>
                         </div>
-                        <!-- <p class="error"
-                           *ngIf="this.form.controls['checkArray'].errors?.required">
-                            Checkbox is required, select atleast one value.
-                        </p> -->
 
                     </form>
-                    <!-- /.my-vehicles-list -->
-
-
-                    <!-- <form [formGroup]="form"
-                          (ngSubmit)="submitForm()"
-                          novalidate>
-                        
-                        <div *ngFor="let data of vehicles let i=index">
-                            <label>
-                                <input type="checkbox"
-                                       [value]="data._id"
-                                       (change)="onCheckboxChange($event)" />
-                                {{data.vehicleNickName}}
-                            </label>
-                        </div>
-                        <p class="error"
-                           *ngIf="this.form.controls['checkArray'].errors?.required">
-                            Checkbox is required, select atleast one value.
-                        </p>
-                        <input type="submit"
-                               value="Submit">
-                    </form> -->
 
                 </div><!-- /.contain -->
-                <div class="no-results-found">
+                <!-- <div class="no-results-found">
                     No vehicles matched this search
-                </div><!-- /.no-results-found -->
+                </div> -->
+                <!-- /.no-results-found -->
             </div><!-- /.my-vehicles-list-view -->
             <div class="my-vehicles-map-view tab-pane fade in"
                  id="map-view">

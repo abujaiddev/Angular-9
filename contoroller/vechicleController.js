@@ -1,7 +1,7 @@
 const Vehicle = require("../models/vehicle");
 
 exports.vechicleCreate = async (req, res) => {
-  // return console.log(req.file)
+  // return console.log(req.body)
   try {
     const vehicle = await new Vehicle({
       ...req.body

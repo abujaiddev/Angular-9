@@ -17,9 +17,8 @@ export class VehiclesComponent implements OnInit {
   form: FormGroup;
   showHide = true
   vehicles$: Observable<any>;
-
+  term: any
   constructor(private modalService: NgbModal, private vs: VehicleService, private fb: FormBuilder, private router: Router) {
-    // this.showHide = true
     this.form = this.fb.group({
       checkArray: this.fb.array([], [Validators.required])
     });
@@ -62,14 +61,9 @@ export class VehiclesComponent implements OnInit {
 
   public getVehiclesUsingAsyncPipe() {
     this.vehicles$ = this.vs.getVehicles()
-    // console.log('========>', this.vehicles$)
   }
 
   ngOnInit() {
-    // this.vs.getVehicles().subscribe(data => {
-    //   this.vehicles = data
-    //   console.log('======vehicle', data)
-    // })
     this.getVehiclesUsingAsyncPipe();
 
   }

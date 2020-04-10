@@ -10,6 +10,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { VehicleService } from './vehicle.service';
 import { VehicleModalComponent } from './vehicle-modal/vehicle-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   entryComponents: [
     VehicleModalComponent
