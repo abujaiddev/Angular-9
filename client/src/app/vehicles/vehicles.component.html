@@ -695,9 +695,8 @@
                                 <div class="my-vehicles-item-edit">
                                     <label class="checkbox solo">
                                         <input type="checkbox"
-                                               product
-                                               name="edit"
-                                               value="" />
+                                               [value]="product._id"
+                                               (change)="onCheckboxChange($event)" />
                                         <em></em>
                                     </label>
                                 </div>
@@ -731,15 +730,22 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- ../assets/images/2019-soul-jf_pe-eb.png -->
                                 <div class="my-vehicles-grid-item-image">
                                     <!-- <img src="../assets{{product.images.imagePath}}{{product.images.imageName}}"
                                          alt="{{product.vehicleNickName}}"
                                          title="{{product.vehicleNickName}}"
                                          height="90" /> -->
+                                    <img src="{{product.imageName}}"
+                                         alt="{{product.vehicleNickName}}"
+                                         title="{{product.vehicleNickName}}"
+                                         height="90"
+                                         *ngIf="product.imageName" />
                                     <img src="../assets/images/2019-soul-jf_pe-eb.png"
                                          alt="{{product.vehicleNickName}}"
                                          title="{{product.vehicleNickName}}"
-                                         height="90" />
+                                         height="90"
+                                         *ngIf="!product.imageName" />
                                 </div>
                                 <div class="my-vehicles-grid-item-meta-data">
                                     <div class="my-vehicles-grid-item-meta-data-inner">
@@ -886,9 +892,7 @@
                     <form [formGroup]="form"
                           (ngSubmit)="submitForm()"
                           novalidate>
-                        <!-- 
-                        <button class="btn btn-primary"
-                                type="submit">Delete selected</button> -->
+
                         <div class="my-vehicles-list"
                              id="mixitup">
                             <div class="my-vehicles-list-item"

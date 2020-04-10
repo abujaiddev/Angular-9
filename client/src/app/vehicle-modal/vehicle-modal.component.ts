@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle-modal',
@@ -15,11 +15,16 @@ export class VehicleModalComponent implements OnInit {
   @Input() modal_content;
   selectedFile: File
   myForm: FormGroup
+  vehicles$: Observable<any>;
+
+  public imagePath;
+  imgURL: any;
 
   constructor(public activeModal: NgbActiveModal, public fb: FormBuilder, private vs: VehicleService) {
     this.vehicle()
 
   }
+
 
   vehicle() {
 
@@ -36,27 +41,23 @@ export class VehicleModalComponent implements OnInit {
       batteryStatus: ['', Validators.required],
       drivingRangeMiles: ['', Validators.required],
       status: ['', Validators.required],
-      imageName: ['', Validators.required],
+      // imageName: ['', Validators.required],
+      imageName: [null]
     })
 
   }
 
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0]
-
-    // console.log(this.selectedFile)
-  }
 
   public submitForm() {
-    const formData = new FormData()
-    formData.append('imageName', this.selectedFile)
-    console.log('=========formdaata', formData)
+    // const formData = new FormData()
+    // formData.append('imageName', this.selectedFile)
+    // console.log('=========formdaata', formData)
 
-    // this.vs.createVehicle(this.myForm.value)
-    // this.activeModal.close(this.myForm.value)
-    // console.log('=========formvalue', this.myForm.value)
-    // window.location.reload()
+    this.vs.createVehicle(this.myForm.value)
+    this.activeModal.close()
+    window.location.reload()
   }
+
 
   ngOnInit(): void {
 

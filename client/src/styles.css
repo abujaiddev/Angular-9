@@ -42,7 +42,11 @@
     padding-left: 12px;
 }
 
+.view-my-vehicles .my-vehicles-car-listings {
+    overflow: visible!important;
+}
 
-/* .modal-header{
-    display: block!important;
-} */
+footer {
+    position: absolute!important;
+    bottom: 0;
+}

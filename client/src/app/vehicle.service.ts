@@ -15,9 +15,9 @@ export class VehicleService {
   getVehicles() {
     return this.http.get<any[]>(`${this.url}/vehicles`)
   }
+
   // create vehicle from database
   createVehicle(obj) {
-    console.log('==========abu', obj)
     this.http.post(`${this.url}/create`, obj).subscribe(res => console.log('Done'))
   }
 
@@ -31,7 +31,5 @@ export class VehicleService {
   deleteRecord(id) {
     console.log('++++++++++++++++++++', id.checkArray)
     this.http.post(`${this.url}/delete`, id.checkArray).subscribe(res => console.log('done'));
-
-    // SSthis.http.delete(`${this.url}/delete`, data).subscribe(res => console.log('=======>', res))
   }
 }

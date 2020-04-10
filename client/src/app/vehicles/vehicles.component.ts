@@ -13,8 +13,6 @@ import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn, Validators
 })
 export class VehiclesComponent implements OnInit {
 
-  // products: any = []
-  // vehicles: any = []
   data: any
   form: FormGroup;
   showHide = true
@@ -31,13 +29,11 @@ export class VehiclesComponent implements OnInit {
   // checkbox
   onCheckboxChange(e) {
     const checkArray: FormArray = this.form.get('checkArray') as FormArray;
-    // console.log('=======>', e.target.checked)
     if (e.target.checked) {
-      console.log('=======>', e.target.checked)
       this.showHide = false
       checkArray.push(new FormControl(e.target.value));
     } else {
-      console.log('=======>', e.target.checked)
+      // console.log('=======>', e.target.checked)
       let i: number = 0;
       checkArray.controls.forEach((item: FormControl) => {
         if (item.value == e.target.value) {
@@ -52,8 +48,6 @@ export class VehiclesComponent implements OnInit {
     this.data = this.form.value
     this.vs.deleteRecord(this.data)
     this.getVehiclesUsingAsyncPipe()
-    this.router.navigate([''])
-    // window.location.reload()
 
   }
   cancelSelected() {
@@ -68,7 +62,7 @@ export class VehiclesComponent implements OnInit {
 
   public getVehiclesUsingAsyncPipe() {
     this.vehicles$ = this.vs.getVehicles()
-    console.log('========>', this.vehicles$)
+    // console.log('========>', this.vehicles$)
   }
 
   ngOnInit() {

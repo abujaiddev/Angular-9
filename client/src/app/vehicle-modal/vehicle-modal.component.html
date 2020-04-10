@@ -13,7 +13,7 @@
              action=""
              (ngSubmit)="submitForm()"
              enctype="multipart/form-data">
-              <!-- <div class="form-group">
+              <div class="form-group">
 
                      <input type="text"
                             class="form-control"
@@ -87,7 +87,7 @@
                             class="form-control"
                             formControlName="drivingRangeMiles"
                             placeholder="driving Range Miles">
-              </div> -->
+              </div>
               <div class="form-group">
                      <input type="text"
                             class="form-control"
@@ -95,11 +95,26 @@
                             placeholder="status">
               </div>
               <div class="form-group">
+                     <input type="text"
+                            class="form-control"
+                            formControlName="imageName"
+                            #imageName
+                            placeholder="Paster here image url">
+              </div>
+
+              <!-- <input #file
+                     type="file"
+                     accept='image/*'
+                     (change)="preview(file.files)" />
+              <img [src]="imgURL"
+                   height="200"
+                   *ngIf="imgURL"> -->
+              <!-- <div class="form-group">
                      <input type="file"
                             class="form-control"
                             formControlName="imageName"
                             (change)="onFileChanged($event)">
-              </div>
+              </div> -->
               <div class="form-group">
                      <!-- [disabled]="myForm.pristine || myForm.invalid" -->
                      <button type="submit"

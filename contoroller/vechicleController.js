@@ -4,8 +4,8 @@ exports.vechicleCreate = async (req, res) => {
   // return console.log(req.file)
   try {
     const vehicle = await new Vehicle({
-      ...req.body,
-      imageName: req.file.filename
+      ...req.body
+      // imageName: req.file.filename
     });
     vehicle.save();
     res.json(vehicle);
