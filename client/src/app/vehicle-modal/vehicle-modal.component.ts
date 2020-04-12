@@ -46,13 +46,11 @@ export class VehicleModalComponent implements OnInit {
 
   }
 
-
   public submitForm() {
     this.vs.createVehicle(this.myForm.value)
     this.activeModal.close()
     window.location.reload()
   }
-
 
   ngOnInit(): void {
 
@@ -63,6 +61,5 @@ export class VehicleModalComponent implements OnInit {
     this.uploadedFiles = event.target.files[0].name;
     console.log(this.uploadedFiles)
   }
-
 
 }

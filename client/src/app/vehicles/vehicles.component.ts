@@ -28,11 +28,13 @@ export class VehiclesComponent implements OnInit {
   }
 
   // checkbox
+  color: any
   onCheckboxChange(e) {
     const checkArray: FormArray = this.form.get('checkArray') as FormArray;
     if (e.target.checked) {
       this.showHide = false
       checkArray.push(new FormControl(e.target.value));
+      this.color = "opacity:1!important"
     } else {
       // console.log('=======>', e.target.checked)
       let i: number = 0;
