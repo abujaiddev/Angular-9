@@ -50,5 +50,9 @@
 }
 footer {
     position: absolute!important;
-    bottom: 0;
+    /* bottom: -50px; */
+    top: 130%;
+}
+.button.dark-icon i {
+    color: white!important;
 }
