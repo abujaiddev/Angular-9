@@ -1,8 +1,7 @@
 # server
-Run npm install and run npm start or nodemon
+Go to drectory server cd Run npm install and run npm start or nodemon
 # Client
-
-Go to drectory client cd client and run npm install then Run the ng serve --open
+run npm install then Run the ng serve --open
 
 ## Development server
 
