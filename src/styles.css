@@ -56,3 +56,6 @@ footer {
 .button.dark-icon i {
     color: white!important;
 }
+::placeholder {
+    text-transform: capitalize;
+}
